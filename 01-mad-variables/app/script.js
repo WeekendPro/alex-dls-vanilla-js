@@ -1,23 +1,5 @@
 function solution() {
-	// TODO: Assign values to your your variables here to complete the story!
-	// homeTown (string);
-	// heroAge (number);
-	// heroName (string);
-	// publicPlace (string);
-	// dangerousActivity (string);
-	// noun (string);
-	// bodyPart (string);
-	// energyLevel (number);
-	// distance (number);
-	// eventCount (number);
-	// animal (string);
-	// funnyLocation (string);
-	// largeIndoorObject (string);
-	// isEnergyControlled (boolean);
-	// isExperimentalSuccess (boolean);
-	// targetScore (number);
 
-	// Write your code here
 	let homeTown = "the Bronx"; 
 	let heroAge = 17;
 	let heroName = "Alexandra";
@@ -37,10 +19,6 @@ function solution() {
 	
 	/* ************************************ *| 
 	
-		Don't modify the code below this line
-		Don't modify the code below this line
-		Don't modify the code below this line
-		Don't modify the code below this line
 		Don't modify the code below this line
 	
 	/* ************************************ */

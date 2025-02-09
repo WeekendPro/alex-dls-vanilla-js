@@ -1,0 +1,114 @@
+/* app/styles.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-container {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e6e6e6;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 800px;
+  width: 90%;
+}
+
+.typewriter {
+  font-family: 'Courier New', Courier, monospace;
+  color: #4ecca3;
+  overflow: hidden;
+  border-right: .15em solid #4ecca3;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  text-align: center;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #4ecca3; }
+}
+
+.story-preview {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.variable-slot {
+  color: #ff6b6b;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  background: rgba(255, 107, 107, 0.1);
+  transition: all 0.3s ease;
+}
+
+.variable-slot.filled {
+  background: rgba(78, 204, 163, 0.2);
+  box-shadow: 0 0 10px rgba(78, 204, 163, 0.3);
+  color: #4ecca3;
+}
+
+.variable-slot.error {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+.code-hint {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+}
+
+.code-hint pre {
+  margin: 0;
+  color: #4ecca3;
+  font-family: 'Courier New', Courier, monospace;
+}
+.code-hint code {
+  text-wrap: wrap;
+}
+.code-file-path {
+  background-color: #1a1a2e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  color:#ff9c6b;
+}
+
+@media (max-width: 768px) {
+  .story-container {
+      padding: 1rem;
+      width: 95%;
+  }
+
+  .story-preview {
+      padding: 1rem;
+      font-size: 1rem;
+  }
+}

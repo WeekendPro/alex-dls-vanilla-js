@@ -1,0 +1,27 @@
+{
+	"name": "the-spark-within",
+	"version": "1.0.0",
+	"description": "The Spark Within",
+	"main": "script.js",
+	"type": "module",
+	"scripts": {
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.mjs",
+		"test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.mjs --watchAll"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.x",
+		"@babel/preset-env": "^7.26.0",
+		"babel-jest": "^29.x",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0"
+	},
+	"directories": {
+		"test": "tests"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"fs": "^0.0.1-security"
+	}
+}

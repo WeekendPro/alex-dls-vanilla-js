@@ -1,0 +1,35 @@
+{
+	"name": "curriculum-projects",
+	"version": "1.0.0",
+	"private": true,
+	"devDependencies": {
+		"eslint": "^8.57.0",
+		"eslint-watch": "^8.0.0",
+		"husky": "^9.1.7",
+		"jest": "^29.0.0",
+		"jest-environment-jsdom": "^29.0.0",
+		"lint-staged": "^15.4.1",
+		"prettier": "^3.4.2"
+	},
+	"scripts": {
+		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+		"format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+		"prepare": "husky",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"lint:watch": "esw . --watch --color"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+			"prettier --write"
+		]
+	},
+	"description": "## Description <strong>Weekend Pro</strong> is an open-source platform designed for rapid development and deployment of small-scale projects, built entirely over weekends. The platform empowers individuals and teams to learn, create, and collaborate on meaningful projects within a short timeframe, fostering creativity, productivity, and real-world skill-building.",
+	"main": "index.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"fs": "^0.0.1-security"
+	}
+}

@@ -18,9 +18,7 @@ function solution() {
 	let targetScore = 200;
 	
 	/* ************************************ *| 
-	
 		Don't modify the code below this line
-	
 	/* ************************************ */
 
 	const store = {

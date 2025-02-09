@@ -18,22 +18,22 @@ function solution() {
 	// targetScore (number);
 
 	// Write your code here
-	let homeTown;
-	let heroAge;
-	let heroName;
-	let publicPlace;
-	let dangerousActivity;
-	let noun;
-	let bodyPart;
-	let energyLevel;
-	let distance;
-	let eventCount;
-	let animal;
-	let funnyLocation;
-	let largeIndoorObject;
-	let isEnergyControlled;
-	let isExperimentalSuccess;
-	let targetScore;
+	let homeTown = "the Bronx"; 
+	let heroAge = 17;
+	let heroName = "Alexandra";
+	let publicPlace = "deli";
+	let dangerousActivity = "eating 200 pancakes";
+	let noun = "pizza";
+	let bodyPart = "arm";
+	let energyLevel = 100;
+	let distance = 40;
+	let eventCount = 3;
+	let animal = "dog";
+	let funnyLocation = "Chuck E Cheese";
+	let largeIndoorObject = "dining table";
+	let isEnergyControlled = true;
+	let isExperimentalSuccess = false;
+	let targetScore = 200;
 	
 	/* ************************************ *| 
 	

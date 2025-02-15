@@ -1,0 +1,146 @@
+body {
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f0f0f0;
+}
+.container {
+	display: grid;
+	gap: 2rem
+}
+
+.container button {
+	width: 12rem;
+	height: 12rem;
+}
+
+.btn {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	font-size: 1.2rem;
+	width: 12rem;
+	height: 12rem;
+	cursor: pointer;
+	justify-content: center;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 2px 2px 4px #0f0f0f, -2px -2px 4px #f0f0f0;
+	transition: 0.2s ease-in-out;
+}
+
+.btn::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+.btn:hover::before {
+	background-color: #00000005;
+}
+.night {
+	position: relative;
+	background-color: #404040;
+	color: #f0f0f0;
+}
+.day {
+	position: relative;
+	background-color: #fff6e7;
+}
+
+.night::after {
+	content: '';
+	position: absolute;
+	margin-left: 8rem;
+	top: 1rem;
+	width: 4rem;
+	height: 4rem;
+	background-image: url('./assets/moon.png');
+	background-size: 4rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 0.2s ease-in-out;
+}
+.day::after {
+	content: '';
+	position: absolute;
+	margin-right: 7.5rem;
+	top: 0.9rem;
+	width: 4rem;
+	height: 4rem;
+	background-image: url('./assets/sun.png');
+	background-size: 2.85rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 0.2s ease-in-out;
+}
+
+.up {
+	position: relative;
+	background-color: rgb(207, 233, 255);
+}
+
+.down {
+	position: relative;
+	background-color: rgb(247, 179, 179);	
+}
+
+.up::after {
+	content: '';
+	position: absolute;
+	margin-bottom: 8rem;
+	width: 1rem;
+	height: 1rem;
+	transform: rotate(180deg);
+	background-image: url('./assets/down-arrow.png');
+	background-size: 1rem;
+	background-position: center;
+	transition: 0.2s ease-in-out;
+}
+.down::after {
+	content: '';
+	position: absolute;
+	margin-top: 8rem;
+	width: 1rem;
+	height: 1rem;
+	background-image: url('./assets/down-arrow.png');
+	background-size: 1rem;
+	background-position: center;
+	transition: 0.2s ease-in-out;
+}
+.left {
+	position: relative;
+	background-color: rgb(207, 255, 208);
+}
+.right {
+	position: relative;
+	background-color: rgb(239, 207, 255);	
+}
+.left::after {
+	content: '';
+	position: absolute;
+	margin-right: 8rem;
+	width: 1rem;
+	height: 1rem;
+	transform: rotate(90deg);
+	background-image: url('./assets/down-arrow.png');
+	background-size: 1rem;
+	background-position: center;
+	transition: 0.2s ease-in-out;
+}
+.right::after {
+	content: '';
+	position: absolute;
+	margin-left: 8rem;
+	width: 1rem;
+	height: 1rem;
+	transform: rotate(270deg);
+	background-image: url('./assets/down-arrow.png');
+	background-size: 1rem;
+	background-position: center;
+	transition: 0.2s ease-in-out;
+}

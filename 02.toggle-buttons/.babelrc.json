@@ -1,0 +1,4 @@
+// web-dev-course/week-0/toggle-button/.babelrc.json
+{
+	"presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+}

@@ -34,33 +34,22 @@ export const DeveloperDrawerTemplate = `
     </div>
 
     <div class="dev-drawer-tabs">
-      <button class="tab-button active" data-tab="description">
-        🗒️ 
-        Description
-      </button>
-      <button class="tab-button" data-tab="tests">
+      <button class="tab-button active" data-tab="tests">
         🧪 
         Tests
       </button>
       <button class="tab-button" data-tab="study">
-        📚
-        Study Guide
+        🧭
+        Directions
       </button>
     </div>
 
     <div class="dev-drawer-content">
-      <div id="description-tab" class="tab-content active">
-        <div class="description">
-          <!-- Test items will be dynamically inserted here -->
-        </div>
-      </div>
-
-      <div id="tests-tab" class="tab-content">
+      <div id="tests-tab" class="tab-content active">
         <div class="test-list">
           <!-- Test items will be dynamically inserted here -->
         </div>
       </div>
-
       <div id="study-tab" class="tab-content">
         <div class="study-guide">
           <!-- Study guide content will be dynamically inserted here -->

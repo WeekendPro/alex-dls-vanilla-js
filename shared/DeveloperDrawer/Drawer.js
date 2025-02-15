@@ -6,7 +6,6 @@ export class Drawer {
 		this.options = {
 			projectTitle: options.projectTitle || 'Current Project',
 			studyGuidePath: options.studyGuidePath || 'STUDY-GUIDE.md',
-			descriptionPath: options.descriptionPath || 'DESCRIPTION.md'
 		};
 
 		this.testCases = [];
@@ -58,7 +57,6 @@ export class Drawer {
 		this.toggle = document.getElementById('dev-drawer-toggle');
 		this.testTab = document.getElementById('tests-tab');
 		this.studyTab = document.getElementById('study-tab');
-		this.descriptionTab = document.getElementById('description-tab');
 
 		this.isOpen = true;
 		this.drawer?.classList.add('open');
@@ -82,7 +80,6 @@ export class Drawer {
 			document.querySelector('.project-status .title').innerHTML = projectTitle;
 		}
 
-		let description;
 		let studyGuide;
 
 		try {
@@ -90,19 +87,14 @@ export class Drawer {
 				// Using require here to avoid top-level import issues
 				const fs = require('fs').promises;
 				studyGuide = await fs.readFile(this.options.studyGuidePath, 'utf8');
-				description = await fs.readFile(this.options.descriptionPath, 'utf8');
 			} else {
 				studyGuide = await fetch(this.options.studyGuidePath).then((r) =>
-					r.text()
-				);
-				description = await fetch(this.options.descriptionPath).then((r) =>
 					r.text()
 				);
 			}
 
 			// Only update DOM if we're in browser environment
 			if (typeof window !== 'undefined') {
-				this.renderDescription(description);
 				this.renderTestList();
 				this.renderStudyGuide(studyGuide);
 			}
@@ -110,13 +102,6 @@ export class Drawer {
 			console.error('Error loading test file:', error);
 			this.testCases = []; // Ensure testCases is always an array
 		}
-	}
-
-	renderDescription(content) {
-		if (!this.descriptionTab) return;
-
-		const description = this.descriptionTab.querySelector('.description');
-		description.innerHTML = formatter(content);
 	}
 
 	renderTestList() {

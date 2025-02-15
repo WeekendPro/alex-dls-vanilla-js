@@ -37,8 +37,5 @@ export class TestRunner {
 				}
 			);
 		}
-		// if (this.cleanup) {
-		// 	this.cleanup();
-		// }
 	}
 }

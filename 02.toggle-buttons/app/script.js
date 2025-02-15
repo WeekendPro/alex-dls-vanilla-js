@@ -1,4 +1,8 @@
 function solution() {
+	const upDown = document.getElementById('up-down');
+	const dayNight = document.getElementById('day-night');
+	const leftRight = document.getElementById('left-right');
+
 	// Write your code here
 }
 

@@ -327,7 +327,6 @@ function testToggleClasses(button, a, b, state) {
 
 function testToggleContent(button, a, b, state) {
 	if (button.textContent === a) {
-		console.log('makes it in', a);
 		button.click();
 		if (button.textContent !== b) {
 			resetter(button, state);

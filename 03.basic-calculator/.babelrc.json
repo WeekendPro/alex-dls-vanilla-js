@@ -1,0 +1,4 @@
+// web-dev-course/week-0/basic-calculator/.babelrc.json
+{
+	"presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+}

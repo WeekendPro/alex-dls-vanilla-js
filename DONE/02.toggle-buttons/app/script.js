@@ -10,7 +10,7 @@ function solution() {
 	upDown.classList.add('btn', 'up');
 	dayNight.classList.add('btn', 'day');
 	leftRight.classList.add('btn', 'left');
-	
+
 	upDown.addEventListener('click', () => {
 		if (upDown.classList.contains('up')) {
 			upDown.classList.remove('up');
@@ -21,7 +21,6 @@ function solution() {
 		}
 	});
 
-	
 	dayNight.addEventListener('click', () => {
 		if (dayNight.classList.contains('day')) {
 			dayNight.classList.remove('day');
@@ -32,7 +31,6 @@ function solution() {
 		}
 	});
 
-	
 	leftRight.addEventListener('click', () => {
 		if (leftRight.classList.contains('left')) {
 			leftRight.classList.remove('left');

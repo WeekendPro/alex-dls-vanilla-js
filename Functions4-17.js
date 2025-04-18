@@ -5,41 +5,44 @@
     - function called times 2, will take in any number and multiply it by 2, and will print that number
     - function that takes in a number and a name, and prints out a sentence that says "Hi my name is (name) and I am (number) years old
 
-    - all five of these functions should return 
 */
 
 function printNumbersBetweenOneAndTen() {
-  for (let number = 1; number <= 100; number += 1) {
-    console.log(number);
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
   }
 }
 
-printNumbersBetweenOneAndTen();
+// printNumbersBetweenOneAndTen();
 
-function printNumbersBetweenOneAndFive(number) {
+function printNumbersBetweenOneAndN(number) {
   for (let i = 1; i <= number; i++) {
     console.log(i);
-  }
+  } 
 }
 
-printNumbersBetweenOneAndFive(5);
+//printNumbersBetweenOneAndN(3);
 
 function printNumbersBetweenOneAndFiveReverse(number) {
-  for (let i = 5; i >= number; i--) {
-    console.log(i);
-  }
+  for (let i = number; i >= 1; i--) {
+    
+  } return
 }
 
-printNumbersBetweenOneAndFiveReverse(1);
+//printNumbersBetweenOneAndFiveReverse(9);
 
 function timesTwo(number) {
-  let result = number * 2;
+  const result = number * 2;
   console.log(result);
 }
 
-timesTwo(3);
+//timesTwo(3);
 
 function nameAndAge(name, age) {
-  console.log("Hi, my name is " + name + " and my age is " + age + ".");
+  const output = "Hi, my name is " + name + " and my age is " + age + ".";
+//  console.log(output);
+  //return output
 }
-nameAndAge("Alexandra", 17);
+const sentence = nameAndAge ("Alexandra",17)
+console.log(sentence)
+ 

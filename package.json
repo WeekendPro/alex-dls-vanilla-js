@@ -2,6 +2,7 @@
 	"name": "curriculum-projects",
 	"version": "1.0.0",
 	"private": true,
+	"type": "module",
 	"devDependencies": {
 		"eslint": "^8.57.0",
 		"eslint-watch": "^8.0.0",

@@ -25,11 +25,42 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-let isPositive = () => {};
-let isNegative = () => {};
-let isZero = () => {};
-let isEven = () => {};
-let isOdd = () => {};
+let isPositive = (number) => {
+	if (number >= 0) {
+		return true;
+	} else if (number <= 0) {
+		return false;
+	}
+};
+
+let isNegative = (number) => {
+	if (number <= 0) {
+		return true;
+	} else if (number >= 0) {
+		return false;
+	}
+};
+let isZero = (number) => {
+	if (number === 0) {
+		return true;
+} else {
+	return false
+}
+}
+let isEven = (number) => {
+	if (number % 2 === o) {
+		return true
+	} else {
+		return false
+	}	
+};
+let isOdd = (number) => {
+	if (number % 2 !== 0) {
+		return true
+	} else {
+		return false
+	}
+};
 let getLarger = () => {};
 let getSmaller = () => {};
 let isEqual = () => {};

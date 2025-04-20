@@ -47,8 +47,8 @@ function runTests() {
 	for (const { a, b, expected } of sumTestCases) {
 		const result = getSum(a, b);
 		const isCorrect = result === expected;
-		const base = `getSum with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getSum" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -91,8 +91,8 @@ function runTests() {
 	for (const { a, b, expected } of differenceTestCases) {
 		const result = getDifference(a, b);
 		const isCorrect = result === expected;
-		const base = `getDifference with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getDifference" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -135,8 +135,8 @@ function runTests() {
 	for (const { a, b, expected } of productTestCases) {
 		const result = getProduct(a, b);
 		const isCorrect = result === expected;
-		const base = `getProduct with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getProduct" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -174,8 +174,8 @@ function runTests() {
 	for (const { a, b, expected } of quotientTestCases) {
 		const result = getQuotient(a, b);
 		const isCorrect = result === expected;
-		const base = `getQuotient with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getQuotient" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -213,8 +213,8 @@ function runTests() {
 	for (const { a, b, expected } of remainderTestCases) {
 		const result = getRemainder(a, b);
 		const isCorrect = result === expected;
-		const base = `getRemainder with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getRemainder" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -257,8 +257,8 @@ function runTests() {
 	for (const { a, b, expected } of powerTestCases) {
 		const result = getPower(a, b);
 		const isCorrect = result === expected;
-		const base = `getPower with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getPower" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}

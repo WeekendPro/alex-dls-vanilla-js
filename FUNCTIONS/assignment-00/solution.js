@@ -14,9 +14,9 @@ Use node to run the tests in the test file found in this directory.
 - Update `getPower` with a function that returns the exponential value of the first number to the power of the second number. 
 */
 
-// ------------------------------- //
-// Write your code below this line //
-// ------------------------------- //
+// ---------------------------- //
+// Fix the code below this line //
+// ---------------------------- //
 
 let getSum = () => {};
 let getDifference = () => {};

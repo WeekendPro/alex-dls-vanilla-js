@@ -6,24 +6,24 @@ Use node to run the tests in the test file found in this directory.
 
 ## TASKS
 
-- Write a function that returns true if a number is positive, false otherwise. 
-- Write a function that returns true if a number is negative, false otherwise. 
-- Write a function that returns true if a number is zero, false otherwise. 
-- Write a function that returns true if a number is even, false otherwise. 
-- Write a function that returns true if a number is odd, false otherwise. 
-- Write a function that returns the larger of two numbers. 
-- Write a function that returns the smaller of two numbers. 
-- Write a function that returns true if two numbers are equal (use ===). 
-- Write a function that returns true if two numbers are not equal (use !==). 
-- Write a function that returns true if the first number is greater than the second. 
-- Write a function that returns true if the first number is less than the second. 
-- Write a function that returns true if the first number is greater than or equal to the second. 
-- Write a function that returns true if the first number is less than or equal to the second. 
+- Update `isPositive` with a function that returns true if a number is positive, false otherwise.
+- Update `isNegative` with a function that returns true if a number is negative, false otherwise.
+- Update `isZero` with a function that returns true if a number is zero, false otherwise.
+- Update `isEven` with a function that returns true if a number is even, false otherwise.
+- Update `isOdd` with a function that returns true if a number is odd, false otherwise.
+- Update `getLarger` with a function that returns the larger of two numbers. If the numbers are equal, return either one.
+- Update `getSmaller` with a function that returns the smaller of two numbers. If the numbers are equal, return either one.
+- Update `isEqual` with a function that returns true if two numbers are equal (use ===).
+- Update `isNotEqual` with a function that returns true if two numbers are not equal (use !==).
+- Update `isGreaterThan` with a function that returns true if the first number is greater than the second.
+- Update `isLessThan` with a function that returns true if the first number is less than the second.
+- Update `isGreaterThanOrEqual` with a function that returns true if the first number is greater than or equal to the second.
+- Update `isLessThanOrEqual` with a function that returns true if the first number is less than or equal to the second.
 */
 
-// ------------------------------- //
-// Write your code below this line //
-// ------------------------------- //
+// ---------------------------- //
+// Fix the code below this line //
+// ---------------------------- //
 
 let isPositive = () => {};
 let isNegative = () => {};

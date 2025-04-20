@@ -30,6 +30,22 @@ function runTests() {
 			number: -1,
 			expected: false,
 		},
+		{
+			number: 48,
+			expected: true,
+		},
+		{
+			number: -64,
+			expected: false,
+		},
+		{
+			number: 0.5,
+			expected: true,
+		},
+		{
+			number: -1982.64,
+			expected: false,
+		},
 	];
 
 	const isNegativeTestCases = [
@@ -43,6 +59,22 @@ function runTests() {
 		},
 		{
 			number: -1,
+			expected: true,
+		},
+		{
+			number: 48,
+			expected: false,
+		},
+		{
+			number: -64,
+			expected: true,
+		},
+		{
+			number: 0.5,
+			expected: false,
+		},
+		{
+			number: -1982.64,
 			expected: true,
 		},
 	];
@@ -60,6 +92,22 @@ function runTests() {
 			number: -1,
 			expected: false,
 		},
+		{
+			number: 48,
+			expected: false,
+		},
+		{
+			number: -64,
+			expected: false,
+		},
+		{
+			number: 0.5,
+			expected: false,
+		},
+		{
+			number: -1982.64,
+			expected: false,
+		},
 	];
 
 	const isEvenTestCases = [
@@ -75,8 +123,31 @@ function runTests() {
 			number: 3,
 			expected: false,
 		},
+		{
+			number: 0,
+			expected: true,
+		},
+		{
+			number: 0.5,
+			expected: false,
+		},
+		{
+			number: -1982.64,
+			expected: false,
+		},
+		{
+			number: 1982.64,
+			expected: false,
+		},
+		{
+			number: 48,
+			expected: true,
+		},
+		{
+			number: 49,
+			expected: false,
+		},
 	];
-
 	const isOddTestCases = [
 		{
 			number: 1,
@@ -90,8 +161,31 @@ function runTests() {
 			number: 3,
 			expected: true,
 		},
+		{
+			number: 0,
+			expected: false,
+		},
+		{
+			number: 0.5,
+			expected: false,
+		},
+		{
+			number: -1982.64,
+			expected: false,
+		},
+		{
+			number: 1982.64,
+			expected: false,
+		},
+		{
+			number: 48,
+			expected: false,
+		},
+		{
+			number: 49,
+			expected: true,
+		},
 	];
-
 	const getLargerTestCases = [
 		{
 			a: 1,
@@ -108,6 +202,21 @@ function runTests() {
 			b: 1,
 			expected: 1,
 		},
+		{
+			a: 599,
+			b: 122,
+			expected: 599,
+		},
+		{
+			a: 190,
+			b: 3902,
+			expected: 3902,
+		},
+		{
+			a: 763,
+			b: 763,
+			expected: 763,
+		},
 	];
 
 	const getSmallerTestCases = [
@@ -115,6 +224,31 @@ function runTests() {
 			a: 1,
 			b: 2,
 			expected: 1,
+		},
+		{
+			a: 2,
+			b: 1,
+			expected: 1,
+		},
+		{
+			a: 1,
+			b: 1,
+			expected: 1,
+		},
+		{
+			a: 599,
+			b: 122,
+			expected: 122,
+		},
+		{
+			a: 190,
+			b: 3902,
+			expected: 190,
+		},
+		{
+			a: 763,
+			b: 763,
+			expected: 763,
 		},
 	];
 
@@ -127,6 +261,26 @@ function runTests() {
 		{
 			a: 1,
 			b: 2,
+			expected: false,
+		},
+		{
+			a: 190,
+			b: 190,
+			expected: true,
+		},
+		{
+			a: 190,
+			b: 191,
+			expected: false,
+		},
+		{
+			a: 190,
+			b: 190.1,
+			expected: false,
+		},
+		{
+			a: 190.0,
+			b: 19.0,
 			expected: false,
 		},
 	];
@@ -142,6 +296,21 @@ function runTests() {
 			b: 2,
 			expected: true,
 		},
+		{
+			a: 190,
+			b: 190.0,
+			expected: false,
+		},
+		{
+			a: 190,
+			b: 190.1,
+			expected: true,
+		},
+		{
+			a: 190.0,
+			b: 19.0,
+			expected: true,
+		},
 	];
 
 	const isGreaterThanTestCases = [
@@ -155,8 +324,37 @@ function runTests() {
 			b: 1,
 			expected: true,
 		},
+		{
+			a: 190,
+			b: 190,
+			expected: false,
+		},
+		{
+			a: 190,
+			b: 191,
+			expected: false,
+		},
+		{
+			a: 190.0,
+			b: 190.1,
+			expected: false,
+		},
+		{
+			a: 190.0,
+			b: 19.0,
+			expected: true,
+		},
+		{
+			a: 48,
+			b: 11,
+			expected: true,
+		},
+		{
+			a: 11,
+			b: 48,
+			expected: false,
+		},
 	];
-
 	const isLessThanTestCases = [
 		{
 			a: 1,
@@ -168,12 +366,67 @@ function runTests() {
 			b: 1,
 			expected: false,
 		},
+		{
+			a: 190,
+			b: 190,
+			expected: false,
+		},
+		{
+			a: 190.0,
+			b: 190.1,
+			expected: true,
+		},
+		{
+			a: 48,
+			b: 11,
+			expected: false,
+		},
+		{
+			a: 11,
+			b: 48,
+			expected: true,
+		},
 	];
 
 	const isGreaterThanOrEqualTestCases = [
 		{
 			a: 1,
 			b: 2,
+			expected: false,
+		},
+		{
+			a: 2,
+			b: 1,
+			expected: true,
+		},
+		{
+			a: 190,
+			b: 190,
+			expected: true,
+		},
+		{
+			a: 190,
+			b: 191,
+			expected: false,
+		},
+		{
+			a: 190.0,
+			b: 190.1,
+			expected: false,
+		},
+		{
+			a: 190.0,
+			b: 190.0,
+			expected: true,
+		},
+		{
+			a: 48,
+			b: 11,
+			expected: true,
+		},
+		{
+			a: 11,
+			b: 48,
 			expected: false,
 		},
 	];
@@ -189,14 +442,39 @@ function runTests() {
 			b: 1,
 			expected: false,
 		},
+		{
+			a: 190,
+			b: 190,
+			expected: true,
+		},
+		{
+			a: 190,
+			b: 191,
+			expected: true,
+		},
+		{
+			a: 190.0,
+			b: 190.1,
+			expected: true,
+		},
+		{
+			a: 48,
+			b: 11,
+			expected: false,
+		},
+		{
+			a: 11,
+			b: 48,
+			expected: true,
+		},
 	];
 
 	console.log('\n\x1b[1m   Tests for `isPositive` \n\x1b[0m');
 	for (const { number, expected } of isPositiveTestCases) {
 		const result = isPositive(number);
 		const isCorrect = result === expected;
-		const base = `isPositive with ${number}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isPositive" with ${number},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -205,8 +483,8 @@ function runTests() {
 	for (const { number, expected } of isNegativeTestCases) {
 		const result = isNegative(number);
 		const isCorrect = result === expected;
-		const base = `isNegative with ${number}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isNegative" with ${number},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -215,8 +493,8 @@ function runTests() {
 	for (const { number, expected } of isZeroTestCases) {
 		const result = isZero(number);
 		const isCorrect = result === expected;
-		const base = `isZero with ${number}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isZero" with ${number},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -225,8 +503,8 @@ function runTests() {
 	for (const { number, expected } of isEvenTestCases) {
 		const result = isEven(number);
 		const isCorrect = result === expected;
-		const base = `isEven with ${number}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isEven" with ${number},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -235,8 +513,8 @@ function runTests() {
 	for (const { number, expected } of isOddTestCases) {
 		const result = isOdd(number);
 		const isCorrect = result === expected;
-		const base = `isOdd with ${number}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isOdd" with ${number},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -245,8 +523,8 @@ function runTests() {
 	for (const { a, b, expected } of getLargerTestCases) {
 		const result = getLarger(a, b);
 		const isCorrect = result === expected;
-		const base = `getLarger with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getLarger" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -255,8 +533,8 @@ function runTests() {
 	for (const { a, b, expected } of getSmallerTestCases) {
 		const result = getSmaller(a, b);
 		const isCorrect = result === expected;
-		const base = `getSmaller with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "getSmaller" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -265,8 +543,8 @@ function runTests() {
 	for (const { a, b, expected } of isEqualTestCases) {
 		const result = isEqual(a, b);
 		const isCorrect = result === expected;
-		const base = `isEqual with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isEqual" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -275,8 +553,8 @@ function runTests() {
 	for (const { a, b, expected } of isNotEqualTestCases) {
 		const result = isNotEqual(a, b);
 		const isCorrect = result === expected;
-		const base = `isNotEqual with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isNotEqual" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -285,8 +563,8 @@ function runTests() {
 	for (const { a, b, expected } of isGreaterThanTestCases) {
 		const result = isGreaterThan(a, b);
 		const isCorrect = result === expected;
-		const base = `isGreaterThan with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isGreaterThan" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -295,8 +573,8 @@ function runTests() {
 	for (const { a, b, expected } of isLessThanTestCases) {
 		const result = isLessThan(a, b);
 		const isCorrect = result === expected;
-		const base = `isLessThan with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isLessThan" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -305,8 +583,8 @@ function runTests() {
 	for (const { a, b, expected } of isGreaterThanOrEqualTestCases) {
 		const result = isGreaterThanOrEqual(a, b);
 		const isCorrect = result === expected;
-		const base = `isGreaterThanOrEqual with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isGreaterThanOrEqual" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}
@@ -315,8 +593,8 @@ function runTests() {
 	for (const { a, b, expected } of isLessThanOrEqualTestCases) {
 		const result = isLessThanOrEqual(a, b);
 		const isCorrect = result === expected;
-		const base = `isLessThanOrEqual with ${a} and ${b}`;
-		const pass = `✅ ${base} returned ${result}`;
+		const base = `called "isLessThanOrEqual" with ${a} and ${b},`;
+		const pass = `✅ ${base} got ${result}`;
 		const fail = `❌ ${base} expected ${expected} but got ${result}`;
 		console.log(isCorrect ? pass : fail);
 	}

@@ -18,12 +18,24 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-let getSum = () => {};
-let getDifference = () => {};
-let getProduct = () => {};
-let getQuotient = () => {};
-let getRemainder = () => {};
-let getPower = () => {};
+let getSum = (a, b) => {
+	return a + b;
+};
+let getDifference = (c, d) => {
+	return a - b;
+};
+let getProduct = (e, f) => {
+	return e * f;
+};
+let getQuotient = (g, h) => {
+	return g / h;
+};
+let getRemainder = (i, j) => {
+	return i % j;
+};
+let getPower = (k, l) => {
+	return k ** l;
+};
 
 // ------------------------------- //
 // Don't edit code below this line //

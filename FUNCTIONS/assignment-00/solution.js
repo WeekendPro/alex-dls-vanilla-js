@@ -22,7 +22,7 @@ let getSum = (a, b) => {
 	return a + b;
 };
 let getDifference = (c, d) => {
-	return a - b;
+	return c - d;
 };
 let getProduct = (e, f) => {
 	return e * f;

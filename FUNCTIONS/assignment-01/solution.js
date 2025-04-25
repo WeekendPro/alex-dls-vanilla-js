@@ -25,50 +25,35 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-let isPositive = (number) => {
-	if (number >= 0) {
-		return true;
-	} else if (number <= 0) {
-		return false;
-	}
-};
-
-let isNegative = (number) => {
-	if (number <= 0) {
-		return true;
-	} else if (number >= 0) {
-		return false;
-	}
-};
-let isZero = (number) => {
-	if (number === 0) {
-		return true;
-} else {
-	return false
-}
-}
-let isEven = (number) => {
-	if (number % 2 === o) {
-		return true
+const isPositive = (number) => number > 0;
+const isNegative = (number) => number < 0;
+const isZero = (number) => number === 0;
+const isEven = (number) => number % 2 === 0;
+const isOdd = (number) => Number.isInteger(number) && number % 2 !== 0;
+const getLarger = (numberOne, numberTwo) => {
+	if (numberOne > numberTwo) {
+		return numberOne;
+	} else if (numberTwo > numberOne) {
+		return numberTwo;
 	} else {
-		return false
-	}	
-};
-let isOdd = (number) => {
-	if (number % 2 !== 0) {
-		return true
-	} else {
-		return false
+		return numberOne;
 	}
 };
-let getLarger = () => {};
-let getSmaller = () => {};
-let isEqual = () => {};
-let isNotEqual = () => {};
-let isGreaterThan = () => {};
-let isLessThan = () => {};
-let isGreaterThanOrEqual = () => {};
-let isLessThanOrEqual = () => {};
+const getSmaller = (numberOne, numberTwo) => {
+	if (numberOne < numberTwo) {
+		return numberOne;
+	} else if (numberTwo < numberOne) {
+		return numberTwo;
+	} else {
+		return numberOne;
+	}
+};
+const isEqual = (numberOne, numberTwo) => numberOne === numberTwo;
+const isNotEqual = (numberOne, numberTwo) => numberOne !== numberTwo;
+const isGreaterThan = (numberOne, numberTwo) => numberOne > numberTwo;
+const isLessThan = (numberOne, numberTwo) => numberOne < numberTwo;
+const isGreaterThanOrEqual = (numberOne, numberTwo) => numberOne >= numberTwo;
+const isLessThanOrEqual = (numberOne, numberTwo) => numberOne <= numberTwo;
 
 // ------------------------------- //
 // Don't edit code below this line //

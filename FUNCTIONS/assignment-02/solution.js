@@ -21,21 +21,21 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-let getGreeting = () => {};
-let getLength = () => {};
-let getFirstCharacter = () => {};
-let getLastCharacter = () => {};
-let concatenateStrings = () => {};
-let convertToUppercase = () => {};
-let convertToLowercase = () => {};
-let isEmpty = () => {};
-let getCharacterAtIndex = () => {};
+const getGreeting = (name) => 'Hello,' + ' ' + name + '!';
+const getLength = (sentence) => sentence.length;
+const getFirstCharacter = (character) => character.charAt(0);
+const getLastCharacter = (character) => character.charAt(character.length - 1);
+const concatenateStrings = (str1, str2) => str1 + str2;
+const convertToUppercase = (string) => string.toUpperCase();
+const convertToLowercase = (string) => string.toLowerCase();
+const isEmpty = (string) => string.length === 0;
+const getCharacterAtIndex = (string, N) => string.charAt(N);
 
 // ------------------------------- //
 // Don't edit code below this line //
 // ------------------------------- //
 
-let solution = {};
+const solution = {};
 
 try {
 	solution = {

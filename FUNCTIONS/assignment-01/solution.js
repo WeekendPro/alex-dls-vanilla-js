@@ -25,19 +25,35 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-let isPositive = () => {};
-let isNegative = () => {};
-let isZero = () => {};
-let isEven = () => {};
-let isOdd = () => {};
-let getLarger = () => {};
-let getSmaller = () => {};
-let isEqual = () => {};
-let isNotEqual = () => {};
-let isGreaterThan = () => {};
-let isLessThan = () => {};
-let isGreaterThanOrEqual = () => {};
-let isLessThanOrEqual = () => {};
+const isPositive = (number) => number > 0;
+const isNegative = (number) => number < 0;
+const isZero = (number) => number === 0;
+const isEven = (number) => number % 2 === 0;
+const isOdd = (number) => Number.isInteger(number) && number % 2 !== 0;
+const getLarger = (numberOne, numberTwo) => {
+	if (numberOne > numberTwo) {
+		return numberOne;
+	} else if (numberTwo > numberOne) {
+		return numberTwo;
+	} else {
+		return numberOne;
+	}
+};
+const getSmaller = (numberOne, numberTwo) => {
+	if (numberOne < numberTwo) {
+		return numberOne;
+	} else if (numberTwo < numberOne) {
+		return numberTwo;
+	} else {
+		return numberOne;
+	}
+};
+const isEqual = (numberOne, numberTwo) => numberOne === numberTwo;
+const isNotEqual = (numberOne, numberTwo) => numberOne !== numberTwo;
+const isGreaterThan = (numberOne, numberTwo) => numberOne > numberTwo;
+const isLessThan = (numberOne, numberTwo) => numberOne < numberTwo;
+const isGreaterThanOrEqual = (numberOne, numberTwo) => numberOne >= numberTwo;
+const isLessThanOrEqual = (numberOne, numberTwo) => numberOne <= numberTwo;
 
 // ------------------------------- //
 // Don't edit code below this line //

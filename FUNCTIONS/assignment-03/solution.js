@@ -26,26 +26,26 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-let getType = () => {};
-let isString = () => {};
-let isNumber = () => {};
-let isBoolean = () => {};
-let isUndefined = () => {};
-let isNull = () => {};
-let getOppositeBoolean = () => {};
-let isBothTrue = () => {};
-let isEitherTrue = () => {};
-let isAbsolute = () => {};
-let getCurrentDate = () => {};
-let getCurrentYear = () => {};
-let getCurrentMonth = () => {};
-let getCurrentDay = () => {};
+const getType = (value) => typeof value;
+const isString = (value) => typeof value === 'string';
+const isNumber = (value) => typeof value === 'number';
+const isBoolean = (value) => typeof value === 'boolean';
+const isUndefined = (value) => typeof value === 'undefined';
+const isNull = (value) => value === null;
+const getOppositeBoolean = (value) => !value;
+const isBothTrue = (bool1, bool2) => bool1 && bool2 === true;
+const isEitherTrue = (bool1, bool2) => bool1 || bool2 === true;
+const isAbsolute = (value) => Math.abs(value);
+const getCurrentDate = () => new Date();
+const getCurrentYear = () => new Date().getFullYear();
+const getCurrentMonth = () => new Date().getMonth();
+const getCurrentDay = () => new Date().getDate();
 
 // ---------------------------- //
 // Don't edit code below this line //
 // ---------------------------- //
 
-let solution = {};
+const solution = {};
 
 try {
 	solution = {

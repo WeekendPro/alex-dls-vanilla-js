@@ -35,7 +35,7 @@ const getCharacterAtIndex = (string, N) => string.charAt(N);
 // Don't edit code below this line //
 // ------------------------------- //
 
-const solution = {};
+let solution = {};
 
 try {
 	solution = {

@@ -25,19 +25,69 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-const getLength = () => {};
-const getFirstElement = () => {};
-const getLastElement = () => {};
-const addItem = () => {};
-const removeAndReturnLastItem = () => {};
-const getSum = () => {};
-const getAverage = () => {};
-const getSumFromOneToN = () => {};
-const getNumbersFromOneToN = () => {};
-const getEvenNumbersFromOneToN = () => {};
-const getOddNumbersFromOneToN = () => {};
-const getLargestNumber = () => {};
-const getSmallestNumber = () => {};
+const getLength = (array) => array.length
+const getFirstElement = (array) => array[0]
+const getLastElement = (array) => array[array.length-1]
+const addItem = (array, item) => {
+	array.push(item)
+	return array
+}
+const removeAndReturnLastItem = (array) => array.pop()
+const getSum = (array) => {
+	let sum = 0 
+	for (let i = 0; i<array.length; i++ ){
+		sum += array[i]
+	}
+	return sum
+};
+const getAverage = (array) => getSum (array) / array.length
+const getSumFromOneToN = (n) => {
+	let sum = 0 
+	for (let i =1; i<=n; i++ ){
+		sum += i
+	}
+	return sum
+};
+const getNumbersFromOneToN = (n) => {
+	let array = []
+	for (let i = 1; i<=n; i++) {
+		array.push(i)
+	}
+	return array 
+};
+const getEvenNumbersFromOneToN = (n) => {
+	let array = []
+	for (let i = 1; i <= n; i++) 
+	 if(i%2 === 0) {
+		array.push (i)
+	 }
+	 return array
+};
+const getOddNumbersFromOneToN = (n) => {
+	let array = []
+	for (let i = 1; i <= n; i++)
+	 if(i % 2 !== 0) {
+		array.push (i)
+	 }
+	 return array
+}
+;
+const getLargestNumber = (array) => {
+	let largest = array[0]
+	for (let i = 1; i < array.length; i++) 
+		if (array[i] > largest) {
+			largest = array[i]
+		}
+	return largest
+};
+const getSmallestNumber = (array) => {
+	let smallest = array[0]
+	for (let i = 1; i < array.length; i++) 
+		if (array[i] < smallest) {
+			smallest = array[i]
+		}
+	return smallest
+};
 
 // ------------------------------- //
 // Don't edit code below this line //

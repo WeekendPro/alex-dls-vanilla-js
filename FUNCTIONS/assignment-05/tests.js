@@ -1,5 +1,5 @@
 import solution from './solution.js';
-import { getPrintable } from '../utils.js';
+import { handleTestCases } from '../utils.js';
 
 function runTests() {
 	const {
@@ -38,57 +38,45 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `reverseString` \n\x1b[0m');
-
-	for (const testCase of reverseStringTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = reverseString(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "reverseString" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: reverseStringTestCases,
+		func: reverseString,
+		params: ['input'],
+	});
 
 	const countCharacterTestCases = [
 		{
-			input: 'hello',
+			str: 'hello',
 			character: 'l',
 			expectedOutput: 2,
 		},
 		{
-			input: 'hello',
+			str: 'hello',
 			character: 'o',
 			expectedOutput: 1,
 		},
 		{
-			input: 'hello',
+			str: 'hello',
 			character: 'x',
 			expectedOutput: 0,
 		},
 		{
-			input: 'supercalifragilisticexpialidocious',
+			str: 'supercalifragilisticexpialidocious',
 			character: 'i',
 			expectedOutput: 7,
 		},
 		{
-			input: 'neil patrick harris',
+			str: 'neil patrick harris',
 			character: 'a',
 			expectedOutput: 2,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `countCharacter` \n\x1b[0m');
-
-	for (const testCase of countCharacterTestCases) {
-		const { input, character, expectedOutput } = testCase;
-		const result = countCharacter(input, character);
-		const isCorrect = result === expectedOutput;
-		const base = `called "countCharacter" with ${getPrintable(input)} and ${getPrintable(character)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: countCharacterTestCases,
+		func: countCharacter,
+		params: ['str', 'character'],
+	});
 
 	const countVowelsTestCases = [
 		{
@@ -117,17 +105,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `countVowels` \n\x1b[0m');
-
-	for (const testCase of countVowelsTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = countVowels(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "countVowels" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: countVowelsTestCases,
+		func: countVowels,
+		params: ['input'],
+	});
 
 	const countConsonantsTestCases = [
 		{
@@ -152,17 +134,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `countConsonants` \n\x1b[0m');
-
-	for (const testCase of countConsonantsTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = countConsonants(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "countConsonants" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: countConsonantsTestCases,
+		func: countConsonants,
+		params: ['input'],
+	});
 
 	const reverseArrayTestCases = [
 		{
@@ -187,73 +163,56 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `reverseArray` \n\x1b[0m');
-
-	for (const testCase of reverseArrayTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = reverseArray(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "reverseArray" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: reverseArrayTestCases,
+		func: reverseArray,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const checkValueInArrayTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			value: 3,
 			expectedOutput: true,
 		},
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			value: 6,
 			expectedOutput: false,
 		},
 		{
-			input: [93, 94, 95, 96, 97],
+			array: [93, 94, 95, 96, 97],
 			value: 93,
 			expectedOutput: true,
 		},
 		{
-			input: [93, 94, 95, 96, 97],
+			array: [93, 94, 95, 96, 97],
 			value: 98,
 			expectedOutput: false,
 		},
 		{
-			input: ['a', 'b', 'c', 'd', 'e'],
+			array: ['a', 'b', 'c', 'd', 'e'],
 			value: 'a',
 			expectedOutput: true,
 		},
 		{
-			input: ['a', 'b', 'c', 'd', 'e'],
+			array: ['a', 'b', 'c', 'd', 'e'],
 			value: 'f',
 			expectedOutput: false,
 		},
 		{
-			input: [],
+			array: [],
 			value: 'a value',
 			expectedOutput: false,
 		},
 	];
-	console.log('\n\x1b[1m   Tests for `checkValueInArray` \n\x1b[0m');
 
-	for (const testCase of checkValueInArrayTestCases) {
-		const { input, value, expectedOutput } = testCase;
-		const result = checkValueInArray(input, value);
-		const isCorrect = result === expectedOutput;
-		const base = `called "checkValueInArray" with ${getPrintable(input)} and ${getPrintable(value)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: checkValueInArrayTestCases,
+		func: checkValueInArray,
+		params: ['array', 'value'],
+	});
 
 	const getPositiveNumbersTestCases = [
 		{
@@ -278,24 +237,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getPositiveNumbers` \n\x1b[0m');
-
-	for (const testCase of getPositiveNumbersTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getPositiveNumbers(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getPositiveNumbers" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getPositiveNumbersTestCases,
+		func: getPositiveNumbers,
+		params: ['input'],
+	});
 
 	const getNegativeNumbersTestCases = [
 		{
@@ -320,24 +266,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getNegativeNumbers` \n\x1b[0m');
-
-	for (const testCase of getNegativeNumbersTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getNegativeNumbers(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getNegativeNumbers" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getNegativeNumbersTestCases,
+		func: getNegativeNumbers,
+		params: ['input'],
+	});
 
 	const getEvenNumbersTestCases = [
 		{
@@ -362,24 +295,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getEvenNumbers` \n\x1b[0m');
-
-	for (const testCase of getEvenNumbersTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getEvenNumbers(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getEvenNumbers" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getEvenNumbersTestCases,
+		func: getEvenNumbers,
+		params: ['input'],
+	});
 
 	const getOddNumbersTestCases = [
 		{
@@ -400,24 +320,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getOddNumbers` \n\x1b[0m');
-
-	for (const testCase of getOddNumbersTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getOddNumbers(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getOddNumbers" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getOddNumbersTestCases,
+		func: getOddNumbers,
+		params: ['input'],
+	});
 
 	const convertToUppercaseTestCases = [
 		{
@@ -446,24 +353,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `convertToUppercase` \n\x1b[0m');
-
-	for (const testCase of convertToUppercaseTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = convertToUppercase(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "convertToUppercase" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: convertToUppercaseTestCases,
+		func: convertToUppercase,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const convertToLowercaseTestCases = [
 		{
@@ -492,24 +387,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `convertToLowercase` \n\x1b[0m');
-
-	for (const testCase of convertToLowercaseTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = convertToLowercase(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "convertToLowercase" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: convertToLowercaseTestCases,
+		func: convertToLowercase,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const doubleNumbersTestCases = [
 		{
@@ -534,24 +417,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `doubleNumbers` \n\x1b[0m');
-
-	for (const testCase of doubleNumbersTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = doubleNumbers(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "doubleNumbers" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: doubleNumbersTestCases,
+		func: doubleNumbers,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const squareNumbersTestCases = [
 		{
@@ -572,23 +443,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `squareNumbers` \n\x1b[0m');
-
-	for (const testCase of squareNumbersTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = squareNumbers(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "squareNumbers" with ${getPrintable(input)},`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: squareNumbersTestCases,
+		func: squareNumbers,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 }
 runTests();

@@ -1,5 +1,5 @@
 import solution from './solution.js';
-import { print } from '../utils.js';
+import { handleTestCases, printHeading, getPrintable } from '../utils.js';
 
 function runTests() {
 	const {
@@ -55,24 +55,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getNumbersInRange` \n\x1b[0m');
-
-	for (const testCase of getNumbersInIncreasingOrderRangeTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getNumbersInIncreasingOrderRange(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getNumbersInIncreasingOrderRange" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getNumbersInIncreasingOrderRangeTestCases,
+		func: getNumbersInIncreasingOrderRange,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const getNumbersInDecreasingOrderRangeTestCases = [
 		{
@@ -104,26 +92,12 @@ function runTests() {
 		},
 	];
 
-	console.log(
-		'\n\x1b[1m   Tests for `getNumbersInDecreasingOrderRange` \n\x1b[0m'
-	);
-
-	for (const testCase of getNumbersInDecreasingOrderRangeTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getNumbersInDecreasingOrderRange(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getNumbersInDecreasingOrderRange" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getNumbersInDecreasingOrderRangeTestCases,
+		func: getNumbersInDecreasingOrderRange,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const getNumbersInGivenOrderRangeTestCases = [
 		{
@@ -155,24 +129,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getNumbersInGivenOrderRange` \n\x1b[0m');
-
-	for (const testCase of getNumbersInGivenOrderRangeTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getNumbersInGivenOrderRange(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getNumbersInGivenOrderRange" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getNumbersInGivenOrderRangeTestCases,
+		func: getNumbersInGivenOrderRange,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const getFirstNEvenPositiveNumbersTestCases = [
 		{
@@ -197,24 +159,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getFirstNEvenPositiveNumbers` \n\x1b[0m');
-
-	for (const testCase of getFirstNEvenPositiveNumbersTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getFirstNEvenPositiveNumbers(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect =
-				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getFirstNEvenPositiveNumbers" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getFirstNEvenPositiveNumbersTestCases,
+		func: getFirstNEvenPositiveNumbers,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const isLeapYearTestCases = [
 		{
@@ -239,17 +189,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isLeapYear` \n\x1b[0m');
-
-	for (const testCase of isLeapYearTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = isLeapYear(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "isLeapYear" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isLeapYearTestCases,
+		func: isLeapYear,
+		params: ['input'],
+	});
 
 	const convertCelsiusToFahrenheitTestCases = [
 		{
@@ -266,17 +210,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `convertCelsiusToFahrenheit` \n\x1b[0m');
-
-	for (const testCase of convertCelsiusToFahrenheitTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = convertCelsiusToFahrenheit(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "convertCelsiusToFahrenheit" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: convertCelsiusToFahrenheitTestCases,
+		func: convertCelsiusToFahrenheit,
+		params: ['input'],
+	});
 
 	const convertFahrenheitToCelsiusTestCases = [
 		{
@@ -293,17 +231,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `convertFahrenheitToCelsius` \n\x1b[0m');
-
-	for (const testCase of convertFahrenheitToCelsiusTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = convertFahrenheitToCelsius(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "convertFahrenheitToCelsius" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: convertFahrenheitToCelsiusTestCases,
+		func: convertFahrenheitToCelsius,
+		params: ['input'],
+	});
 
 	const formatDollarsTestCases = [
 		{
@@ -332,17 +264,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `formatDollars` \n\x1b[0m');
-
-	for (const testCase of formatDollarsTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = formatDollars(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "formatDollars" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: formatDollarsTestCases,
+		func: formatDollars,
+		params: ['input'],
+	});
 
 	const getGradeTestCases = [
 		{
@@ -387,17 +313,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getGrade` \n\x1b[0m');
-
-	for (const testCase of getGradeTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getGrade(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "getGrade" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getGradeTestCases,
+		func: getGrade,
+		params: ['input'],
+	});
 
 	const canVoteTestCases = [
 		{
@@ -418,17 +338,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `canVote` \n\x1b[0m');
-
-	for (const testCase of canVoteTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = canVote(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "canVote" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: canVoteTestCases,
+		func: canVote,
+		params: ['input'],
+	});
 
 	const isIntegerTestCases = [
 		{
@@ -465,39 +379,33 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isInteger` \n\x1b[0m');
+	handleTestCases({
+		tests: isIntegerTestCases,
+		func: isInteger,
+		params: ['input'],
+	});
 
-	for (const testCase of isIntegerTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = isInteger(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "isInteger" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `rollDie` \n\x1b[0m');
+	printHeading(`Tests for "${rollDie.name}"`);
 
 	for (let i = 0; i < 5; i++) {
 		const result = rollDie();
 		const expectedOutput = 'a number between 1 and 6';
 		const isCorrect = result >= 1 && result <= 6;
-		const base = `called "rollDie" and`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${expectedOutput} but got ${print(result)}`;
+		const base = `called "${rollDie.name}" and`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${expectedOutput} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
-	console.log('\n\x1b[1m   Tests for `rollDice` \n\x1b[0m');
+	printHeading(`Tests for "${rollDice.name}"`);
 
 	for (let i = 0; i < 10; i++) {
 		const result = rollDice();
 		const expectedOutput = 'a number between 2 and 12';
 		const isCorrect = result >= 2 && result <= 12;
-		const base = `called "rollDice" and`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${expectedOutput} but got ${print(result)}`;
+		const base = `called "${rollDice.name}" and`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${expectedOutput} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 }

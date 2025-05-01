@@ -26,7 +26,7 @@ Use node to run the tests in the test file found in this directory.
 const containsHello = () => {};
 const getInitials = () => {};
 const getWordCount = () => {};
-const joinWordsIntoSentence = () => {};
+const joinWords = () => {};
 const areAllNumbersPositive = () => {};
 const isAnyNumberNegative = () => {};
 const calculateFactorial = () => {};
@@ -45,7 +45,7 @@ try {
 		containsHello,
 		getInitials,
 		getWordCount,
-		joinWordsIntoSentence,
+		joinWords,
 		areAllNumbersPositive,
 		isAnyNumberNegative,
 		calculateFactorial,

@@ -1,5 +1,5 @@
 import solution from './solution.js';
-import { print } from '../utils.js';
+import { handleTestCases } from '../utils.js';
 
 function runTests() {
 	const {
@@ -31,24 +31,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `removeDuplicates` \n\x1b[0m');
-
-	for (const testCase of removeDuplicatesTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = removeDuplicates(input);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect = result.every(
-				(value, index) => value === expectedOutput[index]
-			);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "removeDuplicates" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: removeDuplicatesTestCases,
+		func: removeDuplicates,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 
 	const mergeArraysTestCases = [
 		{
@@ -73,24 +61,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `mergeArrays` \n\x1b[0m');
-
-	for (const testCase of mergeArraysTestCases) {
-		const { arr1, arr2, expectedOutput } = testCase;
-		const result = mergeArrays(arr1, arr2);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect = result.every(
-				(value, index) => value === expectedOutput[index]
-			);
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "mergeArrays" with ${print(arr1)} and ${print(arr2)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: mergeArraysTestCases,
+		func: mergeArrays,
+		params: ['arr1', 'arr2'],
+		forceArrayOrder: true,
+	});
 
 	const getIntersectionTestCases = [
 		{
@@ -115,38 +91,27 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getIntersection` \n\x1b[0m');
-
-	for (const testCase of getIntersectionTestCases) {
-		const { arr1, arr2, expectedOutput } = testCase;
-		const result = getIntersection(arr1, arr2);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect = expectedOutput.every((value) => result.includes(value));
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getIntersection" with ${print(arr1)} and ${print(arr2)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getIntersectionTestCases,
+		func: getIntersection,
+		params: ['arr1', 'arr2'],
+	});
 
 	const getKeysTestCases = [
 		{
-			obj: { a: 1, b: 2, c: 3 },
+			input: { a: 1, b: 2, c: 3 },
 			expectedOutput: ['a', 'b', 'c'],
 		},
 		{
-			obj: { name: 'John', age: 30, city: 'New York' },
+			input: { name: 'John', age: 30, city: 'New York' },
 			expectedOutput: ['name', 'age', 'city'],
 		},
 		{
-			obj: {},
+			input: {},
 			expectedOutput: [],
 		},
 		{
-			obj: {
+			input: {
 				brand: 'Apple',
 				os: 'iOS',
 				model: 'iPhone 13',
@@ -155,43 +120,32 @@ function runTests() {
 			expectedOutput: ['brand', 'os', 'model', 'condition'],
 		},
 		{
-			obj: { artist: 'Taylor Swift', album: '1989', year: 2014 },
+			input: { artist: 'Taylor Swift', album: '1989', year: 2014 },
 			expectedOutput: ['artist', 'album', 'year'],
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getKeys` \n\x1b[0m');
-
-	for (const testCase of getKeysTestCases) {
-		const { obj, expectedOutput } = testCase;
-		const result = getKeys(obj);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect = result.every((value) => expectedOutput.includes(value));
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getKeys" with ${print(obj)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getKeysTestCases,
+		func: getKeys,
+		params: ['input'],
+	});
 
 	const getValuesTestCases = [
 		{
-			obj: { a: 1, b: 2, c: 3 },
+			input: { a: 1, b: 2, c: 3 },
 			expectedOutput: [1, 2, 3],
 		},
 		{
-			obj: { name: 'John', age: 30, city: 'New York' },
+			input: { name: 'John', age: 30, city: 'New York' },
 			expectedOutput: ['John', 30, 'New York'],
 		},
 		{
-			obj: {},
+			input: {},
 			expectedOutput: [],
 		},
 		{
-			obj: {
+			input: {
 				brand: 'Apple',
 				os: 'iOS',
 				model: 'iPhone 13',
@@ -200,27 +154,16 @@ function runTests() {
 			expectedOutput: ['Apple', 'iOS', 'iPhone 13', 'used'],
 		},
 		{
-			obj: { artist: 'Taylor Swift', album: '1989', year: 2014 },
+			input: { artist: 'Taylor Swift', album: '1989', year: 2014 },
 			expectedOutput: ['Taylor Swift', '1989', 2014],
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getValues` \n\x1b[0m');
-
-	for (const testCase of getValuesTestCases) {
-		const { obj, expectedOutput } = testCase;
-		const result = getValues(obj);
-		let isCorrect;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			isCorrect = result.every((value) => expectedOutput.includes(value));
-		} else {
-			isCorrect = result === expectedOutput;
-		}
-		const base = `called "getValues" with ${print(obj)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getValuesTestCases,
+		func: getValues,
+		params: ['input'],
+	});
 
 	const getByKeyTestCases = [
 		{
@@ -250,33 +193,27 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getByKey` \n\x1b[0m');
-
-	for (const testCase of getByKeyTestCases) {
-		const { obj, key, expectedOutput } = testCase;
-		const result = getByKey(obj, key);
-		const isCorrect = result === expectedOutput;
-		const base = `called "getByKey" with ${print(obj)} and ${print(key)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getByKeyTestCases,
+		func: getByKey,
+		params: ['obj', 'key'],
+	});
 
 	const getLengthTestCases = [
 		{
-			obj: { a: 1, b: 2, c: 3 },
+			input: { a: 1, b: 2, c: 3 },
 			expectedOutput: 3,
 		},
 		{
-			obj: { name: 'John', age: 30, city: 'New York' },
+			input: { name: 'John', age: 30, city: 'New York' },
 			expectedOutput: 3,
 		},
 		{
-			obj: {},
+			input: {},
 			expectedOutput: 0,
 		},
 		{
-			obj: {
+			input: {
 				brand: 'Apple',
 				os: 'iOS',
 				model: 'iPhone 13',
@@ -285,21 +222,15 @@ function runTests() {
 			expectedOutput: 4,
 		},
 		{
-			obj: { artist: 'Taylor Swift', album: '1989', year: 2014 },
+			input: { artist: 'Taylor Swift', album: '1989', year: 2014 },
 			expectedOutput: 3,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getLength` \n\x1b[0m');
-
-	for (const testCase of getLengthTestCases) {
-		const { obj, expectedOutput } = testCase;
-		const result = getLength(obj);
-		const isCorrect = result === expectedOutput;
-		const base = `called "getLength" with ${print(obj)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getLengthTestCases,
+		func: getLength,
+		params: ['input'],
+	});
 }
 runTests();

@@ -1,5 +1,5 @@
 import solution from './solution.js';
-import { print } from '../utils.js';
+import { getPrintable } from '../utils.js';
 
 function runTests() {
 	const {
@@ -44,9 +44,9 @@ function runTests() {
 		const { input, expectedOutput } = testCase;
 		const result = reverseString(input);
 		const isCorrect = result === expectedOutput;
-		const base = `called "reverseString" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "reverseString" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -84,9 +84,9 @@ function runTests() {
 		const { input, character, expectedOutput } = testCase;
 		const result = countCharacter(input, character);
 		const isCorrect = result === expectedOutput;
-		const base = `called "countCharacter" with ${print(input)} and ${print(character)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "countCharacter" with ${getPrintable(input)} and ${getPrintable(character)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -123,9 +123,9 @@ function runTests() {
 		const { input, expectedOutput } = testCase;
 		const result = countVowels(input);
 		const isCorrect = result === expectedOutput;
-		const base = `called "countVowels" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "countVowels" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -158,9 +158,9 @@ function runTests() {
 		const { input, expectedOutput } = testCase;
 		const result = countConsonants(input);
 		const isCorrect = result === expectedOutput;
-		const base = `called "countConsonants" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "countConsonants" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -200,9 +200,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "reverseArray" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "reverseArray" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -249,9 +249,9 @@ function runTests() {
 		const { input, value, expectedOutput } = testCase;
 		const result = checkValueInArray(input, value);
 		const isCorrect = result === expectedOutput;
-		const base = `called "checkValueInArray" with ${print(input)} and ${print(value)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "checkValueInArray" with ${getPrintable(input)} and ${getPrintable(value)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -291,9 +291,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "getPositiveNumbers" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "getPositiveNumbers" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -333,9 +333,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "getNegativeNumbers" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "getNegativeNumbers" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -375,9 +375,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "getEvenNumbers" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "getEvenNumbers" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -413,9 +413,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "getOddNumbers" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "getOddNumbers" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -459,9 +459,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "convertToUppercase" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "convertToUppercase" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -505,9 +505,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "convertToLowercase" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "convertToLowercase" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -547,9 +547,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "doubleNumbers" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "doubleNumbers" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 
@@ -585,9 +585,9 @@ function runTests() {
 		} else {
 			isCorrect = result === expectedOutput;
 		}
-		const base = `called "squareNumbers" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
+		const base = `called "squareNumbers" with ${getPrintable(input)},`;
+		const pass = `✅ ${base} got ${getPrintable(result)}`;
+		const fail = `❌ ${base} expected ${getPrintable(expectedOutput)} but got ${getPrintable(result)}`;
 		console.log(isCorrect ? pass : fail);
 	}
 }

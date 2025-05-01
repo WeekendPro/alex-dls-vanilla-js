@@ -1,5 +1,5 @@
 import solution from './solution.js';
-
+import { handleTestCases } from '../utils.js';
 function runTests() {
 	const {
 		getType,
@@ -21,482 +21,388 @@ function runTests() {
 	const getTypeTestCases = [
 		{
 			value: 'Hello, world!',
-			expected: 'string',
+			expectedOutput: 'string',
 		},
 		{
 			value: 42,
-			expected: 'number',
+			expectedOutput: 'number',
 		},
 		{
 			value: true,
-			expected: 'boolean',
+			expectedOutput: 'boolean',
 		},
 		{
 			value: undefined,
-			expected: 'undefined',
+			expectedOutput: 'undefined',
 		},
 		{
 			value: null,
-			expected: 'object',
+			expectedOutput: 'object',
 		},
 		{
 			value: NaN,
-			expected: 'number',
+			expectedOutput: 'number',
 		},
 		{
 			value: {},
-			expected: 'object',
+			expectedOutput: 'object',
 		},
 		{
 			value: [],
-			expected: 'object',
+			expectedOutput: 'object',
 		},
 		{
 			value: function () {},
-			expected: 'function',
+			expectedOutput: 'function',
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getType` \n\x1b[0m');
-
-	for (const { value, expected } of getTypeTestCases) {
-		const result = getType(value);
-		const isCorrect = result === expected;
-		const base = `called "getType" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getTypeTestCases,
+		func: getType,
+		params: ['value'],
+	});
 
 	const isStringTestCases = [
 		{
 			value: 'Hello, world!',
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value: 42,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: true,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: undefined,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: null,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: NaN,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: {},
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: [],
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: function () {},
-			expected: false,
+			expectedOutput: false,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isString` \n\x1b[0m');
-
-	for (const { value, expected } of isStringTestCases) {
-		const result = isString(value);
-		const isCorrect = result === expected;
-		const base = `called "isString" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isStringTestCases,
+		func: isString,
+		params: ['value'],
+	});
 
 	const isNumberTestCases = [
 		{
 			value: 'Hello, world!',
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: 42,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value: true,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: undefined,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: null,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: NaN,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value: {},
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: [],
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: function () {},
-			expected: false,
+			expectedOutput: false,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isNumber` \n\x1b[0m');
-
-	for (const { value, expected } of isNumberTestCases) {
-		const result = isNumber(value);
-		const isCorrect = result === expected;
-		const base = `called "isNumber" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isNumberTestCases,
+		func: isNumber,
+		params: ['value'],
+	});
 
 	const isBooleanTestCases = [
 		{
 			value: 'Hello, world!',
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: 42,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: true,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value: undefined,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: null,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: NaN,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: {},
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: [],
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: function () {},
-			expected: false,
+			expectedOutput: false,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isBoolean` \n\x1b[0m');
-
-	for (const { value, expected } of isBooleanTestCases) {
-		const result = isBoolean(value);
-		const isCorrect = result === expected;
-		const base = `called "isBoolean" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isBooleanTestCases,
+		func: isBoolean,
+		params: ['value'],
+	});
 
 	const isUndefinedTestCases = [
 		{
 			value: 'Hello, world!',
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: 42,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: true,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: undefined,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value: null,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: NaN,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: {},
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: [],
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: function () {},
-			expected: false,
+			expectedOutput: false,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isUndefined` \n\x1b[0m');
-
-	for (const { value, expected } of isUndefinedTestCases) {
-		const result = isUndefined(value);
-		const isCorrect = result === expected;
-		const base = `called "isUndefined" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isUndefinedTestCases,
+		func: isUndefined,
+		params: ['value'],
+	});
 
 	const isNullTestCases = [
 		{
 			value: 'Hello, world!',
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: 42,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: true,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: undefined,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: null,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value: NaN,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: {},
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: [],
-			expected: false,
+			expectedOutput: false,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isNull` \n\x1b[0m');
-
-	for (const { value, expected } of isNullTestCases) {
-		const result = isNull(value);
-		const isCorrect = result === expected;
-		const base = `called "isNull" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isNullTestCases,
+		func: isNull,
+		params: ['value'],
+	});
 
 	const getOppositeBooleanTestCases = [
 		{
 			value: true,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value: false,
-			expected: true,
+			expectedOutput: true,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getOppositeBoolean` \n\x1b[0m');
-
-	for (const { value, expected } of getOppositeBooleanTestCases) {
-		const result = getOppositeBoolean(value);
-		const isCorrect = result === expected;
-		const base = `called "getOppositeBoolean" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getOppositeBooleanTestCases,
+		func: getOppositeBoolean,
+		params: ['value'],
+	});
 
 	const isBothTrueTestCases = [
 		{
 			value1: true,
 			value2: true,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value1: true,
 			value2: false,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value1: false,
 			value2: true,
-			expected: false,
+			expectedOutput: false,
 		},
 		{
 			value1: false,
 			value2: false,
-			expected: false,
+			expectedOutput: false,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isBothTrue` \n\x1b[0m');
-
-	for (const { value1, value2, expected } of isBothTrueTestCases) {
-		const result = isBothTrue(value1, value2);
-		const isCorrect = result === expected;
-		const base = `called "isBothTrue" with ${value1} and ${value2},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isBothTrueTestCases,
+		func: isBothTrue,
+		params: ['value1', 'value2'],
+	});
 
 	const isEitherTrueTestCases = [
 		{
 			value1: true,
 			value2: true,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value1: true,
 			value2: false,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value1: false,
 			value2: true,
-			expected: true,
+			expectedOutput: true,
 		},
 		{
 			value1: false,
 			value2: false,
-			expected: false,
+			expectedOutput: false,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isEitherTrue` \n\x1b[0m');
-
-	for (const { value1, value2, expected } of isEitherTrueTestCases) {
-		const result = isEitherTrue(value1, value2);
-		const isCorrect = result === expected;
-		const base = `called "isEitherTrue" with ${value1} and ${value2},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isEitherTrueTestCases,
+		func: isEitherTrue,
+		params: ['value1', 'value2'],
+	});
 
 	const isAbsoluteTestCases = [
 		{
 			value: -5,
-			expected: 5,
+			expectedOutput: 5,
 		},
 		{
 			value: 5,
-			expected: 5,
+			expectedOutput: 5,
 		},
 		{
 			value: 0,
-			expected: 0,
+			expectedOutput: 0,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isAbsolute` \n\x1b[0m');
+	handleTestCases({
+		tests: isAbsoluteTestCases,
+		func: isAbsolute,
+		params: ['value'],
+	});
 
-	for (const { value, expected } of isAbsoluteTestCases) {
-		const result = isAbsolute(value);
-		const isCorrect = result === expected;
-		const base = `called "isAbsolute" with ${value},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: [{ expectedOutput: new Date() }],
+		func: getCurrentDate,
+		params: [],
+	});
 
-	const getCurrentDateTestCases = [
-		{
-			expected: new Date(),
-		},
-	];
+	handleTestCases({
+		tests: [{ expectedOutput: new Date().getFullYear() }],
+		func: getCurrentYear,
+		params: [],
+	});
 
-	console.log('\n\x1b[1m   Tests for `getCurrentDate` \n\x1b[0m');
+	handleTestCases({
+		tests: [{ expectedOutput: new Date().getMonth() }],
+		func: getCurrentMonth,
+		params: [],
+	});
 
-	for (const { expected } of getCurrentDateTestCases) {
-		const result = getCurrentDate();
-		const isCorrect = result?.toISOString() === expected.toISOString();
-		const base = `called "getCurrentDate",`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	const getCurrentYearTestCases = [
-		{
-			expected: new Date().getFullYear(),
-		},
-	];
-
-	console.log('\n\x1b[1m   Tests for `getCurrentYear` \n\x1b[0m');
-
-	for (const { expected } of getCurrentYearTestCases) {
-		const result = getCurrentYear();
-		const isCorrect = result === expected;
-		const base = `called "getCurrentYear",`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	const getCurrentMonthTestCases = [
-		{
-			expected: new Date().getMonth(),
-		},
-	];
-
-	console.log('\n\x1b[1m   Tests for `getCurrentMonth` \n\x1b[0m');
-
-	for (const { expected } of getCurrentMonthTestCases) {
-		const result = getCurrentMonth();
-		const isCorrect = result === expected;
-		const base = `called "getCurrentMonth",`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	const getCurrentDayTestCases = [
-		{
-			expected: new Date().getDate(),
-		},
-	];
-
-	console.log('\n\x1b[1m   Tests for `getCurrentDay` \n\x1b[0m');
-
-	for (const { expected } of getCurrentDayTestCases) {
-		const result = getCurrentDay();
-		const isCorrect = result === expected;
-		const base = `called "getCurrentDay",`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: [{ expectedOutput: new Date().getDate() }],
+		func: getCurrentDay,
+		params: [],
+	});
 }
 
 runTests();

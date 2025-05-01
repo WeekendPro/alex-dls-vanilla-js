@@ -1,12 +1,12 @@
 import solution from './solution.js';
-import { print } from '../utils.js';
+import { handleTestCases } from '../utils.js';
 
 function runTests() {
 	const {
 		containsHello,
 		getInitials,
 		getWordCount,
-		joinWordsIntoSentence,
+		joinWords,
 		areAllNumbersPositive,
 		isAnyNumberNegative,
 		calculateFactorial,
@@ -38,17 +38,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `containsHello` \n\x1b[0m');
-
-	for (const testCase of containsHelloTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = containsHello(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "containsHello" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: containsHelloTestCases,
+		func: containsHello,
+		params: ['input'],
+	});
 
 	const getInitialsTestCases = [
 		{
@@ -80,17 +74,12 @@ function runTests() {
 			expectedOutput: 'JCMS',
 		},
 	];
-	console.log('\n\x1b[1m   Tests for `getInitials` \n\x1b[0m');
 
-	for (const testCase of getInitialsTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getInitials(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "getInitials" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getInitialsTestCases,
+		func: getInitials,
+		params: ['input'],
+	});
 
 	const getWordCountTestCases = [
 		{
@@ -111,19 +100,13 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getWordCount` \n\x1b[0m');
+	handleTestCases({
+		tests: getWordCountTestCases,
+		func: getWordCount,
+		params: ['input'],
+	});
 
-	for (const testCase of getWordCountTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = getWordCount(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "getWordCount" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	const joinWordsIntoSentenceTestCases = [
+	const joinWordsTestCases = [
 		{
 			input: ['Hello', 'world'],
 			expectedOutput: 'Hello world',
@@ -138,17 +121,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `joinWordsIntoSentence` \n\x1b[0m');
-
-	for (const testCase of joinWordsIntoSentenceTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = joinWordsIntoSentence(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "joinWordsIntoSentence" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: joinWordsTestCases,
+		func: joinWords,
+		params: ['input'],
+	});
 
 	const areAllNumbersPositiveTestCases = [
 		{
@@ -173,17 +150,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `areAllNumbersPositive` \n\x1b[0m');
-
-	for (const testCase of areAllNumbersPositiveTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = areAllNumbersPositive(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "areAllNumbersPositive" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: areAllNumbersPositiveTestCases,
+		func: areAllNumbersPositive,
+		params: ['input'],
+	});
 
 	const isAnyNumberNegativeTestCases = [
 		{
@@ -208,17 +179,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isAnyNumberNegative` \n\x1b[0m');
-
-	for (const testCase of isAnyNumberNegativeTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = isAnyNumberNegative(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "isAnyNumberNegative" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isAnyNumberNegativeTestCases,
+		func: isAnyNumberNegative,
+		params: ['input'],
+	});
 
 	const calculateFactorialTestCases = [
 		{
@@ -251,17 +216,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `calculateFactorial` \n\x1b[0m');
-
-	for (const testCase of calculateFactorialTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = calculateFactorial(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "calculateFactorial" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: calculateFactorialTestCases,
+		func: calculateFactorial,
+		params: ['input'],
+	});
 
 	const calculatePowerByLoopTestCases = [
 		{
@@ -296,17 +255,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `calculatePowerByLoop` \n\x1b[0m');
-
-	for (const testCase of calculatePowerByLoopTestCases) {
-		const { base: baseNumber, exponent, expectedOutput } = testCase;
-		const result = calculatePowerByLoop(baseNumber, exponent);
-		const isCorrect = result === expectedOutput;
-		const base = `called "calculatePowerByLoop" with ${print(baseNumber)} and ${print(exponent)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: calculatePowerByLoopTestCases,
+		func: calculatePowerByLoop,
+		params: ['base', 'exponent'],
+	});
 
 	const isPalindromeTestCases = [
 		{
@@ -347,17 +300,11 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `isPalindrome` \n\x1b[0m');
-
-	for (const testCase of isPalindromeTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = isPalindrome(input);
-		const isCorrect = result === expectedOutput;
-		const base = `called "isPalindrome" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: isPalindromeTestCases,
+		func: isPalindrome,
+		params: ['input'],
+	});
 
 	const reverseArrayTestCases = [
 		{
@@ -382,27 +329,12 @@ function runTests() {
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `reverseArray` \n\x1b[0m');
-
-	for (const testCase of reverseArrayTestCases) {
-		const { input, expectedOutput } = testCase;
-		const result = reverseArray(input);
-		let isCorrect = true;
-		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
-			for (let i = 0; i < input.length; i++) {
-				if (result[i] !== expectedOutput[i]) {
-					isCorrect = false;
-					break;
-				}
-			}
-		} else {
-			isCorrect = false;
-		}
-		const base = `called "reverseArray" with ${print(input)},`;
-		const pass = `✅ ${base} got ${print(result)}`;
-		const fail = `❌ ${base} expected ${print(expectedOutput)} but got ${print(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: reverseArrayTestCases,
+		func: reverseArray,
+		params: ['input'],
+		forceArrayOrder: true,
+	});
 }
 
 runTests();

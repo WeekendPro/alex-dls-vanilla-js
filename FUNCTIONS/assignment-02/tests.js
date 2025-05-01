@@ -1,4 +1,5 @@
 import solution from './solution.js';
+import { handleTestCases } from '../utils.js';
 
 function runTests() {
 	const {
@@ -15,319 +16,274 @@ function runTests() {
 
 	const getGreetingTestCases = [
 		{
-			name: 'John',
-			expected: 'Hello, John!',
+			input: 'John',
+			expectedOutput: 'Hello, John!',
 		},
 		{
-			name: 'Jane',
-			expected: 'Hello, Jane!',
+			input: 'Jane',
+			expectedOutput: 'Hello, Jane!',
 		},
 		{
-			name: 'Alice',
-			expected: 'Hello, Alice!',
+			input: 'Alice',
+			expectedOutput: 'Hello, Alice!',
 		},
 		{
-			name: 'Bob',
-			expected: 'Hello, Bob!',
+			input: 'Bob',
+			expectedOutput: 'Hello, Bob!',
 		},
 		{
-			name: 'George Washington Senior',
-			expected: 'Hello, George Washington Senior!',
+			input: 'George Washington Senior',
+			expectedOutput: 'Hello, George Washington Senior!',
 		},
 	];
+
+	handleTestCases({
+		tests: getGreetingTestCases,
+		func: getGreeting,
+		params: ['input'],
+	});
 
 	const getLengthTestCases = [
 		{
-			str: 'Hello, world!',
-			expected: 13,
+			input: 'Hello, world!',
+			expectedOutput: 13,
 		},
 		{
-			str: 'Jackson Hayes',
-			expected: 13,
+			input: 'Jackson Hayes',
+			expectedOutput: 13,
 		},
 		{
-			str: 'John',
-			expected: 4,
+			input: 'John',
+			expectedOutput: 4,
 		},
 		{
-			str: 'Jane',
-			expected: 4,
+			input: 'Jane',
+			expectedOutput: 4,
 		},
 		{
-			str: 'Alice',
-			expected: 5,
+			input: 'Alice',
+			expectedOutput: 5,
 		},
 		{
-			str: 'supercalifragilisticexpialidocious',
-			expected: 34,
+			input: 'supercalifragilisticexpialidocious',
+			expectedOutput: 34,
 		},
 	];
+
+	handleTestCases({
+		tests: getLengthTestCases,
+		func: getLength,
+		params: ['input'],
+	});
 
 	const getFirstCharacterTestCases = [
 		{
-			str: 'Hello, world!',
-			expected: 'H',
+			input: 'Hello, world!',
+			expectedOutput: 'H',
 		},
 		{
-			str: 'Jackson Hayes',
-			expected: 'J',
+			input: 'Jackson Hayes',
+			expectedOutput: 'J',
 		},
 		{
-			str: 'John',
-			expected: 'J',
+			input: 'John',
+			expectedOutput: 'J',
 		},
 		{
-			str: 'Jane',
-			expected: 'J',
+			input: 'Jane',
+			expectedOutput: 'J',
 		},
 		{
-			str: 'Alice',
-			expected: 'A',
+			input: 'Alice',
+			expectedOutput: 'A',
 		},
 		{
-			str: 'supercalifragilisticexpialidocious',
-			expected: 's',
+			input: 'supercalifragilisticexpialidocious',
+			expectedOutput: 's',
 		},
 	];
+
+	handleTestCases({
+		tests: getFirstCharacterTestCases,
+		func: getFirstCharacter,
+		params: ['input'],
+	});
 
 	const getLastCharacterTestCases = [
 		{
-			str: 'Hello, world!',
-			expected: '!',
+			input: 'Hello, world!',
+			expectedOutput: '!',
 		},
 		{
-			str: 'Jackson Hayes',
-			expected: 's',
+			input: 'Jackson Hayes',
+			expectedOutput: 's',
 		},
 		{
-			str: 'John',
-			expected: 'n',
+			input: 'John',
+			expectedOutput: 'n',
 		},
 		{
-			str: 'Alice',
-			expected: 'e',
+			input: 'Alice',
+			expectedOutput: 'e',
 		},
 		{
-			str: 'supercalifragilisticexpialidocious',
-			expected: 's',
+			input: 'supercalifragilisticexpialidocious',
+			expectedOutput: 's',
 		},
 	];
+
+	handleTestCases({
+		tests: getLastCharacterTestCases,
+		func: getLastCharacter,
+		params: ['input'],
+	});
 
 	const concatenateStringsTestCases = [
 		{
-			str1: 'Hello, ',
-			str2: 'world!',
-			expected: 'Hello, world!',
+			a: 'Hello, ',
+			b: 'world!',
+			expectedOutput: 'Hello, world!',
 		},
 		{
-			str1: 'Jackson ',
-			str2: 'Hayes',
-			expected: 'Jackson Hayes',
+			a: 'Jackson ',
+			b: 'Hayes',
+			expectedOutput: 'Jackson Hayes',
 		},
 		{
-			str1: 'John',
-			str2: 'Doe',
-			expected: 'JohnDoe',
+			a: 'John',
+			b: 'Doe',
+			expectedOutput: 'JohnDoe',
 		},
 		{
-			str1: 'Alice',
-			str2: 'Smith',
-			expected: 'AliceSmith',
+			a: 'Alice',
+			b: 'Smith',
+			expectedOutput: 'AliceSmith',
 		},
 		{
-			str1: 'supercalifragilisticexpialidocious',
-			str2: '123',
-			expected: 'supercalifragilisticexpialidocious123',
+			a: 'supercalifragilisticexpialidocious',
+			b: '123',
+			expectedOutput: 'supercalifragilisticexpialidocious123',
 		},
 	];
+
+	handleTestCases({
+		tests: concatenateStringsTestCases,
+		func: concatenateStrings,
+		params: ['a', 'b'],
+	});
 
 	const convertToUppercaseTestCases = [
 		{
-			str: 'Hello, world!',
-			expected: 'HELLO, WORLD!',
+			input: 'Hello, world!',
+			expectedOutput: 'HELLO, WORLD!',
 		},
 		{
-			str: 'Jackson Hayes',
-			expected: 'JACKSON HAYES',
+			input: 'Jackson Hayes',
+			expectedOutput: 'JACKSON HAYES',
 		},
 		{
-			str: 'John Doe',
-			expected: 'JOHN DOE',
+			input: 'John Doe',
+			expectedOutput: 'JOHN DOE',
 		},
 		{
-			str: 'Alice Smith',
-			expected: 'ALICE SMITH',
+			input: 'Alice Smith',
+			expectedOutput: 'ALICE SMITH',
 		},
 		{
-			str: 'supercalifragilisticexpialidocious',
-			expected: 'SUPERCALIFRAGILISTICEXPIALIDOCIOUS',
+			input: 'supercalifragilisticexpialidocious',
+			expectedOutput: 'SUPERCALIFRAGILISTICEXPIALIDOCIOUS',
 		},
 	];
+
+	handleTestCases({
+		tests: convertToUppercaseTestCases,
+		func: convertToUppercase,
+		params: ['input'],
+	});
 
 	const convertToLowercaseTestCases = [
 		{
-			str: 'Hello, world!',
-			expected: 'hello, world!',
+			input: 'Hello, world!',
+			expectedOutput: 'hello, world!',
 		},
 		{
-			str: 'Jackson Hayes',
-			expected: 'jackson hayes',
+			input: 'Jackson Hayes',
+			expectedOutput: 'jackson hayes',
 		},
 		{
-			str: 'JOHN DOE',
-			expected: 'john doe',
+			input: 'JOHN DOE',
+			expectedOutput: 'john doe',
 		},
 		{
-			str: 'Alice SMITH',
-			expected: 'alice smith',
+			input: 'Alice SMITH',
+			expectedOutput: 'alice smith',
 		},
 		{
-			str: 'sUpErCaLiFrAgIlIsTiCeXpIaLiDoCiOuS',
-			expected: 'supercalifragilisticexpialidocious',
+			input: 'sUpErCaLiFrAgIlIsTiCeXpIaLiDoCiOuS',
+			expectedOutput: 'supercalifragilisticexpialidocious',
 		},
 	];
 
+	handleTestCases({
+		tests: convertToLowercaseTestCases,
+		func: convertToLowercase,
+		params: ['input'],
+	});
+
 	const isEmptyTestCases = [
 		{
-			str: '',
-			expected: true,
+			input: '',
+			expectedOutput: true,
 		},
 		{
-			str: 'Hello, world!',
-			expected: false,
+			input: 'Hello, world!',
+			expectedOutput: false,
 		},
 		{
-			str: 'Jackson Hayes',
-			expected: false,
+			input: 'Jackson Hayes',
+			expectedOutput: false,
 		},
 	];
+
+	handleTestCases({
+		tests: isEmptyTestCases,
+		func: isEmpty,
+		params: ['input'],
+	});
 
 	const getCharacterAtIndexTestCases = [
 		{
 			str: 'Hello, world!',
 			index: 0,
-			expected: 'H',
+			expectedOutput: 'H',
 		},
 		{
 			str: 'Jackson Hayes',
 			index: 6,
-			expected: 'n',
+			expectedOutput: 'n',
 		},
 		{
 			str: 'John Doe',
 			index: 3,
-			expected: 'n',
+			expectedOutput: 'n',
 		},
 		{
 			str: 'Alice Smith',
 			index: 7,
-			expected: 'm',
+			expectedOutput: 'm',
 		},
 		{
 			str: 'supercalifragilisticexpialidocious',
 			index: 20,
-			expected: 'e',
+			expectedOutput: 'e',
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getGreeting` \n\x1b[0m');
-
-	for (const { name, expected } of getGreetingTestCases) {
-		const result = getGreeting(name);
-		const isCorrect = result === expected;
-		const base = `called "getGreeting" with ${name},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `getLength` \n\x1b[0m');
-
-	for (const { str, expected } of getLengthTestCases) {
-		const result = getLength(str);
-		const isCorrect = result === expected;
-		const base = `called "getLength" with ${str},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `getFirstCharacter` \n\x1b[0m');
-
-	for (const { str, expected } of getFirstCharacterTestCases) {
-		const result = getFirstCharacter(str);
-		const isCorrect = result === expected;
-		const base = `called "getFirstCharacter" with ${str},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `getLastCharacter` \n\x1b[0m');
-
-	for (const { str, expected } of getLastCharacterTestCases) {
-		const result = getLastCharacter(str);
-		const isCorrect = result === expected;
-		const base = `called "getLastCharacter" with ${str},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `concatenateStrings` \n\x1b[0m');
-
-	for (const { str1, str2, expected } of concatenateStringsTestCases) {
-		const result = concatenateStrings(str1, str2);
-		const isCorrect = result === expected;
-		const base = `called "concatenateStrings" with ${str1} and ${str2},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `convertToUppercase` \n\x1b[0m');
-
-	for (const { str, expected } of convertToUppercaseTestCases) {
-		const result = convertToUppercase(str);
-		const isCorrect = result === expected;
-		const base = `called "convertToUppercase" with ${str},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `convertToLowercase` \n\x1b[0m');
-
-	for (const { str, expected } of convertToLowercaseTestCases) {
-		const result = convertToLowercase(str);
-		const isCorrect = result === expected;
-		const base = `called "convertToLowercase" with ${str},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `isEmpty` \n\x1b[0m');
-
-	for (const { str, expected } of isEmptyTestCases) {
-		const result = isEmpty(str);
-		const isCorrect = result === expected;
-		const base = `called "isEmpty" with ${str},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
-
-	console.log('\n\x1b[1m   Tests for `getCharacterAtIndex` \n\x1b[0m');
-
-	for (const { str, index, expected } of getCharacterAtIndexTestCases) {
-		const result = getCharacterAtIndex(str, index);
-		const isCorrect = result === expected;
-		const base = `called "getCharacterAtIndex" with ${str} and ${index},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: getCharacterAtIndexTestCases,
+		func: getCharacterAtIndex,
+		params: ['str', 'index'],
+	});
 }
 
 runTests();

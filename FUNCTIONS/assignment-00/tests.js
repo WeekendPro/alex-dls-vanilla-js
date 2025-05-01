@@ -1,4 +1,5 @@
 import solution from './solution.js';
+import { handleTestCases } from '../utils.js';
 
 function runTests() {
 	const {
@@ -14,254 +15,225 @@ function runTests() {
 		{
 			a: 1,
 			b: 2,
-			expected: 3,
+			expectedOutput: 3,
 		},
 		{
 			a: 0,
 			b: 0,
-			expected: 0,
+			expectedOutput: 0,
 		},
 		{
 			a: 10,
 			b: 5,
-			expected: 15,
+			expectedOutput: 15,
 		},
 		{
 			a: 33,
 			b: -41,
-			expected: -8,
+			expectedOutput: -8,
 		},
 		{
 			a: -6,
 			b: 810,
-			expected: 804,
+			expectedOutput: 804,
 		},
 		{
 			a: 99999,
 			b: 1,
-			expected: 100000,
+			expectedOutput: 100000,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getSum` \n\x1b[0m');
-	for (const { a, b, expected } of sumTestCases) {
-		const result = getSum(a, b);
-		const isCorrect = result === expected;
-		const base = `called "getSum" with ${a} and ${b},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: sumTestCases,
+		func: getSum,
+		params: ['a', 'b'],
+	});
 
 	const differenceTestCases = [
 		{
 			a: 1,
 			b: 2,
-			expected: -1,
+			expectedOutput: -1,
 		},
 		{
 			a: 0,
 			b: 0,
-			expected: 0,
+			expectedOutput: 0,
 		},
 		{
 			a: 10,
 			b: 5,
-			expected: 5,
+			expectedOutput: 5,
 		},
 		{
 			a: 33,
 			b: -41,
-			expected: 74,
+			expectedOutput: 74,
 		},
 		{
 			a: -6,
 			b: 810,
-			expected: -816,
+			expectedOutput: -816,
 		},
 		{
 			a: 99999,
 			b: 1,
-			expected: 99998,
+			expectedOutput: 99998,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getDifference` \n\x1b[0m');
-
-	for (const { a, b, expected } of differenceTestCases) {
-		const result = getDifference(a, b);
-		const isCorrect = result === expected;
-		const base = `called "getDifference" with ${a} and ${b},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: differenceTestCases,
+		func: getDifference,
+		params: ['a', 'b'],
+	});
 
 	const productTestCases = [
 		{
 			a: 1,
 			b: 2,
-			expected: 2,
+			expectedOutput: 2,
 		},
 		{
 			a: 0,
 			b: 0,
-			expected: 0,
+			expectedOutput: 0,
 		},
 		{
 			a: 10,
 			b: 5,
-			expected: 50,
+			expectedOutput: 50,
 		},
 		{
 			a: 33,
 			b: 5.5,
-			expected: 181.5,
+			expectedOutput: 181.5,
 		},
 		{
 			a: -6,
 			b: 200,
-			expected: -1200,
+			expectedOutput: -1200,
 		},
 		{
 			a: 99999,
 			b: 1,
-			expected: 99999,
+			expectedOutput: 99999,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getProduct` \n\x1b[0m');
-
-	for (const { a, b, expected } of productTestCases) {
-		const result = getProduct(a, b);
-		const isCorrect = result === expected;
-		const base = `called "getProduct" with ${a} and ${b},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: productTestCases,
+		func: getProduct,
+		params: ['a', 'b'],
+	});
 
 	const quotientTestCases = [
 		{
 			a: 1,
 			b: 2,
-			expected: 0.5,
+			expectedOutput: 0.5,
 		},
 		{
 			a: 10,
 			b: 5,
-			expected: 2,
+			expectedOutput: 2,
 		},
 		{
 			a: 33,
 			b: 5.5,
-			expected: 6,
+			expectedOutput: 6,
 		},
 		{
 			a: 750,
 			b: 100,
-			expected: 7.5,
+			expectedOutput: 7.5,
 		},
 		{
 			a: 99999,
 			b: 1,
-			expected: 99999,
+			expectedOutput: 99999,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getQuotient` \n\x1b[0m');
-
-	for (const { a, b, expected } of quotientTestCases) {
-		const result = getQuotient(a, b);
-		const isCorrect = result === expected;
-		const base = `called "getQuotient" with ${a} and ${b},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: quotientTestCases,
+		func: getQuotient,
+		params: ['a', 'b'],
+	});
 
 	const remainderTestCases = [
 		{
 			a: 1,
 			b: 2,
-			expected: 1,
+			expectedOutput: 1,
 		},
 		{
 			a: 10,
 			b: 5,
-			expected: 0,
+			expectedOutput: 0,
 		},
 		{
 			a: 33,
 			b: 5,
-			expected: 3,
+			expectedOutput: 3,
 		},
 		{
 			a: 750,
 			b: 100,
-			expected: 50,
+			expectedOutput: 50,
 		},
 		{
 			a: 99999,
 			b: 1,
-			expected: 0,
+			expectedOutput: 0,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getRemainder` \n\x1b[0m');
-
-	for (const { a, b, expected } of remainderTestCases) {
-		const result = getRemainder(a, b);
-		const isCorrect = result === expected;
-		const base = `called "getRemainder" with ${a} and ${b},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: remainderTestCases,
+		func: getRemainder,
+		params: ['a', 'b'],
+	});
 
 	const powerTestCases = [
 		{
 			a: 1,
 			b: 2,
-			expected: 1,
+			expectedOutput: 1,
 		},
 		{
 			a: 12,
 			b: 3,
-			expected: 1728,
+			expectedOutput: 1728,
 		},
 		{
 			a: 3,
 			b: 5,
-			expected: 243,
+			expectedOutput: 243,
 		},
 		{
 			a: 750,
 			b: 2,
-			expected: 562500,
+			expectedOutput: 562500,
 		},
 		{
 			a: 10,
 			b: 5,
-			expected: 100000,
+			expectedOutput: 100000,
 		},
 		{
 			a: 99999,
 			b: 1,
-			expected: 99999,
+			expectedOutput: 99999,
 		},
 	];
 
-	console.log('\n\x1b[1m   Tests for `getPower` \n\x1b[0m');
-
-	for (const { a, b, expected } of powerTestCases) {
-		const result = getPower(a, b);
-		const isCorrect = result === expected;
-		const base = `called "getPower" with ${a} and ${b},`;
-		const pass = `✅ ${base} got ${result}`;
-		const fail = `❌ ${base} expected ${expected} but got ${result}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	handleTestCases({
+		tests: powerTestCases,
+		func: getPower,
+		params: ['a', 'b'],
+	});
 }
 
 runTests();

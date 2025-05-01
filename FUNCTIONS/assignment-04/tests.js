@@ -116,7 +116,7 @@ function runTests() {
 		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
 			isCorrect =
 				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
+				expectedOutput.every((value, index) => value === result[index]);
 		} else {
 			isCorrect = result === expectedOutput;
 		}
@@ -265,7 +265,7 @@ function runTests() {
 		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
 			isCorrect =
 				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
+				expectedOutput.every((value, index) => value === result[index]);
 		} else {
 			isCorrect = result === expectedOutput;
 		}
@@ -298,7 +298,7 @@ function runTests() {
 		if (Array.isArray(result) && Array.isArray(expectedOutput)) {
 			isCorrect =
 				result.length === expectedOutput.length &&
-				result.every((value, index) => value === expectedOutput[index]);
+				expectedOutput.every((value, index) => value === result[index]);
 		} else {
 			isCorrect = result === expectedOutput;
 		}

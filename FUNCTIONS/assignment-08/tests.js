@@ -1,7 +1,9 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
 
 function runTests() {
+	const tester = new Tester();
+
 	const {
 		removeDuplicates,
 		mergeArrays,
@@ -31,7 +33,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: removeDuplicatesTestCases,
 		func: removeDuplicates,
 		params: ['input'],
@@ -61,7 +63,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: mergeArraysTestCases,
 		func: mergeArrays,
 		params: ['arr1', 'arr2'],
@@ -91,7 +93,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getIntersectionTestCases,
 		func: getIntersection,
 		params: ['arr1', 'arr2'],
@@ -125,7 +127,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getKeysTestCases,
 		func: getKeys,
 		params: ['input'],
@@ -159,7 +161,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getValuesTestCases,
 		func: getValues,
 		params: ['input'],
@@ -193,7 +195,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getByKeyTestCases,
 		func: getByKey,
 		params: ['obj', 'key'],
@@ -227,10 +229,12 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getLengthTestCases,
 		func: getLength,
 		params: ['input'],
 	});
+
+	tester.printTestSuiteResults();
 }
 runTests();

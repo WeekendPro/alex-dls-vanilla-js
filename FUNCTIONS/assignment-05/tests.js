@@ -1,7 +1,8 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
 
 function runTests() {
+	const tester = new Tester();
 	const {
 		reverseString,
 		countCharacter,
@@ -21,433 +22,449 @@ function runTests() {
 
 	const reverseStringTestCases = [
 		{
-			input: 'hello',
+			string: 'hello',
 			expectedOutput: 'olleh',
 		},
 		{
-			input: 'world',
+			string: 'world',
 			expectedOutput: 'dlrow',
 		},
 		{
-			input: 'JavaScript',
+			string: 'JavaScript',
 			expectedOutput: 'tpircSavaJ',
 		},
 		{
-			input: 'racecar',
+			string: 'racecar',
 			expectedOutput: 'racecar',
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: reverseStringTestCases,
 		func: reverseString,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(reverseString)} should return the provided ${tester.printParam('string')} reversed.`,
 	});
 
 	const countCharacterTestCases = [
 		{
-			str: 'hello',
+			string: 'hello',
 			character: 'l',
 			expectedOutput: 2,
 		},
 		{
-			str: 'hello',
+			string: 'hello',
 			character: 'o',
 			expectedOutput: 1,
 		},
 		{
-			str: 'hello',
+			string: 'hello',
 			character: 'x',
 			expectedOutput: 0,
 		},
 		{
-			str: 'supercalifragilisticexpialidocious',
+			string: 'supercalifragilisticexpialidocious',
 			character: 'i',
 			expectedOutput: 7,
 		},
 		{
-			str: 'neil patrick harris',
+			string: 'neil patrick harris',
 			character: 'a',
 			expectedOutput: 2,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: countCharacterTestCases,
 		func: countCharacter,
-		params: ['str', 'character'],
+		params: ['string', 'character'],
+		description: `${tester.printFunction(countCharacter)} should return the number of times the provided ${tester.printParam('character')} appears in the provided ${tester.printParam('string')}.`,
 	});
 
 	const countVowelsTestCases = [
 		{
-			input: 'hello',
+			string: 'hello',
 			expectedOutput: 2,
 		},
 		{
-			input: 'world',
+			string: 'world',
 			expectedOutput: 1,
 		},
 		{
-			input: 'JavaScript',
+			string: 'JavaScript',
 			expectedOutput: 3,
 		},
 		{
-			input: 'neil patrick harris',
+			string: 'neil patrick harris',
 			expectedOutput: 6,
 		},
 		{
-			input: 'aeiou',
+			string: 'aeiou',
 			expectedOutput: 5,
 		},
 		{
-			input: 'AEIOU',
+			string: 'AEIOU',
 			expectedOutput: 5,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: countVowelsTestCases,
 		func: countVowels,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(countVowels)} should return the number of vowels in the provided ${tester.printParam('string')}.`,
 	});
 
 	const countConsonantsTestCases = [
 		{
-			input: 'hello',
+			string: 'hello',
 			expectedOutput: 3,
 		},
 		{
-			input: 'world',
+			string: 'world',
 			expectedOutput: 4,
 		},
 		{
-			input: 'JavaScript',
+			string: 'JavaScript',
 			expectedOutput: 7,
 		},
 		{
-			input: 'aeiou',
+			string: 'aeiou',
 			expectedOutput: 0,
 		},
 		{
-			input: 'NEIL PATRICK HARRIS',
+			string: 'NEIL PATRICK HARRIS',
 			expectedOutput: 11,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: countConsonantsTestCases,
 		func: countConsonants,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(countConsonants)} should return the number of consonants in the provided ${tester.printParam('string')}.`,
 	});
 
 	const reverseArrayTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [5, 4, 3, 2, 1],
 		},
 		{
-			input: ['a', 'b', 'c', 'd', 'e'],
+			numbers: ['a', 'b', 'c', 'd', 'e'],
 			expectedOutput: ['e', 'd', 'c', 'b', 'a'],
 		},
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [5, 4, 3, 2, 1],
 		},
 		{
-			input: [],
+			numbers: [],
 			expectedOutput: [],
 		},
 		{
-			input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 			expectedOutput: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: reverseArrayTestCases,
 		func: reverseArray,
-		params: ['input'],
+		params: ['numbers'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(reverseArray)} should return a new array with the elements of the provided ${tester.printParam('numbers')} in reverse order.`,
 	});
 
 	const checkValueInArrayTestCases = [
 		{
 			array: [1, 2, 3, 4, 5],
-			value: 3,
+			target: 3,
 			expectedOutput: true,
 		},
 		{
 			array: [1, 2, 3, 4, 5],
-			value: 6,
+			target: 6,
 			expectedOutput: false,
 		},
 		{
 			array: [93, 94, 95, 96, 97],
-			value: 93,
+			target: 93,
 			expectedOutput: true,
 		},
 		{
 			array: [93, 94, 95, 96, 97],
-			value: 98,
+			target: 98,
 			expectedOutput: false,
 		},
 		{
 			array: ['a', 'b', 'c', 'd', 'e'],
-			value: 'a',
+			target: 'a',
 			expectedOutput: true,
 		},
 		{
 			array: ['a', 'b', 'c', 'd', 'e'],
-			value: 'f',
+			target: 'f',
 			expectedOutput: false,
 		},
 		{
 			array: [],
-			value: 'a value',
+			target: 'a value',
 			expectedOutput: false,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: checkValueInArrayTestCases,
 		func: checkValueInArray,
-		params: ['array', 'value'],
+		params: ['array', 'target'],
+		description: `${tester.printFunction(checkValueInArray)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('target')} exists in the provided ${tester.printParam('array')}, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const getPositiveNumbersTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [1, 2, 3, 4, 5],
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: [],
 		},
 		{
-			input: [0, 0, 0, 0, 0],
+			numbers: [0, 0, 0, 0, 0],
 			expectedOutput: [],
 		},
 		{
-			input: [1, -2, 3, -4, 5],
+			numbers: [1, -2, 3, -4, 5],
 			expectedOutput: [1, 3, 5],
 		},
 		{
-			input: [-10, 9, -8, 7, -6, 5, -4, 3, -2, 1],
+			numbers: [-10, 9, -8, 7, -6, 5, -4, 3, -2, 1],
 			expectedOutput: [9, 7, 5, 3, 1],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getPositiveNumbersTestCases,
 		func: getPositiveNumbers,
-		params: ['input'],
+		params: ['numbers'],
+		description: `${tester.printFunction(getPositiveNumbers)} should return a new array with the positive numbers from the provided ${tester.printParam('numbers')}.`,
 	});
 
 	const getNegativeNumbersTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [],
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: [-1, -2, -3, -4, -5],
 		},
 		{
-			input: [0, 0, 0, 0, 0],
+			numbers: [0, 0, 0, 0, 0],
 			expectedOutput: [],
 		},
 		{
-			input: [1, -2, 3, -4, 5],
+			numbers: [1, -2, 3, -4, 5],
 			expectedOutput: [-2, -4],
 		},
 		{
-			input: [-10, 9, -8, 7, -6, 5, -4, 3, -2, 1],
+			numbers: [-10, 9, -8, 7, -6, 5, -4, 3, -2, 1],
 			expectedOutput: [-10, -8, -6, -4, -2],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getNegativeNumbersTestCases,
 		func: getNegativeNumbers,
-		params: ['input'],
+		params: ['numbers'],
+		description: `${tester.printFunction(getNegativeNumbers)} should return a new array with the negative numbers from the provided ${tester.printParam('numbers')}.`,
 	});
 
 	const getEvenNumbersTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [2, 4],
 		},
 		{
-			input: [1, 3, 5, 7, 9],
+			numbers: [1, 3, 5, 7, 9],
 			expectedOutput: [],
 		},
 		{
-			input: [0, 0, 0, 0, 0],
+			numbers: [0, 0, 0, 0, 0],
 			expectedOutput: [0, 0, 0, 0, 0],
 		},
 		{
-			input: [2, 4, 6, 8, 10],
+			numbers: [2, 4, 6, 8, 10],
 			expectedOutput: [2, 4, 6, 8, 10],
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: [-2, -4],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getEvenNumbersTestCases,
 		func: getEvenNumbers,
-		params: ['input'],
+		params: ['numbers'],
+		description: `${tester.printFunction(getEvenNumbers)} should return a new array with the even numbers from the provided ${tester.printParam('numbers')}.`,
 	});
 
 	const getOddNumbersTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [1, 3, 5],
 		},
 		{
-			input: [2, 4, 6, 8, 10],
+			numbers: [2, 4, 6, 8, 10],
 			expectedOutput: [],
 		},
 		{
-			input: [0, 0, 0, 0, 0],
+			numbers: [0, 0, 0, 0, 0],
 			expectedOutput: [],
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: [-1, -3, -5],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getOddNumbersTestCases,
 		func: getOddNumbers,
-		params: ['input'],
+		params: ['numbers'],
+		description: `${tester.printFunction(getOddNumbers)} should return a new array with the odd numbers from the provided ${tester.printParam('numbers')}.`,
 	});
 
 	const convertToUppercaseTestCases = [
 		{
-			input: ['hello', 'world', 'javascript'],
+			strings: ['hello', 'world', 'javascript'],
 			expectedOutput: ['HELLO', 'WORLD', 'JAVASCRIPT'],
 		},
 		{
-			input: ['NEIL PATRICK HARRIS', 'aeiou', 'AEIOU'],
+			strings: ['NEIL PATRICK HARRIS', 'aeiou', 'AEIOU'],
 			expectedOutput: ['NEIL PATRICK HARRIS', 'AEIOU', 'AEIOU'],
 		},
 		{
-			input: [],
+			strings: [],
 			expectedOutput: [],
 		},
 		{
-			input: ['123', '456', '789'],
+			strings: ['123', '456', '789'],
 			expectedOutput: ['123', '456', '789'],
 		},
 		{
-			input: ['Boston Celtics', 'Los Angeles Lakers', 'Chicago Bulls'],
+			strings: ['Boston Celtics', 'Los Angeles Lakers', 'Chicago Bulls'],
 			expectedOutput: ['BOSTON CELTICS', 'LOS ANGELES LAKERS', 'CHICAGO BULLS'],
 		},
 		{
-			input: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+			strings: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
 			expectedOutput: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: convertToUppercaseTestCases,
 		func: convertToUppercase,
-		params: ['input'],
+		params: ['strings'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(convertToUppercase)} should return a new array with the strings in the provided ${tester.printParam('strings')} converted to uppercase.`,
 	});
 
 	const convertToLowercaseTestCases = [
 		{
-			input: ['HELLO', 'WORLD', 'JAVASCRIPT'],
+			strings: ['HELLO', 'WORLD', 'JAVASCRIPT'],
 			expectedOutput: ['hello', 'world', 'javascript'],
 		},
 		{
-			input: ['NEIL PATRICK HARRIS', 'AEIOU', 'AEIOU'],
+			strings: ['NEIL PATRICK HARRIS', 'AEIOU', 'AEIOU'],
 			expectedOutput: ['neil patrick harris', 'aeiou', 'aeiou'],
 		},
 		{
-			input: [],
+			strings: [],
 			expectedOutput: [],
 		},
 		{
-			input: ['123', '456', '789'],
+			strings: ['123', '456', '789'],
 			expectedOutput: ['123', '456', '789'],
 		},
 		{
-			input: ['Boston Celtics', 'Los Angeles Lakers', 'Chicago Bulls'],
+			strings: ['Boston Celtics', 'Los Angeles Lakers', 'Chicago Bulls'],
 			expectedOutput: ['boston celtics', 'los angeles lakers', 'chicago bulls'],
 		},
 		{
-			input: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+			strings: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
 			expectedOutput: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: convertToLowercaseTestCases,
 		func: convertToLowercase,
-		params: ['input'],
+		params: ['strings'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(convertToLowercase)} should return a new array with the strings in the provided ${tester.printParam('strings')} converted to lowercase.`,
 	});
 
 	const doubleNumbersTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [2, 4, 6, 8, 10],
 		},
 		{
-			input: [0, 0, 0, 0, 0],
+			numbers: [0, 0, 0, 0, 0],
 			expectedOutput: [0, 0, 0, 0, 0],
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: [-2, -4, -6, -8, -10],
 		},
 		{
-			input: [1, 3, 5, 7, 9],
+			numbers: [1, 3, 5, 7, 9],
 			expectedOutput: [2, 6, 10, 14, 18],
 		},
 		{
-			input: [42, 11, 29, 99, 310, 4, 1, 45, 87, 932, 588, 42],
+			numbers: [42, 11, 29, 99, 310, 4, 1, 45, 87, 932, 588, 42],
 			expectedOutput: [84, 22, 58, 198, 620, 8, 2, 90, 174, 1864, 1176, 84],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: doubleNumbersTestCases,
 		func: doubleNumbers,
-		params: ['input'],
+		params: ['numbers'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(doubleNumbers)} should return a new array with the numbers in the provided ${tester.printParam('numbers')} doubled.`,
 	});
 
 	const squareNumbersTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [1, 4, 9, 16, 25],
 		},
 		{
-			input: [0, 0, 0, 0, 0],
+			numbers: [0, 0, 0, 0, 0],
 			expectedOutput: [0, 0, 0, 0, 0],
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: [1, 4, 9, 16, 25],
 		},
 		{
-			input: [1, 3, 5, 7, 9],
+			numbers: [1, 3, 5, 7, 9],
 			expectedOutput: [1, 9, 25, 49, 81],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: squareNumbersTestCases,
 		func: squareNumbers,
-		params: ['input'],
+		params: ['numbers'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(squareNumbers)} should return a new array with the numbers in the provided ${tester.printParam('numbers')} squared.`,
 	});
+
+	tester.printTestSuiteResults();
 }
 runTests();

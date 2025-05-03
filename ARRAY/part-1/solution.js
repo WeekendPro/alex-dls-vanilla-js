@@ -45,9 +45,7 @@ Use node to run the tests in the test file found in this directory.
 const getStringLengths = () => {};
 const incrementNumbers = () => {};
 const invertBooleans = () => {};
-const makeNameTag = () => {
-	return ["I'm John from New York", "I'm Rachel from Paris"];
-};
+const makeNameTag = () => {};
 const getNumberType = () => {};
 const extractCityInfo = () => {};
 const convertToFahrenheit = () => {};

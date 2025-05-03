@@ -26,24 +26,20 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-const reverseString = () => {};
-const countCharacter = () => {};
-const countVowels = (str) => {};
-const countConsonants = (str) => {};
-const reverseArray = () => {};
-const checkValueInArray = () => {};
-const getPositiveNumbers = () => {};
-const getNegativeNumbers = () => {};
-const getEvenNumbers = () => {};
-const getOddNumbers = () => {};
-const convertToUppercase = () => {};
-const convertToLowercase = () => {};
-const doubleNumbers = () => {
-	return [84, 22, 58, 198, 620];
-};
-const squareNumbers = (numbers) => {
-	return numbers.map((number) => number * number);
-};
+const reverseString = (string) => {};
+const countCharacter = (string, character) => {};
+const countVowels = (string) => {};
+const countConsonants = (string) => {};
+const reverseArray = (numbers) => {};
+const checkValueInArray = (array, target) => {};
+const getPositiveNumbers = (numbers) => {};
+const getNegativeNumbers = (numbers) => {};
+const getEvenNumbers = (numbers) => {};
+const getOddNumbers = (numbers) => {};
+const convertToUppercase = (strings) => {};
+const convertToLowercase = (strings) => {};
+const doubleNumbers = (numbers) => {};
+const squareNumbers = (numbers) => {};
 
 // ------------------------------- //
 // Don't edit code below this line //

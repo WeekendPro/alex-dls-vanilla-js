@@ -1,7 +1,9 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
 
 function runTests() {
+	const tester = new Tester();
+
 	const {
 		containsHello,
 		getInitials,
@@ -17,209 +19,216 @@ function runTests() {
 
 	const containsHelloTestCases = [
 		{
-			input: 'hello',
+			string: 'hello',
 			expectedOutput: true,
 		},
 		{
-			input: 'world',
+			string: 'world',
 			expectedOutput: false,
 		},
 		{
-			input: 'hello world',
+			string: 'hello world',
 			expectedOutput: true,
 		},
 		{
-			input: 'HELLO',
+			string: 'HELLO',
 			expectedOutput: true,
 		},
 		{
-			input: 'I would like to say "Hello" to you and yours.',
+			string: 'I would like to say hello.',
 			expectedOutput: true,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: containsHelloTestCases,
 		func: containsHello,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(containsHello)} should return ${tester.printBoolean(true)} if the ${tester.printParam('string')} contains the substring ${tester.printString('hello')}, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const getInitialsTestCases = [
 		{
-			input: 'John Doe',
+			string: 'John Doe',
 			expectedOutput: 'JD',
 		},
 		{
-			input: 'Jane Smith',
+			string: 'Jane Smith',
 			expectedOutput: 'JS',
 		},
 		{
-			input: 'Alice Johnson',
+			string: 'Alice Johnson',
 			expectedOutput: 'AJ',
 		},
 		{
-			input: 'Bob Brown',
+			string: 'Bob Brown',
 			expectedOutput: 'BB',
 		},
 		{
-			input: 'Alexandria Ocaio Cortez',
+			string: 'Alexandria Ocaio Cortez',
 			expectedOutput: 'AOC',
 		},
 		{
-			input: 'John F. Kennedy',
+			string: 'John F. Kennedy',
 			expectedOutput: 'JFK',
 		},
 		{
-			input: 'Juan Carlos Mendoza Sosa',
+			string: 'Juan Carlos Mendoza Sosa',
 			expectedOutput: 'JCMS',
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getInitialsTestCases,
 		func: getInitials,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(getInitials)} should return the initials of the ${tester.printParam('string')}.`,
 	});
 
 	const getWordCountTestCases = [
 		{
-			input: 'Hello world',
+			string: 'Hello world',
 			expectedOutput: 2,
 		},
 		{
-			input: 'This is a test',
+			string: 'This is a test',
 			expectedOutput: 4,
 		},
 		{
-			input: 'Hello',
+			string: 'Hello',
 			expectedOutput: 1,
 		},
 		{
-			input: 'The players association requested a meeting with the board.',
+			string: 'The players association requested a meeting with the board.',
 			expectedOutput: 9,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getWordCountTestCases,
 		func: getWordCount,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(getWordCount)} should return the number of words in the ${tester.printParam('string')}.`,
 	});
 
 	const joinWordsTestCases = [
 		{
-			input: ['Hello', 'world'],
+			array: ['Hello', 'world'],
 			expectedOutput: 'Hello world',
 		},
 		{
-			input: ['This', 'is', 'a', 'test'],
+			array: ['This', 'is', 'a', 'test'],
 			expectedOutput: 'This is a test',
 		},
 		{
-			input: ['The', 'fountain', 'of', 'youth'],
+			array: ['The', 'fountain', 'of', 'youth'],
 			expectedOutput: 'The fountain of youth',
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: joinWordsTestCases,
 		func: joinWords,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(joinWords)} should return the ${tester.printParam('array')} of words joined by spaces.`,
 	});
 
 	const areAllNumbersPositiveTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: true,
 		},
 		{
-			input: [1, 2, 3, 4, -5],
+			array: [1, 2, 3, 4, -5],
 			expectedOutput: false,
 		},
 		{
-			input: [1],
+			array: [1],
 			expectedOutput: true,
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			array: [-1, -2, -3, -4, -5],
 			expectedOutput: false,
 		},
 		{
-			input: [10, 20, 30, 40, 50],
+			array: [10, 20, 30, 40, 50],
 			expectedOutput: true,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: areAllNumbersPositiveTestCases,
 		func: areAllNumbersPositive,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(areAllNumbersPositive)} should return ${tester.printBoolean(true)} if all numbers in the ${tester.printParam('array')} are positive, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isAnyNumberNegativeTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: false,
 		},
 		{
-			input: [1, 2, 3, 4, -5],
+			array: [1, 2, 3, 4, -5],
 			expectedOutput: true,
 		},
 		{
-			input: [1],
+			array: [1],
 			expectedOutput: false,
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			array: [-1, -2, -3, -4, -5],
 			expectedOutput: true,
 		},
 		{
-			input: [-1],
+			array: [-1],
 			expectedOutput: true,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isAnyNumberNegativeTestCases,
 		func: isAnyNumberNegative,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(isAnyNumberNegative)} should return ${tester.printBoolean(true)} if any number in the ${tester.printParam('array')} is negative, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const calculateFactorialTestCases = [
 		{
-			input: 0,
+			number: 0,
 			expectedOutput: 1,
 		},
 		{
-			input: 1,
+			number: 1,
 			expectedOutput: 1,
 		},
 		{
-			input: 2,
+			number: 2,
 			expectedOutput: 2,
 		},
 		{
-			input: 3,
+			number: 3,
 			expectedOutput: 6,
 		},
 		{
-			input: 4,
+			number: 4,
 			expectedOutput: 24,
 		},
 		{
-			input: 5,
+			number: 5,
 			expectedOutput: 120,
 		},
 		{
-			input: 6,
+			number: 6,
 			expectedOutput: 720,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: calculateFactorialTestCases,
 		func: calculateFactorial,
-		params: ['input'],
+		params: ['number'],
+		description: `${tester.printFunction(calculateFactorial)} should return the factorial of the given ${tester.printParam('number')}.`,
 	});
 
 	const calculatePowerByLoopTestCases = [
@@ -255,86 +264,91 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: calculatePowerByLoopTestCases,
 		func: calculatePowerByLoop,
 		params: ['base', 'exponent'],
+		description: `${tester.printFunction(calculatePowerByLoop)} should return the ${tester.printParam('base')} raised to the power of the ${tester.printParam('exponent')}.`,
 	});
 
 	const isPalindromeTestCases = [
 		{
-			input: 'racecar',
+			string: 'racecar',
 			expectedOutput: true,
 		},
 		{
-			input: 'hello',
+			string: 'hello',
 			expectedOutput: false,
 		},
 		{
-			input: 'kayak',
+			string: 'kayak',
 			expectedOutput: true,
 		},
 		{
-			input: 'madam',
+			string: 'madam',
 			expectedOutput: true,
 		},
 		{
-			input: '12321',
+			string: '12321',
 			expectedOutput: true,
 		},
 		{
-			input: '12345',
+			string: '12345',
 			expectedOutput: false,
 		},
 		{
-			input: 'level',
+			string: 'level',
 			expectedOutput: true,
 		},
 		{
-			input: 'noon',
+			string: 'noon',
 			expectedOutput: true,
 		},
 		{
-			input: 'moron',
+			string: 'moron',
 			expectedOutput: false,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isPalindromeTestCases,
 		func: isPalindrome,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(isPalindrome)} should return ${tester.printBoolean(true)} if the ${tester.printParam('string')} is a palindrome, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const reverseArrayTestCases = [
 		{
-			input: ['Hello', 'world'],
+			array: ['Hello', 'world'],
 			expectedOutput: ['world', 'Hello'],
 		},
 		{
-			input: ['This', 'is', 'a', 'test'],
+			array: ['This', 'is', 'a', 'test'],
 			expectedOutput: ['test', 'a', 'is', 'This'],
 		},
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: [5, 4, 3, 2, 1],
 		},
 		{
-			input: ['A', 'B', 'C', 'D', 'E'],
+			array: ['A', 'B', 'C', 'D', 'E'],
 			expectedOutput: ['E', 'D', 'C', 'B', 'A'],
 		},
 		{
-			input: ['A', 'B', 'C', 'D', 'E'],
+			array: ['A', 'B', 'C', 'D', 'E'],
 			expectedOutput: ['E', 'D', 'C', 'B', 'A'],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: reverseArrayTestCases,
 		func: reverseArray,
-		params: ['input'],
+		params: ['array'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(reverseArray)} should return the ${tester.printParam('array')} reversed.`,
 	});
+
+	tester.printTestSuiteResults();
 }
 
 runTests();

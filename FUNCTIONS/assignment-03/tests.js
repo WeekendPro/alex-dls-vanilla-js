@@ -1,6 +1,9 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
+
 function runTests() {
+	const tester = new Tester();
+
 	const {
 		getType,
 		isString,
@@ -57,7 +60,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getTypeTestCases,
 		func: getType,
 		params: ['value'],
@@ -102,7 +105,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isStringTestCases,
 		func: isString,
 		params: ['value'],
@@ -147,7 +150,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isNumberTestCases,
 		func: isNumber,
 		params: ['value'],
@@ -192,7 +195,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isBooleanTestCases,
 		func: isBoolean,
 		params: ['value'],
@@ -237,7 +240,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isUndefinedTestCases,
 		func: isUndefined,
 		params: ['value'],
@@ -278,7 +281,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isNullTestCases,
 		func: isNull,
 		params: ['value'],
@@ -295,7 +298,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getOppositeBooleanTestCases,
 		func: getOppositeBoolean,
 		params: ['value'],
@@ -324,7 +327,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isBothTrueTestCases,
 		func: isBothTrue,
 		params: ['value1', 'value2'],
@@ -353,7 +356,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isEitherTrueTestCases,
 		func: isEitherTrue,
 		params: ['value1', 'value2'],
@@ -374,35 +377,37 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isAbsoluteTestCases,
 		func: isAbsolute,
 		params: ['value'],
 	});
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date() }],
 		func: getCurrentDate,
 		params: [],
 	});
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date().getFullYear() }],
 		func: getCurrentYear,
 		params: [],
 	});
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date().getMonth() }],
 		func: getCurrentMonth,
 		params: [],
 	});
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date().getDate() }],
 		func: getCurrentDay,
 		params: [],
 	});
+
+	tester.printTestSuiteResults();
 }
 
 runTests();

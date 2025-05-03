@@ -1,7 +1,9 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
 
 function runTests() {
+	const tester = new Tester();
+
 	const {
 		getLength,
 		getFirstElement,
@@ -20,222 +22,232 @@ function runTests() {
 
 	const getLengthTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: 5,
 		},
 		{
-			input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 			expectedOutput: 10,
 		},
 		{
-			input: [],
+			array: [],
 			expectedOutput: 0,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getLengthTestCases,
 		func: getLength,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(getLength)} should return the length of the provided ${tester.printParam('array')}.`,
 	});
 
 	const getFirstElementTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: 1,
 		},
 		{
-			input: [55, 66, 77, 88, 99],
+			array: [55, 66, 77, 88, 99],
 			expectedOutput: 55,
 		},
 		{
-			input: [],
+			array: [],
 			expectedOutput: undefined,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getFirstElementTestCases,
 		func: getFirstElement,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(getFirstElement)} should return the first element of the provided ${tester.printParam('array')}.`,
 	});
 
 	const getLastElementTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: 5,
 		},
 		{
-			input: [55, 66, 77, 88, 99],
+			array: [55, 66, 77, 88, 99],
 			expectedOutput: 99,
 		},
 		{
-			input: [],
+			array: [],
 			expectedOutput: undefined,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getLastElementTestCases,
 		func: getLastElement,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(getLastElement)} should return the last element of the provided ${tester.printParam('array')}.`,
 	});
 
 	const addItemTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			item: 6,
 			expectedOutput: [1, 2, 3, 4, 5, 6],
 		},
 		{
-			input: [89, 13, 31, 100, 200],
+			array: [89, 13, 31, 100, 200],
 			item: 1000,
 			expectedOutput: [89, 13, 31, 100, 200, 1000],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: addItemTestCases,
 		func: addItem,
-		params: ['input', 'item'],
+		params: ['array', 'item'],
+		description: `${tester.printFunction(addItem)} should return a new array with the provided ${tester.printParam('item')} added to the end of the provided ${tester.printParam('array')}.`,
 	});
 
 	const removeAndReturnLastItemTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: 5,
 		},
 		{
-			input: [89, 13, 31, 100, 200],
+			array: [89, 13, 31, 100, 200],
 			expectedOutput: 200,
 		},
 		{
-			input: [],
+			array: [],
 			expectedOutput: undefined,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: removeAndReturnLastItemTestCases,
 		func: removeAndReturnLastItem,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(removeAndReturnLastItem)} should return the last item of the provided ${tester.printParam('array')} and remove it from the array.`,
 	});
 
 	const getSumTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: 15,
 		},
 		{
-			input: [10, 20, 30, 40, 50],
+			array: [10, 20, 30, 40, 50],
 			expectedOutput: 150,
 		},
 		{
-			input: [],
+			array: [],
 			expectedOutput: 0,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getSumTestCases,
 		func: getSum,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(getSum)} should return the sum of all the elements in the provided ${tester.printParam('array')}.`,
 	});
 
 	const getAverageTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			array: [1, 2, 3, 4, 5],
 			expectedOutput: 3,
 		},
 		{
-			input: [10, 20, 30, 40, 50],
+			array: [10, 20, 30, 40, 50],
 			expectedOutput: 30,
 		},
 		{
-			input: [940, 191, 192, 193, 194],
+			array: [940, 191, 192, 193, 194],
 			expectedOutput: 342,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getAverageTestCases,
 		func: getAverage,
-		params: ['input'],
+		params: ['array'],
+		description: `${tester.printFunction(getAverage)} should return the average of all the elements in the provided ${tester.printParam('array')}.`,
 	});
 
 	const getSumFromOneToNTestCases = [
 		{
-			input: 5,
+			n: 5,
 			expectedOutput: 15,
 		},
 		{
-			input: 10,
+			n: 10,
 			expectedOutput: 55,
 		},
 		{
-			input: 0,
+			n: 0,
 			expectedOutput: 0,
 		},
 		{
-			input: -1,
+			n: -1,
 			expectedOutput: 0,
 		},
 		{
-			input: 100,
+			n: 100,
 			expectedOutput: 5050,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getSumFromOneToNTestCases,
 		func: getSumFromOneToN,
-		params: ['input'],
+		params: ['n'],
+		description: `${tester.printFunction(getSumFromOneToN)} should return the sum of all the numbers from 1 to the provided ${tester.printParam('n')}.`,
 	});
 
 	const getNumbersFromOneToNTestCases = [
 		{
-			input: 5,
+			n: 5,
 			expectedOutput: [1, 2, 3, 4, 5],
 		},
 		{
-			input: 10,
+			n: 10,
 			expectedOutput: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 		},
 		{
-			input: 0,
+			n: 0,
 			expectedOutput: [],
 		},
 		{
-			input: -1,
+			n: -1,
 			expectedOutput: [],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getNumbersFromOneToNTestCases,
 		func: getNumbersFromOneToN,
-		params: ['input'],
+		params: ['n'],
+		description: `${tester.printFunction(getNumbersFromOneToN)} should return an array of all the numbers from 1 to the provided ${tester.printParam('n')}.`,
 	});
 
 	const getEvenNumbersFromOneToNTestCases = [
 		{
-			input: 5,
+			n: 5,
 			expectedOutput: [2, 4],
 		},
 		{
-			input: 10,
+			n: 10,
 			expectedOutput: [2, 4, 6, 8, 10],
 		},
 		{
-			input: 0,
+			n: 0,
 			expectedOutput: [],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getEvenNumbersFromOneToNTestCases,
 		func: getEvenNumbersFromOneToN,
-		params: ['input'],
+		params: ['n'],
+		description: `${tester.printFunction(getEvenNumbersFromOneToN)} should return`,
 	});
 
 	const getOddNumbersFromOneToNTestCases = [
@@ -253,7 +265,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getOddNumbersFromOneToNTestCases,
 		func: getOddNumbersFromOneToN,
 		params: ['input'],
@@ -274,7 +286,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getLargestNumberTestCases,
 		func: getLargestNumber,
 		params: ['input'],
@@ -295,11 +307,13 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getSmallestNumberTestCases,
 		func: getSmallestNumber,
 		params: ['input'],
 	});
+
+	tester.printTestSuiteResults();
 }
 
 runTests();

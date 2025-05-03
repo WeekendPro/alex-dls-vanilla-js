@@ -1,7 +1,9 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
 
 function runTests() {
+	const tester = new Tester();
+
 	const {
 		getSum = () => {},
 		getDifference = () => {},
@@ -44,7 +46,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: sumTestCases,
 		func: getSum,
 		params: ['a', 'b'],
@@ -83,7 +85,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: differenceTestCases,
 		func: getDifference,
 		params: ['a', 'b'],
@@ -122,7 +124,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: productTestCases,
 		func: getProduct,
 		params: ['a', 'b'],
@@ -156,7 +158,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: quotientTestCases,
 		func: getQuotient,
 		params: ['a', 'b'],
@@ -190,7 +192,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: remainderTestCases,
 		func: getRemainder,
 		params: ['a', 'b'],
@@ -229,11 +231,13 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: powerTestCases,
 		func: getPower,
 		params: ['a', 'b'],
 	});
+
+	tester.printTestSuiteResults();
 }
 
 runTests();

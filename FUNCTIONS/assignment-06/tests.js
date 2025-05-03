@@ -1,11 +1,12 @@
 import solution from './solution.js';
-import {
-	handleTestCases,
-	printHeading,
-	getPrintable,
-} from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
+
+// handleTestCases,
+// printHeading,
+// getPrintable,
 
 function runTests() {
+	const tester = new Tester();
 	const {
 		getNumbersInIncreasingOrderRange,
 		getNumbersInDecreasingOrderRange,
@@ -24,34 +25,34 @@ function runTests() {
 
 	const getNumbersInIncreasingOrderRangeTestCases = [
 		{
-			input: [1, 10],
+			range: [1, 10],
 			expectedOutput: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 		},
 		{
-			input: [10, 1],
+			range: [10, 1],
 			expectedOutput: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 		},
 		{
-			input: [5, 5],
+			range: [5, 5],
 			expectedOutput: [5],
 		},
 		{
-			input: [0, 0],
+			range: [0, 0],
 			expectedOutput: [0],
 		},
 		{
-			input: [-10, -1],
+			range: [-10, -1],
 			expectedOutput: [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1],
 		},
 		{
-			input: [10, -10],
+			range: [10, -10],
 			expectedOutput: [
 				-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 				10,
 			],
 		},
 		{
-			input: [10, -10],
+			range: [10, -10],
 			expectedOutput: [
 				-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 				10,
@@ -59,36 +60,37 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getNumbersInIncreasingOrderRangeTestCases,
 		func: getNumbersInIncreasingOrderRange,
-		params: ['input'],
+		params: ['range'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(getNumbersInIncreasingOrderRange)} should return an array of numbers in increasing order using the provided ${tester.printParam('range')}.`,
 	});
 
 	const getNumbersInDecreasingOrderRangeTestCases = [
 		{
-			input: [1, 10],
+			range: [1, 10],
 			expectedOutput: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 		},
 		{
-			input: [10, 1],
+			range: [10, 1],
 			expectedOutput: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 		},
 		{
-			input: [5, 5],
+			range: [5, 5],
 			expectedOutput: [5],
 		},
 		{
-			input: [0, 0],
+			range: [0, 0],
 			expectedOutput: [0],
 		},
 		{
-			input: [-10, -1],
+			range: [-10, -1],
 			expectedOutput: [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10],
 		},
 		{
-			input: [10, -10],
+			range: [10, -10],
 			expectedOutput: [
 				10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9,
 				-10,
@@ -96,36 +98,37 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getNumbersInDecreasingOrderRangeTestCases,
 		func: getNumbersInDecreasingOrderRange,
-		params: ['input'],
+		params: ['range'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(getNumbersInDecreasingOrderRange)} should return an array of numbers in decreasing order using the provided ${tester.printParam('range')}.`,
 	});
 
 	const getNumbersInGivenOrderRangeTestCases = [
 		{
-			input: [1, 10],
+			range: [1, 10],
 			expectedOutput: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 		},
 		{
-			input: [10, 1],
+			range: [10, 1],
 			expectedOutput: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 		},
 		{
-			input: [5, 5],
+			range: [5, 5],
 			expectedOutput: [5],
 		},
 		{
-			input: [0, 0],
+			range: [0, 0],
 			expectedOutput: [0],
 		},
 		{
-			input: [-10, -1],
+			range: [-10, -1],
 			expectedOutput: [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1],
 		},
 		{
-			input: [10, -10],
+			range: [10, -10],
 			expectedOutput: [
 				10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9,
 				-10,
@@ -133,285 +136,286 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getNumbersInGivenOrderRangeTestCases,
 		func: getNumbersInGivenOrderRange,
-		params: ['input'],
+		params: ['range'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(getNumbersInGivenOrderRange)} should return an array of numbers in the order they are provided using the provided ${tester.printParam('range')}.`,
 	});
 
 	const getFirstNEvenPositiveNumbersTestCases = [
 		{
-			input: 10,
+			limit: 10,
 			expectedOutput: [2, 4, 6, 8, 10, 12, 14, 16, 18],
 		},
 		{
-			input: 5,
+			limit: 5,
 			expectedOutput: [2, 4, 6, 8],
 		},
 		{
-			input: 0,
+			limit: 0,
 			expectedOutput: [],
 		},
 		{
-			input: -1,
+			limit: -1,
 			expectedOutput: [],
 		},
 		{
-			input: 15,
+			limit: 15,
 			expectedOutput: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28],
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getFirstNEvenPositiveNumbersTestCases,
 		func: getFirstNEvenPositiveNumbers,
-		params: ['input'],
+		params: ['limit'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(getFirstNEvenPositiveNumbers)} should return an array of the first N even numbers up to the provided ${tester.printParam('limit')}.`,
 	});
 
 	const isLeapYearTestCases = [
 		{
-			input: 2020,
+			year: 2020,
 			expectedOutput: true,
 		},
 		{
-			input: 2021,
+			year: 2021,
 			expectedOutput: false,
 		},
 		{
-			input: 2000,
+			year: 2000,
 			expectedOutput: true,
 		},
 		{
-			input: 1900,
+			year: 1900,
 			expectedOutput: false,
 		},
 		{
-			input: 1963,
+			year: 1963,
 			expectedOutput: false,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isLeapYearTestCases,
 		func: isLeapYear,
-		params: ['input'],
+		params: ['year'],
+		description: `${tester.printFunction(isLeapYear)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('year')} is a leap year, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const convertCelsiusToFahrenheitTestCases = [
 		{
-			input: 0,
+			celsius: 0,
 			expectedOutput: 32,
 		},
 		{
-			input: 100,
+			celsius: 100,
 			expectedOutput: 212,
 		},
 		{
-			input: -40,
+			celsius: -40,
 			expectedOutput: -40,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: convertCelsiusToFahrenheitTestCases,
 		func: convertCelsiusToFahrenheit,
-		params: ['input'],
+		params: ['celsius'],
+		description: `${tester.printFunction(convertCelsiusToFahrenheit)} should return the ${tester.printParam('celsius')} converted to fahrenheit.`,
 	});
 
 	const convertFahrenheitToCelsiusTestCases = [
 		{
-			input: 32,
+			fahrenheit: 32,
 			expectedOutput: 0,
 		},
 		{
-			input: 212,
+			fahrenheit: 212,
 			expectedOutput: 100,
 		},
 		{
-			input: -40,
+			fahrenheit: -40,
 			expectedOutput: -40,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: convertFahrenheitToCelsiusTestCases,
 		func: convertFahrenheitToCelsius,
-		params: ['input'],
+		params: ['fahrenheit'],
+		description: `${tester.printFunction(convertFahrenheitToCelsius)} should return the ${tester.printParam('fahrenheit')} converted to celsius.`,
 	});
 
 	const formatDollarsTestCases = [
 		{
-			input: 100,
+			cents: 100,
 			expectedOutput: '$1',
 		},
 		{
-			input: 1000,
+			cents: 1000,
 			expectedOutput: '$10',
 		},
 		{
-			input: 10000,
+			cents: 10000,
 			expectedOutput: '$100',
 		},
 		{
-			input: 100000,
+			cents: 100000,
 			expectedOutput: '$1000',
 		},
 		{
-			input: 49101,
+			cents: 49101,
 			expectedOutput: '$491.01',
 		},
 		{
-			input: 63333,
+			cents: 63333,
 			expectedOutput: '$633.33',
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: formatDollarsTestCases,
 		func: formatDollars,
-		params: ['input'],
+		params: ['cents'],
+		description: `${tester.printFunction(formatDollars)} should return the ${tester.printParam('cents')} formatted as dollars and cents.`,
 	});
 
 	const getGradeTestCases = [
 		{
-			input: 95,
+			score: 95,
 			expectedOutput: 'A',
 		},
 		{
-			input: 90,
+			score: 90,
 			expectedOutput: 'A-',
 		},
 		{
-			input: 87,
+			score: 87,
 			expectedOutput: 'B+',
 		},
 		{
-			input: 84,
+			score: 84,
 			expectedOutput: 'B',
 		},
 		{
-			input: 74,
+			score: 74,
 			expectedOutput: 'C',
 		},
 		{
-			input: 70,
+			score: 70,
 			expectedOutput: 'C-',
 		},
 		{
-			input: 67,
+			score: 67,
 			expectedOutput: 'D+',
 		},
 		{
-			input: 64,
+			score: 64,
 			expectedOutput: 'D',
 		},
 		{
-			input: 60,
+			score: 60,
 			expectedOutput: 'D-',
 		},
 		{
-			input: 59,
+			score: 59,
 			expectedOutput: 'F',
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getGradeTestCases,
 		func: getGrade,
-		params: ['input'],
+		params: ['score'],
+		description: `${tester.printFunction(getGrade)} should return the letter grade for the provided number ${tester.printParam('score')}.`,
 	});
 
 	const canVoteTestCases = [
 		{
-			input: 18,
+			age: 18,
 			expectedOutput: true,
 		},
 		{
-			input: 17,
+			age: 17,
 			expectedOutput: false,
 		},
 		{
-			input: 16,
+			age: 16,
 			expectedOutput: false,
 		},
 		{
-			input: 21,
+			age: 21,
 			expectedOutput: true,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: canVoteTestCases,
 		func: canVote,
-		params: ['input'],
+		params: ['age'],
+		description: `${tester.printFunction(canVote)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('age')} is 18 or older, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isIntegerTestCases = [
 		{
-			input: 1,
+			number: 1,
 			expectedOutput: true,
 		},
 		{
-			input: 1.5,
+			number: 1.5,
 			expectedOutput: false,
 		},
 		{
-			input: -1,
+			number: -1,
 			expectedOutput: true,
 		},
 		{
-			input: -1.5,
+			number: -1.5,
 			expectedOutput: false,
 		},
 		{
-			input: '1',
+			number: '1',
 			expectedOutput: false,
 		},
 		{
-			input: false,
+			number: false,
 			expectedOutput: false,
 		},
 		{
-			input: null,
+			number: null,
 			expectedOutput: false,
 		},
 		{
-			input: [1],
+			number: [1],
 			expectedOutput: false,
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isIntegerTestCases,
 		func: isInteger,
-		params: ['input'],
+		params: ['number'],
+		description: `${tester.printFunction(isInteger)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number')} is an integer, otherwise ${tester.printBoolean(false)}.`,
 	});
 
-	printHeading(`Tests for "${rollDie.name}"`);
+	tester.handleRandomTests({
+		func: rollDie,
+		expectedRange: { min: 1, max: 6 },
+		numTests: 10,
+		description: `${tester.printFunction(rollDie)} should return a random number between 1 and 6.`,
+	});
 
-	for (let i = 0; i < 5; i++) {
-		const result = rollDie();
-		const expectedOutput = 'a number between 1 and 6';
-		const isCorrect = result >= 1 && result <= 6;
-		const base = `called "${rollDie.name}" and`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${expectedOutput} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	tester.handleRandomTests({
+		func: rollDice,
+		expectedRange: { min: 1, max: 12 },
+		numTests: 10,
+		description: `${tester.printFunction(rollDice)} should return a random number between 1 and 12.`,
+	});
 
-	printHeading(`Tests for "${rollDice.name}"`);
-
-	for (let i = 0; i < 10; i++) {
-		const result = rollDice();
-		const expectedOutput = 'a number between 2 and 12';
-		const isCorrect = result >= 2 && result <= 12;
-		const base = `called "${rollDice.name}" and`;
-		const pass = `✅ ${base} got ${getPrintable(result)}`;
-		const fail = `❌ ${base} expected ${expectedOutput} but got ${getPrintable(result)}`;
-		console.log(isCorrect ? pass : fail);
-	}
+	tester.printTestSuiteResults();
 }
 
 runTests();

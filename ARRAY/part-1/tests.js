@@ -1,7 +1,9 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/utils.js';
 
 function runTests() {
+	const tester = new Tester();
+
 	const {
 		getStringLengths,
 		incrementNumbers,
@@ -77,7 +79,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getStringLengthsTestCases,
 		func: getStringLengths,
 		params: ['input'],
@@ -103,7 +105,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: incrementNumbersTestCases,
 		func: incrementNumbers,
 		params: ['input'],
@@ -129,7 +131,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: invertBooleansTestCases,
 		func: invertBooleans,
 		params: ['input'],
@@ -159,7 +161,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: makeNameTagTestCases,
 		func: makeNameTag,
 		params: ['input'],
@@ -186,7 +188,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getNumberTypeTestCases,
 		func: getNumberType,
 		params: ['input'],
@@ -223,7 +225,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: extractCityInfoTestCases,
 		func: extractCityInfo,
 		params: ['input'],
@@ -250,49 +252,15 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: convertToFahrenheitTestCases,
 		func: convertToFahrenheit,
 		params: ['input'],
 		forceArrayOrder: true,
 	});
+
+	// Print overall test suite summary
+	tester.printTestSuiteResults();
 }
+
 runTests();
-
-// function collapse(text, title = 'Details') {
-// 	let isCollapsed = true;
-// 	const lines = text.split('\n');
-
-// 	function printOutput() {
-// 		console.log(
-// 			title + (isCollapsed ? ' (Click to expand)' : ' (Click to collapse)')
-// 		);
-// 		if (!isCollapsed) {
-// 			lines.forEach((line) => console.log(line));
-// 		}
-// 	}
-
-// 	printOutput();
-
-// 	return function toggleCollapse() {
-// 		isCollapsed = !isCollapsed;
-// 		// Clear previous output (implementation depends on terminal environment)
-// 		console.clear();
-
-// 		printOutput();
-// 	};
-// }
-
-// // Example usage:
-// const myText = `
-// This is the first line of text.
-// This is the second line of text.
-// This is the third line of text.
-// `;
-
-// const toggle = collapse(myText, 'My Section');
-
-// // Simulate user interaction (e.g., click)
-// toggle(); // Expand
-// // Simulate more code execution or user actions...
-// toggle(); // Collapse

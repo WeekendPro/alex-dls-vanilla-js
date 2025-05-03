@@ -1,7 +1,8 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
 
 function runTests() {
+	const tester = new Tester();
 	const {
 		getGreeting,
 		getLength,
@@ -37,7 +38,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getGreetingTestCases,
 		func: getGreeting,
 		params: ['input'],
@@ -70,7 +71,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getLengthTestCases,
 		func: getLength,
 		params: ['input'],
@@ -103,7 +104,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getFirstCharacterTestCases,
 		func: getFirstCharacter,
 		params: ['input'],
@@ -132,7 +133,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getLastCharacterTestCases,
 		func: getLastCharacter,
 		params: ['input'],
@@ -166,7 +167,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: concatenateStringsTestCases,
 		func: concatenateStrings,
 		params: ['a', 'b'],
@@ -195,7 +196,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: convertToUppercaseTestCases,
 		func: convertToUppercase,
 		params: ['input'],
@@ -224,7 +225,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: convertToLowercaseTestCases,
 		func: convertToLowercase,
 		params: ['input'],
@@ -245,7 +246,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isEmptyTestCases,
 		func: isEmpty,
 		params: ['input'],
@@ -279,11 +280,13 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getCharacterAtIndexTestCases,
 		func: getCharacterAtIndex,
 		params: ['str', 'index'],
 	});
+
+	tester.printTestSuiteResults();
 }
 
 runTests();

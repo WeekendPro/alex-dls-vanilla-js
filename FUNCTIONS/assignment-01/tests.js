@@ -1,6 +1,8 @@
 import solution from './solution.js';
-import { handleTestCases } from '../../shared/utils.js';
+import { Tester } from '../../shared/tester.js';
 function runTests() {
+	const tester = new Tester();
+
 	const {
 		isPositive = () => {},
 		isNegative = () => {},
@@ -48,7 +50,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isPositiveTestCases,
 		func: isPositive,
 		params: ['input'],
@@ -85,7 +87,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isNegativeTestCases,
 		func: isNegative,
 		params: ['input'],
@@ -122,7 +124,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isZeroTestCases,
 		func: isZero,
 		params: ['input'],
@@ -167,7 +169,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isEvenTestCases,
 		func: isEven,
 		params: ['input'],
@@ -212,7 +214,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isOddTestCases,
 		func: isOdd,
 		params: ['input'],
@@ -251,7 +253,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getLargerTestCases,
 		func: getLarger,
 		params: ['a', 'b'],
@@ -290,7 +292,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: getSmallerTestCases,
 		func: getSmaller,
 		params: ['a', 'b'],
@@ -329,7 +331,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isEqualTestCases,
 		func: isEqual,
 		params: ['a', 'b'],
@@ -363,7 +365,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isNotEqualTestCases,
 		func: isNotEqual,
 		params: ['a', 'b'],
@@ -412,7 +414,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isGreaterThanTestCases,
 		func: isGreaterThan,
 		params: ['a', 'b'],
@@ -451,7 +453,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isLessThanTestCases,
 		func: isLessThan,
 		params: ['a', 'b'],
@@ -500,7 +502,7 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isGreaterThanOrEqualTestCases,
 		func: isGreaterThanOrEqual,
 		params: ['a', 'b'],
@@ -544,11 +546,13 @@ function runTests() {
 		},
 	];
 
-	handleTestCases({
+	tester.handleTestCases({
 		tests: isLessThanOrEqualTestCases,
 		func: isLessThanOrEqual,
 		params: ['a', 'b'],
 	});
+
+	tester.printTestSuiteResults();
 }
 
 runTests();

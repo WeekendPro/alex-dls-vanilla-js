@@ -1,5 +1,9 @@
 import solution from './solution.js';
-import { handleTestCases, printHeading, getPrintable } from '../utils.js';
+import {
+	handleTestCases,
+	printHeading,
+	getPrintable,
+} from '../../shared/utils.js';
 
 function runTests() {
 	const {

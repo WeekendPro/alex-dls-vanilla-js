@@ -1,5 +1,5 @@
 import solution from './solution.js';
-import { handleTestCases } from '../utils.js';
+import { handleTestCases } from '../../shared/utils.js';
 function runTests() {
 	const {
 		isPositive = () => {},

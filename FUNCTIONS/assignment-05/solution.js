@@ -28,8 +28,8 @@ Use node to run the tests in the test file found in this directory.
 
 const reverseString = () => {};
 const countCharacter = () => {};
-const countVowels = () => {};
-const countConsonants = () => {};
+const countVowels = (str) => {};
+const countConsonants = (str) => {};
 const reverseArray = () => {};
 const checkValueInArray = () => {};
 const getPositiveNumbers = () => {};
@@ -38,8 +38,12 @@ const getEvenNumbers = () => {};
 const getOddNumbers = () => {};
 const convertToUppercase = () => {};
 const convertToLowercase = () => {};
-const doubleNumbers = () => {};
-const squareNumbers = () => {};
+const doubleNumbers = () => {
+	return [84, 22, 58, 198, 620];
+};
+const squareNumbers = (numbers) => {
+	return numbers.map((number) => number * number);
+};
 
 // ------------------------------- //
 // Don't edit code below this line //

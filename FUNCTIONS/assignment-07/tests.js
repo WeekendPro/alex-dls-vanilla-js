@@ -8,7 +8,7 @@ function runTests() {
 		containsHello,
 		getInitials,
 		getWordCount,
-		joinWords,
+		joinWordsIntoSentence,
 		areAllNumbersPositive,
 		isAnyNumberNegative,
 		calculateFactorial,
@@ -49,31 +49,31 @@ function runTests() {
 
 	const getInitialsTestCases = [
 		{
-			string: 'John Doe',
+			fullName: 'John Doe',
 			expectedOutput: 'JD',
 		},
 		{
-			string: 'Jane Smith',
+			fullName: 'Jane Smith',
 			expectedOutput: 'JS',
 		},
 		{
-			string: 'Alice Johnson',
+			fullName: 'Alice Johnson',
 			expectedOutput: 'AJ',
 		},
 		{
-			string: 'Bob Brown',
+			fullName: 'Bob Brown',
 			expectedOutput: 'BB',
 		},
 		{
-			string: 'Alexandria Ocaio Cortez',
+			fullName: 'Alexandria Ocaio Cortez',
 			expectedOutput: 'AOC',
 		},
 		{
-			string: 'John F. Kennedy',
+			fullName: 'John F. Kennedy',
 			expectedOutput: 'JFK',
 		},
 		{
-			string: 'Juan Carlos Mendoza Sosa',
+			fullName: 'Juan Carlos Mendoza Sosa',
 			expectedOutput: 'JCMS',
 		},
 	];
@@ -81,25 +81,25 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getInitialsTestCases,
 		func: getInitials,
-		params: ['string'],
-		description: `${tester.printFunction(getInitials)} should return the initials of the ${tester.printParam('string')}.`,
+		params: ['fullName'],
+		description: `${tester.printFunction(getInitials)} should return the initials of the ${tester.printParam('fullName')}.`,
 	});
 
 	const getWordCountTestCases = [
 		{
-			string: 'Hello world',
+			sentence: 'Hello world',
 			expectedOutput: 2,
 		},
 		{
-			string: 'This is a test',
+			sentence: 'This is a test',
 			expectedOutput: 4,
 		},
 		{
-			string: 'Hello',
+			sentence: 'Hello',
 			expectedOutput: 1,
 		},
 		{
-			string: 'The players association requested a meeting with the board.',
+			sentence: 'The players association requested a meeting with the board.',
 			expectedOutput: 9,
 		},
 	];
@@ -107,51 +107,51 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getWordCountTestCases,
 		func: getWordCount,
-		params: ['string'],
-		description: `${tester.printFunction(getWordCount)} should return the number of words in the ${tester.printParam('string')}.`,
+		params: ['sentence'],
+		description: `${tester.printFunction(getWordCount)} should return the number of words in the ${tester.printParam('sentence')}.`,
 	});
 
 	const joinWordsTestCases = [
 		{
-			array: ['Hello', 'world'],
+			words: ['Hello', 'world'],
 			expectedOutput: 'Hello world',
 		},
 		{
-			array: ['This', 'is', 'a', 'test'],
+			words: ['This', 'is', 'a', 'test'],
 			expectedOutput: 'This is a test',
 		},
 		{
-			array: ['The', 'fountain', 'of', 'youth'],
+			words: ['The', 'fountain', 'of', 'youth'],
 			expectedOutput: 'The fountain of youth',
 		},
 	];
 
 	tester.handleTestCases({
 		tests: joinWordsTestCases,
-		func: joinWords,
-		params: ['array'],
-		description: `${tester.printFunction(joinWords)} should return the ${tester.printParam('array')} of words joined by spaces.`,
+		func: joinWordsIntoSentence,
+		params: ['words'],
+		description: `${tester.printFunction(joinWordsIntoSentence)} should return the ${tester.printParam('words')} joined by spaces.`,
 	});
 
 	const areAllNumbersPositiveTestCases = [
 		{
-			array: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: true,
 		},
 		{
-			array: [1, 2, 3, 4, -5],
+			numbers: [1, 2, 3, 4, -5],
 			expectedOutput: false,
 		},
 		{
-			array: [1],
+			numbers: [1],
 			expectedOutput: true,
 		},
 		{
-			array: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: false,
 		},
 		{
-			array: [10, 20, 30, 40, 50],
+			numbers: [10, 20, 30, 40, 50],
 			expectedOutput: true,
 		},
 	];
@@ -159,29 +159,29 @@ function runTests() {
 	tester.handleTestCases({
 		tests: areAllNumbersPositiveTestCases,
 		func: areAllNumbersPositive,
-		params: ['array'],
-		description: `${tester.printFunction(areAllNumbersPositive)} should return ${tester.printBoolean(true)} if all numbers in the ${tester.printParam('array')} are positive, otherwise ${tester.printBoolean(false)}.`,
+		params: ['numbers'],
+		description: `${tester.printFunction(areAllNumbersPositive)} should return ${tester.printBoolean(true)} if all numbers in the ${tester.printParam('numbers')} are positive, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isAnyNumberNegativeTestCases = [
 		{
-			array: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: false,
 		},
 		{
-			array: [1, 2, 3, 4, -5],
+			numbers: [1, 2, 3, 4, -5],
 			expectedOutput: true,
 		},
 		{
-			array: [1],
+			numbers: [1],
 			expectedOutput: false,
 		},
 		{
-			array: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: true,
 		},
 		{
-			array: [-1],
+			numbers: [-1],
 			expectedOutput: true,
 		},
 	];
@@ -189,8 +189,8 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isAnyNumberNegativeTestCases,
 		func: isAnyNumberNegative,
-		params: ['array'],
-		description: `${tester.printFunction(isAnyNumberNegative)} should return ${tester.printBoolean(true)} if any number in the ${tester.printParam('array')} is negative, otherwise ${tester.printBoolean(false)}.`,
+		params: ['numbers'],
+		description: `${tester.printFunction(isAnyNumberNegative)} should return ${tester.printBoolean(true)} if any number in the ${tester.printParam('numbers')} is negative, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const calculateFactorialTestCases = [

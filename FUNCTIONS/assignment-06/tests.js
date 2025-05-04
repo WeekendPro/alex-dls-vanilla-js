@@ -10,7 +10,7 @@ function runTests() {
 	const {
 		getNumbersInIncreasingOrderRange,
 		getNumbersInDecreasingOrderRange,
-		getNumbersInGivenOrderRange,
+		getNumbersInIncomingOrderRange,
 		getFirstNEvenPositiveNumbers,
 		isLeapYear,
 		convertCelsiusToFahrenheit,
@@ -106,7 +106,7 @@ function runTests() {
 		description: `${tester.printFunction(getNumbersInDecreasingOrderRange)} should return an array of numbers in decreasing order using the provided ${tester.printParam('range')}.`,
 	});
 
-	const getNumbersInGivenOrderRangeTestCases = [
+	const getNumbersInIncomingOrderRangeTestCases = [
 		{
 			range: [1, 10],
 			expectedOutput: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -137,11 +137,11 @@ function runTests() {
 	];
 
 	tester.handleTestCases({
-		tests: getNumbersInGivenOrderRangeTestCases,
-		func: getNumbersInGivenOrderRange,
+		tests: getNumbersInIncomingOrderRangeTestCases,
+		func: getNumbersInIncomingOrderRange,
 		params: ['range'],
 		forceArrayOrder: true,
-		description: `${tester.printFunction(getNumbersInGivenOrderRange)} should return an array of numbers in the order they are provided using the provided ${tester.printParam('range')}.`,
+		description: `${tester.printFunction(getNumbersInIncomingOrderRange)} should return an array of numbers in the order they are provided using the provided ${tester.printParam('range')}.`,
 	});
 
 	const getFirstNEvenPositiveNumbersTestCases = [

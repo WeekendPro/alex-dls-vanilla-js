@@ -8,7 +8,7 @@ Use node to run the tests in the test file found in this directory.
 
 - Update `getNumbersInIncreasingOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in increasing order. The input array can be in any order.
 - Update `getNumbersInDecreasingOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in decreasing order. The input array can be in any order.
-- Update `getNumbersInGivenOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in the order they are provided. The input array can be in any order.
+- Update `getNumbersInIncomingOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in the order they are provided. The input array can be in any order.
 - Update `getFirstNEvenPositiveNumbers` with a function that takes a number (limit) and returns an array of the first N even numbers.
 - Update `isLeapYear` with a function that checks if a year (number) is a leap year (divisible by 4, but not by 100 unless also divisible by 400).
 - Update `convertCelsiusToFahrenheit` with a function that takes a temperature in Celsius and converts it to Fahrenheit. Formula: F = C * 9/5 + 32
@@ -36,16 +36,16 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-const getNumbersInIncreasingOrderRange = () => {};
-const getNumbersInDecreasingOrderRange = () => {};
-const getNumbersInGivenOrderRange = () => {};
-const getFirstNEvenPositiveNumbers = () => {};
-const isLeapYear = () => {};
-const convertCelsiusToFahrenheit = () => {};
-const convertFahrenheitToCelsius = () => {};
-const formatDollars = () => {};
-const getGrade = () => {};
-const canVote = () => {};
+const getNumbersInIncreasingOrderRange = (range) => {};
+const getNumbersInDecreasingOrderRange = (range) => {};
+const getNumbersInIncomingOrderRange = (range) => {};
+const getFirstNEvenPositiveNumbers = (limit) => {};
+const isLeapYear = (year) => {};
+const convertCelsiusToFahrenheit = (celsius) => {};
+const convertFahrenheitToCelsius = (fahrenheit) => {};
+const formatDollars = (cents) => {};
+const getGrade = (score) => {};
+const canVote = (age) => {};
 const isInteger = () => {};
 const rollDie = () => {};
 const rollDice = () => {};
@@ -60,7 +60,7 @@ try {
 	solution = {
 		getNumbersInIncreasingOrderRange,
 		getNumbersInDecreasingOrderRange,
-		getNumbersInGivenOrderRange,
+		getNumbersInIncomingOrderRange,
 		getFirstNEvenPositiveNumbers,
 		isLeapYear,
 		convertCelsiusToFahrenheit,

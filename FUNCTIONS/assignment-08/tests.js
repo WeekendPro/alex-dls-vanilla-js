@@ -38,6 +38,7 @@ function runTests() {
 		func: removeDuplicates,
 		params: ['collection'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(removeDuplicates)} should return a new array with duplicate elements removed.`,
 	});
 
 	const mergeArraysTestCases = [
@@ -67,7 +68,7 @@ function runTests() {
 		tests: mergeArraysTestCases,
 		func: mergeArrays,
 		params: ['array1', 'array2'],
-		forceArrayOrder: true,
+		description: `${tester.printFunction(mergeArrays)} should return a new array with elements from both arrays.`,
 	});
 
 	const getIntersectionTestCases = [
@@ -97,6 +98,7 @@ function runTests() {
 		tests: getIntersectionTestCases,
 		func: getIntersection,
 		params: ['array1', 'array2'],
+		description: `${tester.printFunction(getIntersection)} should return a new array with elements that appear in both arrays.`,
 	});
 
 	const getKeysTestCases = [
@@ -131,6 +133,7 @@ function runTests() {
 		tests: getKeysTestCases,
 		func: getKeys,
 		params: ['object'],
+		description: `${tester.printFunction(getKeys)} should return an array of the object's keys.`,
 	});
 
 	const getValuesTestCases = [
@@ -165,6 +168,7 @@ function runTests() {
 		tests: getValuesTestCases,
 		func: getValues,
 		params: ['object'],
+		description: `${tester.printFunction(getValues)} should return an array of the object's values.`,
 	});
 
 	const getByKeyTestCases = [
@@ -204,6 +208,7 @@ function runTests() {
 		tests: getByKeyTestCases,
 		func: getByKey,
 		params: ['object', 'key'],
+		description: `${tester.printFunction(getByKey)} should return the value of the object's key.`,
 	});
 
 	const getLengthTestCases = [
@@ -238,6 +243,7 @@ function runTests() {
 		tests: getLengthTestCases,
 		func: getLength,
 		params: ['object'],
+		description: `${tester.printFunction(getLength)} should return the number of key-value pairs in the object.`,
 	});
 
 	tester.printTestSuiteResults();

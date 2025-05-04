@@ -64,6 +64,7 @@ function runTests() {
 		tests: getTypeTestCases,
 		func: getType,
 		params: ['value'],
+		description: `${tester.printFunction(getType)} should return the type of the provided ${tester.printParam('value')}.`,
 	});
 
 	const isStringTestCases = [
@@ -109,6 +110,7 @@ function runTests() {
 		tests: isStringTestCases,
 		func: isString,
 		params: ['value'],
+		description: `${tester.printFunction(isString)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('value')} is a string, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isNumberTestCases = [
@@ -154,6 +156,7 @@ function runTests() {
 		tests: isNumberTestCases,
 		func: isNumber,
 		params: ['value'],
+		description: `${tester.printFunction(isNumber)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('value')} is a number, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isBooleanTestCases = [
@@ -199,6 +202,7 @@ function runTests() {
 		tests: isBooleanTestCases,
 		func: isBoolean,
 		params: ['value'],
+		description: `${tester.printFunction(isBoolean)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('value')} is a boolean, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isUndefinedTestCases = [
@@ -244,6 +248,7 @@ function runTests() {
 		tests: isUndefinedTestCases,
 		func: isUndefined,
 		params: ['value'],
+		description: `${tester.printFunction(isUndefined)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('value')} is undefined, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isNullTestCases = [
@@ -285,6 +290,7 @@ function runTests() {
 		tests: isNullTestCases,
 		func: isNull,
 		params: ['value'],
+		description: `${tester.printFunction(isNull)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('value')} is null, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const getOppositeBooleanTestCases = [
@@ -302,6 +308,7 @@ function runTests() {
 		tests: getOppositeBooleanTestCases,
 		func: getOppositeBoolean,
 		params: ['value'],
+		description: `${tester.printFunction(getOppositeBoolean)} should return the opposite of the provided ${tester.printParam('value')}.`,
 	});
 
 	const isBothTrueTestCases = [
@@ -331,6 +338,7 @@ function runTests() {
 		tests: isBothTrueTestCases,
 		func: isBothTrue,
 		params: ['value1', 'value2'],
+		description: `${tester.printFunction(isBothTrue)} should return ${tester.printBoolean(true)} if both provided ${tester.printParam('value1')} and ${tester.printParam('value2')} are true, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isEitherTrueTestCases = [
@@ -360,6 +368,7 @@ function runTests() {
 		tests: isEitherTrueTestCases,
 		func: isEitherTrue,
 		params: ['value1', 'value2'],
+		description: `${tester.printFunction(isEitherTrue)} should return ${tester.printBoolean(true)} if either provided ${tester.printParam('value1')} or ${tester.printParam('value2')} is true, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isAbsoluteTestCases = [
@@ -381,30 +390,35 @@ function runTests() {
 		tests: isAbsoluteTestCases,
 		func: isAbsolute,
 		params: ['value'],
+		description: `${tester.printFunction(isAbsolute)} should return the absolute value of the provided ${tester.printParam('value')}.`,
 	});
 
 	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date() }],
 		func: getCurrentDate,
 		params: [],
+		description: `${tester.printFunction(getCurrentDate)} should return the current date.`,
 	});
 
 	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date().getFullYear() }],
 		func: getCurrentYear,
 		params: [],
+		description: `${tester.printFunction(getCurrentYear)} should return the current year.`,
 	});
 
 	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date().getMonth() }],
 		func: getCurrentMonth,
 		params: [],
+		description: `${tester.printFunction(getCurrentMonth)} should return the current month.`,
 	});
 
 	tester.handleTestCases({
 		tests: [{ expectedOutput: new Date().getDate() }],
 		func: getCurrentDay,
 		params: [],
+		description: `${tester.printFunction(getCurrentDay)} should return the current day.`,
 	});
 
 	tester.printTestSuiteResults();

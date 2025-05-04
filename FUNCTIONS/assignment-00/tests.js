@@ -15,33 +15,33 @@ function runTests() {
 
 	const sumTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: 3,
 		},
 		{
-			a: 0,
-			b: 0,
+			number1: 0,
+			number2: 0,
 			expectedOutput: 0,
 		},
 		{
-			a: 10,
-			b: 5,
+			number1: 10,
+			number2: 5,
 			expectedOutput: 15,
 		},
 		{
-			a: 33,
-			b: -41,
+			number1: 33,
+			number2: -41,
 			expectedOutput: -8,
 		},
 		{
-			a: -6,
-			b: 810,
+			number1: -6,
+			number2: 810,
 			expectedOutput: 804,
 		},
 		{
-			a: 99999,
-			b: 1,
+			number1: 99999,
+			number2: 1,
 			expectedOutput: 100000,
 		},
 	];
@@ -49,38 +49,39 @@ function runTests() {
 	tester.handleTestCases({
 		tests: sumTestCases,
 		func: getSum,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getSum)} should return the sum of the provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	const differenceTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: -1,
 		},
 		{
-			a: 0,
-			b: 0,
+			number1: 0,
+			number2: 0,
 			expectedOutput: 0,
 		},
 		{
-			a: 10,
-			b: 5,
+			number1: 10,
+			number2: 5,
 			expectedOutput: 5,
 		},
 		{
-			a: 33,
-			b: -41,
+			number1: 33,
+			number2: -41,
 			expectedOutput: 74,
 		},
 		{
-			a: -6,
-			b: 810,
+			number1: -6,
+			number2: 810,
 			expectedOutput: -816,
 		},
 		{
-			a: 99999,
-			b: 1,
+			number1: 99999,
+			number2: 1,
 			expectedOutput: 99998,
 		},
 	];
@@ -88,38 +89,39 @@ function runTests() {
 	tester.handleTestCases({
 		tests: differenceTestCases,
 		func: getDifference,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getDifference)} should return the difference of the provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	const productTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: 2,
 		},
 		{
-			a: 0,
-			b: 0,
+			number1: 0,
+			number2: 0,
 			expectedOutput: 0,
 		},
 		{
-			a: 10,
-			b: 5,
+			number1: 10,
+			number2: 5,
 			expectedOutput: 50,
 		},
 		{
-			a: 33,
-			b: 5.5,
+			number1: 33,
+			number2: 5.5,
 			expectedOutput: 181.5,
 		},
 		{
-			a: -6,
-			b: 200,
+			number1: -6,
+			number2: 200,
 			expectedOutput: -1200,
 		},
 		{
-			a: 99999,
-			b: 1,
+			number1: 99999,
+			number2: 1,
 			expectedOutput: 99999,
 		},
 	];
@@ -127,33 +129,34 @@ function runTests() {
 	tester.handleTestCases({
 		tests: productTestCases,
 		func: getProduct,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getProduct)} should return the product of the provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	const quotientTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: 0.5,
 		},
 		{
-			a: 10,
-			b: 5,
+			number1: 10,
+			number2: 5,
 			expectedOutput: 2,
 		},
 		{
-			a: 33,
-			b: 5.5,
+			number1: 33,
+			number2: 5.5,
 			expectedOutput: 6,
 		},
 		{
-			a: 750,
-			b: 100,
+			number1: 750,
+			number2: 100,
 			expectedOutput: 7.5,
 		},
 		{
-			a: 99999,
-			b: 1,
+			number1: 99999,
+			number2: 1,
 			expectedOutput: 99999,
 		},
 	];
@@ -161,33 +164,34 @@ function runTests() {
 	tester.handleTestCases({
 		tests: quotientTestCases,
 		func: getQuotient,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getQuotient)} should return the quotient of the provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	const remainderTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: 1,
 		},
 		{
-			a: 10,
-			b: 5,
+			number1: 10,
+			number2: 5,
 			expectedOutput: 0,
 		},
 		{
-			a: 33,
-			b: 5,
+			number1: 33,
+			number2: 5,
 			expectedOutput: 3,
 		},
 		{
-			a: 750,
-			b: 100,
+			number1: 750,
+			number2: 100,
 			expectedOutput: 50,
 		},
 		{
-			a: 99999,
-			b: 1,
+			number1: 99999,
+			number2: 1,
 			expectedOutput: 0,
 		},
 	];
@@ -195,38 +199,39 @@ function runTests() {
 	tester.handleTestCases({
 		tests: remainderTestCases,
 		func: getRemainder,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getRemainder)} should return the remainder of the provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	const powerTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: 1,
 		},
 		{
-			a: 12,
-			b: 3,
+			number1: 12,
+			number2: 3,
 			expectedOutput: 1728,
 		},
 		{
-			a: 3,
-			b: 5,
+			number1: 3,
+			number2: 5,
 			expectedOutput: 243,
 		},
 		{
-			a: 750,
-			b: 2,
+			number1: 750,
+			number2: 2,
 			expectedOutput: 562500,
 		},
 		{
-			a: 10,
-			b: 5,
+			number1: 10,
+			number2: 5,
 			expectedOutput: 100000,
 		},
 		{
-			a: 99999,
-			b: 1,
+			number1: 99999,
+			number2: 1,
 			expectedOutput: 99999,
 		},
 	];
@@ -234,7 +239,8 @@ function runTests() {
 	tester.handleTestCases({
 		tests: powerTestCases,
 		func: getPower,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getPower)} should return the power of the provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	tester.printTestSuiteResults();

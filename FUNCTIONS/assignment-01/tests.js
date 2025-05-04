@@ -21,31 +21,31 @@ function runTests() {
 
 	const isPositiveTestCases = [
 		{
-			input: 1,
+			number: 1,
 			expectedOutput: true,
 		},
 		{
-			input: 0,
+			number: 0,
 			expectedOutput: false,
 		},
 		{
-			input: -1,
+			number: -1,
 			expectedOutput: false,
 		},
 		{
-			input: 48,
+			number: 48,
 			expectedOutput: true,
 		},
 		{
-			input: -64,
+			number: -64,
 			expectedOutput: false,
 		},
 		{
-			input: 0.5,
+			number: 0.5,
 			expectedOutput: true,
 		},
 		{
-			input: -1982.64,
+			number: -1982.64,
 			expectedOutput: false,
 		},
 	];
@@ -53,36 +53,37 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isPositiveTestCases,
 		func: isPositive,
-		params: ['input'],
+		params: ['number'],
+		description: `${tester.printFunction(isPositive)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number')} is positive, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isNegativeTestCases = [
 		{
-			input: 1,
+			number: 1,
 			expectedOutput: false,
 		},
 		{
-			input: 0,
+			number: 0,
 			expectedOutput: false,
 		},
 		{
-			input: -1,
+			number: -1,
 			expectedOutput: true,
 		},
 		{
-			input: 48,
+			number: 48,
 			expectedOutput: false,
 		},
 		{
-			input: -64,
+			number: -64,
 			expectedOutput: true,
 		},
 		{
-			input: 0.5,
+			number: 0.5,
 			expectedOutput: false,
 		},
 		{
-			input: -1982.64,
+			number: -1982.64,
 			expectedOutput: true,
 		},
 	];
@@ -90,36 +91,37 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isNegativeTestCases,
 		func: isNegative,
-		params: ['input'],
+		params: ['number'],
+		description: `${tester.printFunction(isNegative)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number')} is negative, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isZeroTestCases = [
 		{
-			input: 0,
+			number: 0,
 			expectedOutput: true,
 		},
 		{
-			input: 1,
+			number: 1,
 			expectedOutput: false,
 		},
 		{
-			input: -1,
+			number: -1,
 			expectedOutput: false,
 		},
 		{
-			input: 48,
+			number: 48,
 			expectedOutput: false,
 		},
 		{
-			input: -64,
+			number: -64,
 			expectedOutput: false,
 		},
 		{
-			input: 0.5,
+			number: 0.5,
 			expectedOutput: false,
 		},
 		{
-			input: -1982.64,
+			number: -1982.64,
 			expectedOutput: false,
 		},
 	];
@@ -127,44 +129,45 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isZeroTestCases,
 		func: isZero,
-		params: ['input'],
+		params: ['number'],
+		description: `${tester.printFunction(isZero)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number')} is zero, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isEvenTestCases = [
 		{
-			input: 2,
+			number: 2,
 			expectedOutput: true,
 		},
 		{
-			input: 1,
+			number: 1,
 			expectedOutput: false,
 		},
 		{
-			input: 3,
+			number: 3,
 			expectedOutput: false,
 		},
 		{
-			input: 0,
+			number: 0,
 			expectedOutput: true,
 		},
 		{
-			input: 0.5,
+			number: 0.5,
 			expectedOutput: false,
 		},
 		{
-			input: -1982.64,
+			number: -1982.64,
 			expectedOutput: false,
 		},
 		{
-			input: 1982.64,
+			number: 1982.64,
 			expectedOutput: false,
 		},
 		{
-			input: 48,
+			number: 48,
 			expectedOutput: true,
 		},
 		{
-			input: 49,
+			number: 49,
 			expectedOutput: false,
 		},
 	];
@@ -172,44 +175,45 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isEvenTestCases,
 		func: isEven,
-		params: ['input'],
+		params: ['number'],
+		description: `${tester.printFunction(isEven)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number')} is even, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isOddTestCases = [
 		{
-			input: 1,
+			number: 1,
 			expectedOutput: true,
 		},
 		{
-			input: 2,
+			number: 2,
 			expectedOutput: false,
 		},
 		{
-			input: 3,
+			number: 3,
 			expectedOutput: true,
 		},
 		{
-			input: 0,
+			number: 0,
 			expectedOutput: false,
 		},
 		{
-			input: 0.5,
+			number: 0.5,
 			expectedOutput: false,
 		},
 		{
-			input: -1982.64,
+			number: -1982.64,
 			expectedOutput: false,
 		},
 		{
-			input: 1982.64,
+			number: 1982.64,
 			expectedOutput: false,
 		},
 		{
-			input: 48,
+			number: 48,
 			expectedOutput: false,
 		},
 		{
-			input: 49,
+			number: 49,
 			expectedOutput: true,
 		},
 	];
@@ -217,38 +221,39 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isOddTestCases,
 		func: isOdd,
-		params: ['input'],
+		params: ['number'],
+		description: `${tester.printFunction(isOdd)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number')} is odd, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const getLargerTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: 2,
 		},
 		{
-			a: 2,
-			b: 1,
+			number1: 2,
+			number2: 1,
 			expectedOutput: 2,
 		},
 		{
-			a: 1,
-			b: 1,
+			number1: 1,
+			number2: 1,
 			expectedOutput: 1,
 		},
 		{
-			a: 599,
-			b: 122,
+			number1: 599,
+			number2: 122,
 			expectedOutput: 599,
 		},
 		{
-			a: 190,
-			b: 3902,
+			number1: 190,
+			number2: 3902,
 			expectedOutput: 3902,
 		},
 		{
-			a: 763,
-			b: 763,
+			number1: 763,
+			number2: 763,
 			expectedOutput: 763,
 		},
 	];
@@ -256,38 +261,39 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getLargerTestCases,
 		func: getLarger,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getLarger)} should return the larger of the two provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	const getSmallerTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: 1,
 		},
 		{
-			a: 2,
-			b: 1,
+			number1: 2,
+			number2: 1,
 			expectedOutput: 1,
 		},
 		{
-			a: 1,
-			b: 1,
+			number1: 1,
+			number2: 1,
 			expectedOutput: 1,
 		},
 		{
-			a: 599,
-			b: 122,
+			number1: 599,
+			number2: 122,
 			expectedOutput: 122,
 		},
 		{
-			a: 190,
-			b: 3902,
+			number1: 190,
+			number2: 3902,
 			expectedOutput: 190,
 		},
 		{
-			a: 763,
-			b: 763,
+			number1: 763,
+			number2: 763,
 			expectedOutput: 763,
 		},
 	];
@@ -295,38 +301,39 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getSmallerTestCases,
 		func: getSmaller,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(getSmaller)} should return the smaller of the two provided ${tester.printParam('number1')} and ${tester.printParam('number2')}.`,
 	});
 
 	const isEqualTestCases = [
 		{
-			a: 1,
-			b: 1,
+			number1: 1,
+			number2: 1,
 			expectedOutput: true,
 		},
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: false,
 		},
 		{
-			a: 190,
-			b: 190,
+			number1: 190,
+			number2: 190,
 			expectedOutput: true,
 		},
 		{
-			a: 190,
-			b: 191,
+			number1: 190,
+			number2: 191,
 			expectedOutput: false,
 		},
 		{
-			a: 190,
-			b: 190.1,
+			number1: 190,
+			number2: 190.1,
 			expectedOutput: false,
 		},
 		{
-			a: 190.0,
-			b: 19.0,
+			number1: 190.0,
+			number2: 19.0,
 			expectedOutput: false,
 		},
 	];
@@ -334,33 +341,34 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isEqualTestCases,
 		func: isEqual,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(isEqual)} should return ${tester.printBoolean(true)} if the two provided ${tester.printParam('number1')} and ${tester.printParam('number2')} are equal, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isNotEqualTestCases = [
 		{
-			a: 1,
-			b: 1,
+			number1: 1,
+			number2: 1,
 			expectedOutput: false,
 		},
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: true,
 		},
 		{
-			a: 190,
-			b: 190.0,
+			number1: 190,
+			number2: 190.0,
 			expectedOutput: false,
 		},
 		{
-			a: 190,
-			b: 190.1,
+			number1: 190,
+			number2: 190.1,
 			expectedOutput: true,
 		},
 		{
-			a: 190.0,
-			b: 19.0,
+			number1: 190.0,
+			number2: 19.0,
 			expectedOutput: true,
 		},
 	];
@@ -368,48 +376,49 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isNotEqualTestCases,
 		func: isNotEqual,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(isNotEqual)} should return ${tester.printBoolean(true)} if the two provided ${tester.printParam('number1')} and ${tester.printParam('number2')} are not equal, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isGreaterThanTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: false,
 		},
 		{
-			a: 2,
-			b: 1,
+			number1: 2,
+			number2: 1,
 			expectedOutput: true,
 		},
 		{
-			a: 190,
-			b: 190,
+			number1: 190,
+			number2: 190,
 			expectedOutput: false,
 		},
 		{
-			a: 190,
-			b: 191,
+			number1: 190,
+			number2: 191,
 			expectedOutput: false,
 		},
 		{
-			a: 190.0,
-			b: 190.1,
+			number1: 190.0,
+			number2: 190.1,
 			expectedOutput: false,
 		},
 		{
-			a: 190.0,
-			b: 19.0,
+			number1: 190.0,
+			number2: 19.0,
 			expectedOutput: true,
 		},
 		{
-			a: 48,
-			b: 11,
+			number1: 48,
+			number2: 11,
 			expectedOutput: true,
 		},
 		{
-			a: 11,
-			b: 48,
+			number1: 11,
+			number2: 48,
 			expectedOutput: false,
 		},
 	];
@@ -417,38 +426,39 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isGreaterThanTestCases,
 		func: isGreaterThan,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(isGreaterThan)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number1')} is greater than the provided ${tester.printParam('number2')}, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isLessThanTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: true,
 		},
 		{
-			a: 2,
-			b: 1,
+			number1: 2,
+			number2: 1,
 			expectedOutput: false,
 		},
 		{
-			a: 190,
-			b: 190,
+			number1: 190,
+			number2: 190,
 			expectedOutput: false,
 		},
 		{
-			a: 190.0,
-			b: 190.1,
+			number1: 190.0,
+			number2: 190.1,
 			expectedOutput: true,
 		},
 		{
-			a: 48,
-			b: 11,
+			number1: 48,
+			number2: 11,
 			expectedOutput: false,
 		},
 		{
-			a: 11,
-			b: 48,
+			number1: 11,
+			number2: 48,
 			expectedOutput: true,
 		},
 	];
@@ -456,48 +466,49 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isLessThanTestCases,
 		func: isLessThan,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(isLessThan)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number1')} is less than the provided ${tester.printParam('number2')}, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isGreaterThanOrEqualTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: false,
 		},
 		{
-			a: 2,
-			b: 1,
+			number1: 2,
+			number2: 1,
 			expectedOutput: true,
 		},
 		{
-			a: 190,
-			b: 190,
+			number1: 190,
+			number2: 190,
 			expectedOutput: true,
 		},
 		{
-			a: 190,
-			b: 191,
+			number1: 190,
+			number2: 191,
 			expectedOutput: false,
 		},
 		{
-			a: 190.0,
-			b: 190.1,
+			number1: 190.0,
+			number2: 190.1,
 			expectedOutput: false,
 		},
 		{
-			a: 190.0,
-			b: 190.0,
+			number1: 190.0,
+			number2: 190.0,
 			expectedOutput: true,
 		},
 		{
-			a: 48,
-			b: 11,
+			number1: 48,
+			number2: 11,
 			expectedOutput: true,
 		},
 		{
-			a: 11,
-			b: 48,
+			number1: 11,
+			number2: 48,
 			expectedOutput: false,
 		},
 	];
@@ -505,43 +516,44 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isGreaterThanOrEqualTestCases,
 		func: isGreaterThanOrEqual,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(isGreaterThanOrEqual)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number1')} is greater than or equal to the provided ${tester.printParam('number2')}, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const isLessThanOrEqualTestCases = [
 		{
-			a: 1,
-			b: 2,
+			number1: 1,
+			number2: 2,
 			expectedOutput: true,
 		},
 		{
-			a: 2,
-			b: 1,
+			number1: 2,
+			number2: 1,
 			expectedOutput: false,
 		},
 		{
-			a: 190,
-			b: 190,
+			number1: 190,
+			number2: 190,
 			expectedOutput: true,
 		},
 		{
-			a: 190,
-			b: 191,
+			number1: 190,
+			number2: 191,
 			expectedOutput: true,
 		},
 		{
-			a: 190.0,
-			b: 190.1,
+			number1: 190.0,
+			number2: 190.1,
 			expectedOutput: true,
 		},
 		{
-			a: 48,
-			b: 11,
+			number1: 48,
+			number2: 11,
 			expectedOutput: false,
 		},
 		{
-			a: 11,
-			b: 48,
+			number1: 11,
+			number2: 48,
 			expectedOutput: true,
 		},
 	];
@@ -549,7 +561,8 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isLessThanOrEqualTestCases,
 		func: isLessThanOrEqual,
-		params: ['a', 'b'],
+		params: ['number1', 'number2'],
+		description: `${tester.printFunction(isLessThanOrEqual)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('number1')} is less than or equal to the provided ${tester.printParam('number2')}, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	tester.printTestSuiteResults();

@@ -26,20 +26,126 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-const reverseString = (string) => {};
-const countCharacter = (string, character) => {};
-const countVowels = (string) => {};
-const countConsonants = (string) => {};
-const reverseArray = (numbers) => {};
-const checkValueInArray = (array, target) => {};
-const getPositiveNumbers = (numbers) => {};
-const getNegativeNumbers = (numbers) => {};
-const getEvenNumbers = (numbers) => {};
-const getOddNumbers = (numbers) => {};
-const convertToUppercase = (strings) => {};
-const convertToLowercase = (strings) => {};
-const doubleNumbers = (numbers) => {};
-const squareNumbers = (numbers) => {};
+const reverseString = (string) => {
+	let reverse =  ''
+		for (let i = string.length-1; i>=0; i--) {
+			reverse += string[i]
+		}	
+return reverse
+};
+const countCharacter = (string, character) => {
+	let count = 0
+	for (let i =0; i < string.length; i++) {
+		if (string[i] === character) {
+			count ++
+		}
+	}
+	return count
+};
+const countVowels = (string) => {
+	let count = 0
+	const vowels = "aeiou"
+	for (let i =0; i<string.length; i++) {
+		const char = string[i].toLowerCase()
+		if (vowels.includes(char)) {
+			count++
+		}
+	}
+	return count
+};
+const countConsonants = (string) => {
+	let count = 0
+	const vowels = "aeiou"
+
+	for (let i=0; i<string.length;i++){
+		const char = string[i].toLowerCase()
+		if (char >= 'a' && char <= 'z' && !vowels.includes(char)) {
+      count++; 
+	}
+}
+return count
+};
+
+const reverseArray = (numbers) => {
+	const reverse = []
+	for (let i = numbers.length-1; i>= 0; i--) {
+		reverse.push(numbers[i])
+	}
+	return reverse
+};
+
+const checkValueInArray = (array, target) => {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] === target) {
+			return true
+		}
+	}
+	 return false
+};
+const getPositiveNumbers = (numbers) => {
+	const positives = []
+	for (let i = 0; i > numbers.length; i++) {
+		if (numbers[i] >= 0) {
+			positives.push(numbers[i])
+		}
+	}
+	return positives
+};
+const getNegativeNumbers = (numbers) => {
+	const negatives = []
+	for (let i = 0; i < numbers.length;  i++) {
+		if (numbers[i] < 0) {
+			negatives.push(numbers[i])
+		}
+	}
+	return negatives
+};
+const getEvenNumbers = (numbers) => {
+	const evens = []
+	for (let i = 0; i < numbers.length; i++) {
+		if (numbers[i] % 2 === 0) {
+			evens.push(numbers[i])
+		}
+	}
+	return evens
+};
+const getOddNumbers = (numbers) => {
+	const odds = []
+	for (let i = 0; i < numbers.length; i++) {
+		if (numbers[i] % 2 !== 0) {
+			odds.push(numbers[i])
+		}
+	}
+	return odds
+};
+const convertToUppercase = (strings) => {
+	const uppercase = [];
+  for (let i = 0; i < strings.length; i++) {
+    uppercase.push(strings[i].toUpperCase());
+  }
+  return uppercase;
+};
+const convertToLowercase = (strings) => {
+	const lowercase = [];
+  for (let i = 0; i < strings.length; i++) {
+    lowercase.push(strings[i].toLowerCase());
+  }
+  return lowercase;
+};
+const doubleNumbers = (numbers) => {
+	const double = [];
+  for (let i = 0; i < numbers.length; i++) {
+    double.push(numbers[i] * 2);
+  }
+  return double;
+};
+const squareNumbers = (numbers) => {
+	const square = [];
+  for (let i = 0; i < numbers.length; i++) {
+    square.push(numbers[i] ** 2);
+  }
+  return square;
+};
 
 // ------------------------------- //
 // Don't edit code below this line //

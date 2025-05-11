@@ -40,31 +40,31 @@ function runTests() {
 
 	const getStringLengthsTestCases = [
 		{
-			input: ['apple', 'banana', 'cherry'],
+			strings: ['apple', 'banana', 'cherry'],
 			expectedOutput: [5, 6, 6],
 		},
 		{
-			input: ['hello', 'world', 'javascript'],
+			strings: ['hello', 'world', 'javascript'],
 			expectedOutput: [5, 5, 10],
 		},
 		{
-			input: [],
+			strings: [],
 			expectedOutput: [],
 		},
 		{
-			input: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+			strings: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
 			expectedOutput: [1, 1, 1, 1, 1, 1, 1],
 		},
 		{
-			input: ['123', '456', '789'],
+			strings: ['123', '456', '789'],
 			expectedOutput: [3, 3, 3],
 		},
 		{
-			input: ['1234567890', '12345678901234567890'],
+			strings: ['1234567890', '12345678901234567890'],
 			expectedOutput: [10, 20],
 		},
 		{
-			input: [
+			strings: [
 				'jack',
 				'jill',
 				'jane',
@@ -82,25 +82,25 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getStringLengthsTestCases,
 		func: getStringLengths,
-		params: ['input'],
+		params: ['strings'],
 		forceArrayOrder: true,
 	});
 
 	const incrementNumbersTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: [2, 3, 4, 5, 6],
 		},
 		{
-			input: [0, 0, 0, 0, 0],
+			numbers: [0, 0, 0, 0, 0],
 			expectedOutput: [1, 1, 1, 1, 1],
 		},
 		{
-			input: [-1, -2, -3, -4, -5],
+			numbers: [-1, -2, -3, -4, -5],
 			expectedOutput: [0, -1, -2, -3, -4],
 		},
 		{
-			input: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+			numbers: [100, 200, 300, 400, 500, 600, 700, 800, 900],
 			expectedOutput: [101, 201, 301, 401, 501, 601, 701, 801, 901],
 		},
 	];

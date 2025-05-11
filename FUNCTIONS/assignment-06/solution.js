@@ -36,19 +36,111 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-const getNumbersInIncreasingOrderRange = (range) => {};
-const getNumbersInDecreasingOrderRange = (range) => {};
-const getNumbersInIncomingOrderRange = (range) => {};
-const getFirstNEvenPositiveNumbers = (limit) => {};
-const isLeapYear = (year) => {};
-const convertCelsiusToFahrenheit = (celsius) => {};
-const convertFahrenheitToCelsius = (fahrenheit) => {};
-const formatDollars = (cents) => {};
-const getGrade = (score) => {};
-const canVote = (age) => {};
-const isInteger = () => {};
-const rollDie = () => {};
-const rollDice = () => {};
+const getNumbersInIncreasingOrderRange = (range) => {
+	const start = Math.min(range[0], range[1]);
+	const end = Math.max(range[0], range[1]);
+	const result = [];
+
+	for (let i = start; i <= end; i++) {
+		result.push(i);
+	}
+	return result;
+};
+const getNumbersInDecreasingOrderRange = (range) => {
+	const start = Math.max(range[0], range[1]);
+	const end = Math.min(range[0], range[1]);
+	const result = [];
+
+	for (let i = start; i >= end; i--) {
+		result.push(i);
+	}
+	return result;
+};
+const getNumbersInIncomingOrderRange = (range) => {
+	const start = range[0];
+	const end = range[1];
+	const result = [];
+
+	if (start <= end) {
+		for (let i = start; i <= end; i++) {
+			result.push(i);
+		}
+	} else {
+		for (let i = start; i >= end; i--) {
+			result.push(i);
+		}
+	}
+	return result;
+};
+const getFirstNEvenPositiveNumbers = (limit) => {
+	const result = [];
+	for (let i = 1; i < limit; i++) {
+		result.push(i * 2);
+	}
+	return result;
+};
+const isLeapYear = (year) => {
+	if (year % 4 !== 0) {
+		return false;
+	} else if (year % 100 !== 0) {
+		return true;
+	} else if (year % 400 === 0) {
+		return true;
+	} else {
+		return false;
+	}
+};
+const convertCelsiusToFahrenheit = (celsius) => {
+	return (celsius * 9) / 5 + 32;
+};
+const convertFahrenheitToCelsius = (fahrenheit) => {
+	return ((fahrenheit - 32) * 5) / 9;
+};
+const formatDollars = (cents) => {
+	let dollars = cents / 100;
+	if (dollars % 1 === 0) {
+		return `$${dollars.toFixed(0)}`;
+	} else {
+		return `$${dollars.toFixed(2)}`;
+	}
+};
+const getGrade = (score) => {
+	if (score >= 94 && score <= 100) {
+		return 'A';
+	} else if (score >= 90) {
+		return 'A-';
+	} else if (score >= 87) {
+		return 'B+';
+	} else if (score >= 84) {
+		return 'B';
+	} else if (score >= 74) {
+		return 'C';
+	} else if (score >= 70) {
+		return 'C-';
+	} else if (score >= 67) {
+		return 'D+';
+	} else if (score >= 64) {
+		return 'D';
+	} else if (score >= 60) {
+		return 'D-';
+	} else {
+		return 'F';
+	}
+};
+const canVote = (age) => {
+	return age >= 18;
+};
+const isInteger = (number) => {
+	return typeof number === 'number' && number % 1 === 0;
+};
+const rollDie = () => {
+	return Math.floor(Math.random() * 6) + 1;
+};
+const rollDice = () => {
+	let die1 = Math.floor(Math.random() * 6) + 1;
+	let die2 = Math.floor(Math.random() * 6) + 1;
+	return die1 + die2;
+};
 
 // ------------------------------- //
 // Don't edit code below this line //

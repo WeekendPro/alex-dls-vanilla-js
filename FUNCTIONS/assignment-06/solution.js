@@ -8,7 +8,7 @@ Use node to run the tests in the test file found in this directory.
 
 - Update `getNumbersInIncreasingOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in increasing order. The input array can be in any order.
 - Update `getNumbersInDecreasingOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in decreasing order. The input array can be in any order.
-- Update `getNumbersInGivenOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in the order they are provided. The input array can be in any order.
+- Update `getNumbersInIncomingOrderRange` with a function that takes an array of two numbers (a range) and returns an array of numbers from the start to the end (inclusive). The numbers should be in the order they are provided. The input array can be in any order.
 - Update `getFirstNEvenPositiveNumbers` with a function that takes a number (limit) and returns an array of the first N even numbers.
 - Update `isLeapYear` with a function that checks if a year (number) is a leap year (divisible by 4, but not by 100 unless also divisible by 400).
 - Update `convertCelsiusToFahrenheit` with a function that takes a temperature in Celsius and converts it to Fahrenheit. Formula: F = C * 9/5 + 32
@@ -56,7 +56,7 @@ const getNumbersInDecreasingOrderRange = (range) => {
 	}
 	return result;
 };
-const getNumbersInGivenOrderRange = (range) => {
+const getNumbersInIncomingOrderRange = (range) => {
 	const start = range[0];
 	const end = range[1];
 	const result = [];
@@ -75,7 +75,7 @@ const getNumbersInGivenOrderRange = (range) => {
 const getFirstNEvenPositiveNumbers = (limit) => {
 	const result = [];
 	for (let i = 1; i < limit; i++) {
-		result.push(i*2);
+		result.push(i * 2);
 	}
 	return result;
 };
@@ -97,51 +97,50 @@ const convertFahrenheitToCelsius = (fahrenheit) => {
 	return ((fahrenheit - 32) * 5) / 9;
 };
 const formatDollars = (cents) => {
-	let dollars = cents / 100
+	let dollars = cents / 100;
 	if (dollars % 1 === 0) {
 		return `$${dollars.toFixed(0)}`;
 	} else {
 		return `$${dollars.toFixed(2)}`;
 	}
-
 };
 const getGrade = (score) => {
 	if (score >= 94 && score <= 100) {
-    return 'A';
-  } else if (score >= 90) {
-    return 'A-';
-  } else if (score >= 87) {
-    return 'B+';
-  } else if (score >= 84) {
-    return 'B';
-  } else if (score >= 74) {
-    return 'C';
-  } else if (score >= 70) {
-    return 'C-';
-  } else if (score >= 67) {
-    return 'D+';
-  } else if (score >= 64) {
-    return 'D';
-  } else if (score >= 60) {
-    return 'D-';
-  } else {
-    return 'F';
-  }
+		return 'A';
+	} else if (score >= 90) {
+		return 'A-';
+	} else if (score >= 87) {
+		return 'B+';
+	} else if (score >= 84) {
+		return 'B';
+	} else if (score >= 74) {
+		return 'C';
+	} else if (score >= 70) {
+		return 'C-';
+	} else if (score >= 67) {
+		return 'D+';
+	} else if (score >= 64) {
+		return 'D';
+	} else if (score >= 60) {
+		return 'D-';
+	} else {
+		return 'F';
+	}
 };
 const canVote = (age) => {
-	return age >= 18
+	return age >= 18;
 };
 const isInteger = (number) => {
-	return typeof number === 'number' && number % 1 === 0
+	return typeof number === 'number' && number % 1 === 0;
 };
 const rollDie = () => {
-	return Math.floor(Math.random() * 6) + 1
+	return Math.floor(Math.random() * 6) + 1;
 };
 const rollDice = () => {
-	let die1 = Math.floor(Math.random() * 6) + 1
-	let die2 = Math.floor(Math.random() * 6) + 1
-	return die1 + die2
-}
+	let die1 = Math.floor(Math.random() * 6) + 1;
+	let die2 = Math.floor(Math.random() * 6) + 1;
+	return die1 + die2;
+};
 
 // ------------------------------- //
 // Don't edit code below this line //
@@ -153,7 +152,7 @@ try {
 	solution = {
 		getNumbersInIncreasingOrderRange,
 		getNumbersInDecreasingOrderRange,
-		getNumbersInGivenOrderRange,
+		getNumbersInIncomingOrderRange,
 		getFirstNEvenPositiveNumbers,
 		isLeapYear,
 		convertCelsiusToFahrenheit,

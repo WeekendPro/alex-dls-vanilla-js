@@ -97,12 +97,18 @@ function runTests() {
 			item: 1000,
 			expectedOutput: [89, 13, 31, 100, 200, 1000],
 		},
+		{
+			array: [],
+			item: 1,
+			expectedOutput: [1],
+		},
 	];
 
 	tester.handleTestCases({
 		tests: addItemTestCases,
 		func: addItem,
 		params: ['array', 'item'],
+		forceArrayOrder: true,
 		description: `${tester.printFunction(addItem)} should return a new array with the provided ${tester.printParam('item')} added to the end of the provided ${tester.printParam('array')}.`,
 	});
 
@@ -252,15 +258,15 @@ function runTests() {
 
 	const getOddNumbersFromOneToNTestCases = [
 		{
-			input: 5,
+			n: 5,
 			expectedOutput: [1, 3, 5],
 		},
 		{
-			input: 10,
+			n: 10,
 			expectedOutput: [1, 3, 5, 7, 9],
 		},
 		{
-			input: 0,
+			n: 0,
 			expectedOutput: [],
 		},
 	];
@@ -268,20 +274,21 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getOddNumbersFromOneToNTestCases,
 		func: getOddNumbersFromOneToN,
-		params: ['input'],
+		params: ['n'],
+		description: `${tester.printFunction(getOddNumbersFromOneToN)} should return an array of all the odd numbers from 1 to the provided ${tester.printParam('n')}.`,
 	});
 
 	const getLargestNumberTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: 5,
 		},
 		{
-			input: [10, 20, 30, 40, 50],
+			numbers: [10, 20, 30, 40, 50],
 			expectedOutput: 50,
 		},
 		{
-			input: [100, 700, 200, 450, 50],
+			numbers: [100, 700, 200, 450, 50],
 			expectedOutput: 700,
 		},
 	];
@@ -289,20 +296,21 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getLargestNumberTestCases,
 		func: getLargestNumber,
-		params: ['input'],
+		params: ['numbers'],
+		description: `${tester.printFunction(getLargestNumber)} should return the largest number in the provided ${tester.printParam('numbers')}.`,
 	});
 
 	const getSmallestNumberTestCases = [
 		{
-			input: [1, 2, 3, 4, 5],
+			numbers: [1, 2, 3, 4, 5],
 			expectedOutput: 1,
 		},
 		{
-			input: [10, 20, 30, 40, 50],
+			numbers: [10, 20, 30, 40, 50],
 			expectedOutput: 10,
 		},
 		{
-			input: [100, 700, 20, 450, 50],
+			numbers: [100, 700, 20, 450, 50],
 			expectedOutput: 20,
 		},
 	];
@@ -310,7 +318,8 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getSmallestNumberTestCases,
 		func: getSmallestNumber,
-		params: ['input'],
+		params: ['numbers'],
+		description: `${tester.printFunction(getSmallestNumber)} should return the smallest number in the provided ${tester.printParam('numbers')}.`,
 	});
 
 	tester.printTestSuiteResults();

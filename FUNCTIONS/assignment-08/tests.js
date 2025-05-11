@@ -16,19 +16,19 @@ function runTests() {
 
 	const removeDuplicatesTestCases = [
 		{
-			input: [1, 2, 2, 3, 4, 4, 5],
+			collection: [1, 2, 2, 3, 4, 4, 5],
 			expectedOutput: [1, 2, 3, 4, 5],
 		},
 		{
-			input: ['apple', 'banana', 'apple', 'cherry', 'banana', 'date'],
+			collection: ['apple', 'banana', 'apple', 'cherry', 'banana', 'date'],
 			expectedOutput: ['apple', 'banana', 'cherry', 'date'],
 		},
 		{
-			input: [1, 1, 1, 2, 2, 2, 3, 3, 3],
+			collection: [1, 1, 1, 2, 2, 2, 3, 3, 3],
 			expectedOutput: [1, 2, 3],
 		},
 		{
-			input: [1, 2, 3, 4, 5],
+			collection: [1, 2, 3, 4, 5],
 			expectedOutput: [1, 2, 3, 4, 5],
 		},
 	];
@@ -36,29 +36,30 @@ function runTests() {
 	tester.handleTestCases({
 		tests: removeDuplicatesTestCases,
 		func: removeDuplicates,
-		params: ['input'],
+		params: ['collection'],
 		forceArrayOrder: true,
+		description: `${tester.printFunction(removeDuplicates)} should return a new array with duplicate elements removed.`,
 	});
 
 	const mergeArraysTestCases = [
 		{
-			arr1: [1, 2, 3],
-			arr2: [4, 5, 6],
+			array1: [1, 2, 3],
+			array2: [4, 5, 6],
 			expectedOutput: [1, 2, 3, 4, 5, 6],
 		},
 		{
-			arr1: [1],
-			arr2: [2, 3, 4, 5, 6],
+			array1: [1],
+			array2: [2, 3, 4, 5, 6],
 			expectedOutput: [1, 2, 3, 4, 5, 6],
 		},
 		{
-			arr1: [true, false],
-			arr2: [false, true],
+			array1: [true, false],
+			array2: [false, true],
 			expectedOutput: [true, false, false, true],
 		},
 		{
-			arr1: ['words', 'have', 'power'],
-			arr2: ['over', 'us'],
+			array1: ['words', 'have', 'power'],
+			array2: ['over', 'us'],
 			expectedOutput: ['words', 'have', 'power', 'over', 'us'],
 		},
 	];
@@ -66,29 +67,29 @@ function runTests() {
 	tester.handleTestCases({
 		tests: mergeArraysTestCases,
 		func: mergeArrays,
-		params: ['arr1', 'arr2'],
-		forceArrayOrder: true,
+		params: ['array1', 'array2'],
+		description: `${tester.printFunction(mergeArrays)} should return a new array with elements from both arrays.`,
 	});
 
 	const getIntersectionTestCases = [
 		{
-			arr1: [1, 2, 3, 4, 5],
-			arr2: [4, 5, 6, 7, 8],
+			array1: [1, 2, 3, 4, 5],
+			array2: [4, 5, 6, 7, 8],
 			expectedOutput: [4, 5],
 		},
 		{
-			arr1: [1, 2, 3],
-			arr2: [4, 5, 6],
+			array1: [1, 2, 3],
+			array2: [4, 5, 6],
 			expectedOutput: [],
 		},
 		{
-			arr1: [true, false],
-			arr2: [false, true],
+			array1: [true, false],
+			array2: [false, true],
 			expectedOutput: [false, true],
 		},
 		{
-			arr1: ['words', 'have', 'power'],
-			arr2: ['power', 'of', 'words'],
+			array1: ['words', 'have', 'power'],
+			array2: ['power', 'of', 'words'],
 			expectedOutput: ['power', 'words'],
 		},
 	];
@@ -96,24 +97,25 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getIntersectionTestCases,
 		func: getIntersection,
-		params: ['arr1', 'arr2'],
+		params: ['array1', 'array2'],
+		description: `${tester.printFunction(getIntersection)} should return a new array with elements that appear in both arrays.`,
 	});
 
 	const getKeysTestCases = [
 		{
-			input: { a: 1, b: 2, c: 3 },
+			object: { a: 1, b: 2, c: 3 },
 			expectedOutput: ['a', 'b', 'c'],
 		},
 		{
-			input: { name: 'John', age: 30, city: 'New York' },
+			object: { name: 'John', age: 30, city: 'New York' },
 			expectedOutput: ['name', 'age', 'city'],
 		},
 		{
-			input: {},
+			object: {},
 			expectedOutput: [],
 		},
 		{
-			input: {
+			object: {
 				brand: 'Apple',
 				os: 'iOS',
 				model: 'iPhone 13',
@@ -122,7 +124,7 @@ function runTests() {
 			expectedOutput: ['brand', 'os', 'model', 'condition'],
 		},
 		{
-			input: { artist: 'Taylor Swift', album: '1989', year: 2014 },
+			object: { artist: 'Taylor Swift', album: '1989', year: 2014 },
 			expectedOutput: ['artist', 'album', 'year'],
 		},
 	];
@@ -130,24 +132,25 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getKeysTestCases,
 		func: getKeys,
-		params: ['input'],
+		params: ['object'],
+		description: `${tester.printFunction(getKeys)} should return an array of the object's keys.`,
 	});
 
 	const getValuesTestCases = [
 		{
-			input: { a: 1, b: 2, c: 3 },
+			object: { a: 1, b: 2, c: 3 },
 			expectedOutput: [1, 2, 3],
 		},
 		{
-			input: { name: 'John', age: 30, city: 'New York' },
+			object: { name: 'John', age: 30, city: 'New York' },
 			expectedOutput: ['John', 30, 'New York'],
 		},
 		{
-			input: {},
+			object: {},
 			expectedOutput: [],
 		},
 		{
-			input: {
+			object: {
 				brand: 'Apple',
 				os: 'iOS',
 				model: 'iPhone 13',
@@ -156,7 +159,7 @@ function runTests() {
 			expectedOutput: ['Apple', 'iOS', 'iPhone 13', 'used'],
 		},
 		{
-			input: { artist: 'Taylor Swift', album: '1989', year: 2014 },
+			object: { artist: 'Taylor Swift', album: '1989', year: 2014 },
 			expectedOutput: ['Taylor Swift', '1989', 2014],
 		},
 	];
@@ -164,32 +167,38 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getValuesTestCases,
 		func: getValues,
-		params: ['input'],
+		params: ['object'],
+		description: `${tester.printFunction(getValues)} should return an array of the object's values.`,
 	});
 
 	const getByKeyTestCases = [
 		{
-			obj: { a: 1, b: 2, c: 3 },
+			object: { a: 1, b: 2, c: 3 },
 			key: 'a',
 			expectedOutput: 1,
 		},
 		{
-			obj: { name: 'John', age: 30, city: 'New York' },
+			object: { name: 'John', age: 30, city: 'New York' },
 			key: 'age',
 			expectedOutput: 30,
 		},
 		{
-			obj: {},
+			object: {},
 			key: 'a',
 			expectedOutput: undefined,
 		},
 		{
-			obj: { brand: 'Apple', os: 'iOS', model: 'iPhone 13', condition: 'used' },
+			object: {
+				brand: 'Apple',
+				os: 'iOS',
+				model: 'iPhone 13',
+				condition: 'used',
+			},
 			key: 'os',
 			expectedOutput: 'iOS',
 		},
 		{
-			obj: { artist: 'Taylor Swift', album: '1989', year: 2014 },
+			object: { artist: 'Taylor Swift', album: '1989', year: 2014 },
 			key: 'year',
 			expectedOutput: 2014,
 		},
@@ -198,24 +207,25 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getByKeyTestCases,
 		func: getByKey,
-		params: ['obj', 'key'],
+		params: ['object', 'key'],
+		description: `${tester.printFunction(getByKey)} should return the value of the object's key.`,
 	});
 
 	const getLengthTestCases = [
 		{
-			input: { a: 1, b: 2, c: 3 },
+			object: { a: 1, b: 2, c: 3 },
 			expectedOutput: 3,
 		},
 		{
-			input: { name: 'John', age: 30, city: 'New York' },
+			object: { name: 'John', age: 30, city: 'New York' },
 			expectedOutput: 3,
 		},
 		{
-			input: {},
+			object: {},
 			expectedOutput: 0,
 		},
 		{
-			input: {
+			object: {
 				brand: 'Apple',
 				os: 'iOS',
 				model: 'iPhone 13',
@@ -224,7 +234,7 @@ function runTests() {
 			expectedOutput: 4,
 		},
 		{
-			input: { artist: 'Taylor Swift', album: '1989', year: 2014 },
+			object: { artist: 'Taylor Swift', album: '1989', year: 2014 },
 			expectedOutput: 3,
 		},
 	];
@@ -232,7 +242,8 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getLengthTestCases,
 		func: getLength,
-		params: ['input'],
+		params: ['object'],
+		description: `${tester.printFunction(getLength)} should return the number of key-value pairs in the object.`,
 	});
 
 	tester.printTestSuiteResults();

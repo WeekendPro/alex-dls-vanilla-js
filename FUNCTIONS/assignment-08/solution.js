@@ -19,13 +19,13 @@ Use node to run the tests in the test file found in this directory.
 // Fix the code below this line //
 // ---------------------------- //
 
-const removeDuplicates = () => {};
-const mergeArrays = () => {};
-const getIntersection = () => {};
-const getKeys = () => {};
-const getValues = () => {};
-const getByKey = () => {};
-const getLength = () => {};
+const removeDuplicates = (collection) => {};
+const mergeArrays = (array1, array2) => {};
+const getIntersection = (array1, array2) => {};
+const getKeys = (object) => {};
+const getValues = (object) => {};
+const getByKey = (object, key) => {};
+const getLength = (object) => {};
 
 // ------------------------------- //
 // Don't edit code below this line //

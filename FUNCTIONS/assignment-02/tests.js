@@ -17,23 +17,23 @@ function runTests() {
 
 	const getGreetingTestCases = [
 		{
-			input: 'John',
+			name: 'John',
 			expectedOutput: 'Hello, John!',
 		},
 		{
-			input: 'Jane',
+			name: 'Jane',
 			expectedOutput: 'Hello, Jane!',
 		},
 		{
-			input: 'Alice',
+			name: 'Alice',
 			expectedOutput: 'Hello, Alice!',
 		},
 		{
-			input: 'Bob',
+			name: 'Bob',
 			expectedOutput: 'Hello, Bob!',
 		},
 		{
-			input: 'George Washington Senior',
+			name: 'George Washington Senior',
 			expectedOutput: 'Hello, George Washington Senior!',
 		},
 	];
@@ -41,32 +41,33 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getGreetingTestCases,
 		func: getGreeting,
-		params: ['input'],
+		params: ['name'],
+		description: `${tester.printFunction(getGreeting)} should return a greeting to the provided ${tester.printParam('name')}.`,
 	});
 
 	const getLengthTestCases = [
 		{
-			input: 'Hello, world!',
+			string: 'Hello, world!',
 			expectedOutput: 13,
 		},
 		{
-			input: 'Jackson Hayes',
+			string: 'Jackson Hayes',
 			expectedOutput: 13,
 		},
 		{
-			input: 'John',
+			string: 'John',
 			expectedOutput: 4,
 		},
 		{
-			input: 'Jane',
+			string: 'Jane',
 			expectedOutput: 4,
 		},
 		{
-			input: 'Alice',
+			string: 'Alice',
 			expectedOutput: 5,
 		},
 		{
-			input: 'supercalifragilisticexpialidocious',
+			string: 'supercalifragilisticexpialidocious',
 			expectedOutput: 34,
 		},
 	];
@@ -74,32 +75,33 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getLengthTestCases,
 		func: getLength,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(getLength)} should return the length of the provided ${tester.printParam('string')}.`,
 	});
 
 	const getFirstCharacterTestCases = [
 		{
-			input: 'Hello, world!',
+			string: 'Hello, world!',
 			expectedOutput: 'H',
 		},
 		{
-			input: 'Jackson Hayes',
+			string: 'Jackson Hayes',
 			expectedOutput: 'J',
 		},
 		{
-			input: 'John',
+			string: 'John',
 			expectedOutput: 'J',
 		},
 		{
-			input: 'Jane',
+			string: 'Jane',
 			expectedOutput: 'J',
 		},
 		{
-			input: 'Alice',
+			string: 'Alice',
 			expectedOutput: 'A',
 		},
 		{
-			input: 'supercalifragilisticexpialidocious',
+			string: 'supercalifragilisticexpialidocious',
 			expectedOutput: 's',
 		},
 	];
@@ -107,28 +109,29 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getFirstCharacterTestCases,
 		func: getFirstCharacter,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(getFirstCharacter)} should return the first character of the provided ${tester.printParam('string')}.`,
 	});
 
 	const getLastCharacterTestCases = [
 		{
-			input: 'Hello, world!',
+			string: 'Hello, world!',
 			expectedOutput: '!',
 		},
 		{
-			input: 'Jackson Hayes',
+			string: 'Jackson Hayes',
 			expectedOutput: 's',
 		},
 		{
-			input: 'John',
+			string: 'John',
 			expectedOutput: 'n',
 		},
 		{
-			input: 'Alice',
+			string: 'Alice',
 			expectedOutput: 'e',
 		},
 		{
-			input: 'supercalifragilisticexpialidocious',
+			string: 'supercalifragilisticexpialidocious',
 			expectedOutput: 's',
 		},
 	];
@@ -136,33 +139,34 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getLastCharacterTestCases,
 		func: getLastCharacter,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(getLastCharacter)} should return the last character of the provided ${tester.printParam('string')}.`,
 	});
 
 	const concatenateStringsTestCases = [
 		{
-			a: 'Hello, ',
-			b: 'world!',
+			string1: 'Hello, ',
+			string2: 'world!',
 			expectedOutput: 'Hello, world!',
 		},
 		{
-			a: 'Jackson ',
-			b: 'Hayes',
+			string1: 'Jackson ',
+			string2: 'Hayes',
 			expectedOutput: 'Jackson Hayes',
 		},
 		{
-			a: 'John',
-			b: 'Doe',
+			string1: 'John',
+			string2: 'Doe',
 			expectedOutput: 'JohnDoe',
 		},
 		{
-			a: 'Alice',
-			b: 'Smith',
+			string1: 'Alice',
+			string2: 'Smith',
 			expectedOutput: 'AliceSmith',
 		},
 		{
-			a: 'supercalifragilisticexpialidocious',
-			b: '123',
+			string1: 'supercalifragilisticexpialidocious',
+			string2: '123',
 			expectedOutput: 'supercalifragilisticexpialidocious123',
 		},
 	];
@@ -170,28 +174,29 @@ function runTests() {
 	tester.handleTestCases({
 		tests: concatenateStringsTestCases,
 		func: concatenateStrings,
-		params: ['a', 'b'],
+		params: ['string1', 'string2'],
+		description: `${tester.printFunction(concatenateStrings)} should return the concatenation of the provided ${tester.printParam('string1')} and ${tester.printParam('string2')}.`,
 	});
 
 	const convertToUppercaseTestCases = [
 		{
-			input: 'Hello, world!',
+			string: 'Hello, world!',
 			expectedOutput: 'HELLO, WORLD!',
 		},
 		{
-			input: 'Jackson Hayes',
+			string: 'Jackson Hayes',
 			expectedOutput: 'JACKSON HAYES',
 		},
 		{
-			input: 'John Doe',
+			string: 'John Doe',
 			expectedOutput: 'JOHN DOE',
 		},
 		{
-			input: 'Alice Smith',
+			string: 'Alice Smith',
 			expectedOutput: 'ALICE SMITH',
 		},
 		{
-			input: 'supercalifragilisticexpialidocious',
+			string: 'supercalifragilisticexpialidocious',
 			expectedOutput: 'SUPERCALIFRAGILISTICEXPIALIDOCIOUS',
 		},
 	];
@@ -199,28 +204,29 @@ function runTests() {
 	tester.handleTestCases({
 		tests: convertToUppercaseTestCases,
 		func: convertToUppercase,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(convertToUppercase)} should return the provided ${tester.printParam('string')} in uppercase.`,
 	});
 
 	const convertToLowercaseTestCases = [
 		{
-			input: 'Hello, world!',
+			string: 'Hello, world!',
 			expectedOutput: 'hello, world!',
 		},
 		{
-			input: 'Jackson Hayes',
+			string: 'Jackson Hayes',
 			expectedOutput: 'jackson hayes',
 		},
 		{
-			input: 'JOHN DOE',
+			string: 'JOHN DOE',
 			expectedOutput: 'john doe',
 		},
 		{
-			input: 'Alice SMITH',
+			string: 'Alice SMITH',
 			expectedOutput: 'alice smith',
 		},
 		{
-			input: 'sUpErCaLiFrAgIlIsTiCeXpIaLiDoCiOuS',
+			string: 'sUpErCaLiFrAgIlIsTiCeXpIaLiDoCiOuS',
 			expectedOutput: 'supercalifragilisticexpialidocious',
 		},
 	];
@@ -228,20 +234,21 @@ function runTests() {
 	tester.handleTestCases({
 		tests: convertToLowercaseTestCases,
 		func: convertToLowercase,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(convertToLowercase)} should return the provided ${tester.printParam('string')} in lowercase.`,
 	});
 
 	const isEmptyTestCases = [
 		{
-			input: '',
+			string: '',
 			expectedOutput: true,
 		},
 		{
-			input: 'Hello, world!',
+			string: 'Hello, world!',
 			expectedOutput: false,
 		},
 		{
-			input: 'Jackson Hayes',
+			string: 'Jackson Hayes',
 			expectedOutput: false,
 		},
 	];
@@ -249,32 +256,33 @@ function runTests() {
 	tester.handleTestCases({
 		tests: isEmptyTestCases,
 		func: isEmpty,
-		params: ['input'],
+		params: ['string'],
+		description: `${tester.printFunction(isEmpty)} should return ${tester.printBoolean(true)} if the provided ${tester.printParam('string')} is empty, otherwise ${tester.printBoolean(false)}.`,
 	});
 
 	const getCharacterAtIndexTestCases = [
 		{
-			str: 'Hello, world!',
+			string: 'Hello, world!',
 			index: 0,
 			expectedOutput: 'H',
 		},
 		{
-			str: 'Jackson Hayes',
+			string: 'Jackson Hayes',
 			index: 6,
 			expectedOutput: 'n',
 		},
 		{
-			str: 'John Doe',
+			string: 'John Doe',
 			index: 3,
 			expectedOutput: 'n',
 		},
 		{
-			str: 'Alice Smith',
+			string: 'Alice Smith',
 			index: 7,
 			expectedOutput: 'm',
 		},
 		{
-			str: 'supercalifragilisticexpialidocious',
+			string: 'supercalifragilisticexpialidocious',
 			index: 20,
 			expectedOutput: 'e',
 		},
@@ -283,7 +291,8 @@ function runTests() {
 	tester.handleTestCases({
 		tests: getCharacterAtIndexTestCases,
 		func: getCharacterAtIndex,
-		params: ['str', 'index'],
+		params: ['string', 'index'],
+		description: `${tester.printFunction(getCharacterAtIndex)} should return the character at the provided ${tester.printParam('index')} of the provided ${tester.printParam('string')}.`,
 	});
 
 	tester.printTestSuiteResults();
